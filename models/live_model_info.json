@@ -1,0 +1,9 @@
+{
+  "model_type": "RandomForest",
+  "requires_scaling": false,
+  "test_accuracy": 0.7921,
+  "auc": 0.8898,
+  "n_features": 18,
+  "train_samples": 113858,
+  "test_samples": 14006
+}

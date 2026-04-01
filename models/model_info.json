@@ -1,0 +1,7 @@
+{
+  "model_type": "LogisticRegression",
+  "requires_scaling": true,
+  "test_accuracy": 0.6414,
+  "auc": 0.687,
+  "n_features": 42
+}

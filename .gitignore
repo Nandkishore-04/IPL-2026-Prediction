@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Environment variables — NEVER commit this
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data — raw and processed CSVs are large, don't commit
+data/raw/
+data/processed/
+
+# Raw CSVs at project root (uploaded manually)
+*.csv
+matches.csv
+IPL\ dataset\ final.csv
+IPL_Auction_2026_Sold_Player.csv
+IPL\ -\ Player\ Performance\ Dataset/
+
+# Models — large binary files, don't commit
+# (JSON files like feature_cols.json ARE committed — they're small and needed at startup)
+models/*.pkl
+
+# Claude Code internal settings
+.claude/
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log

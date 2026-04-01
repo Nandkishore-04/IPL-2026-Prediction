@@ -1,0 +1,72 @@
+{
+  "Chennai Super Kings": {
+    "overall_win_rate": 0.599,
+    "last5_win_rate": 0.58,
+    "total_matches": 252,
+    "total_wins": 144,
+    "home_venue": "MA Chidambaram Stadium, Chepauk, Chennai"
+  },
+  "Delhi Capitals": {
+    "overall_win_rate": 0.473,
+    "last5_win_rate": 0.454,
+    "total_matches": 267,
+    "total_wins": 120,
+    "home_venue": "Arun Jaitley Stadium, Delhi"
+  },
+  "Gujarat Titans": {
+    "overall_win_rate": 0.724,
+    "last5_win_rate": 0.657,
+    "total_matches": 60,
+    "total_wins": 37,
+    "home_venue": "Narendra Modi Stadium, Ahmedabad"
+  },
+  "Kolkata Knight Riders": {
+    "overall_win_rate": 0.489,
+    "last5_win_rate": 0.492,
+    "total_matches": 264,
+    "total_wins": 138,
+    "home_venue": "Eden Gardens, Kolkata"
+  },
+  "Lucknow Super Giants": {
+    "overall_win_rate": 0.571,
+    "last5_win_rate": 0.521,
+    "total_matches": 58,
+    "total_wins": 30,
+    "home_venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow"
+  },
+  "Mumbai Indians": {
+    "overall_win_rate": 0.551,
+    "last5_win_rate": 0.563,
+    "total_matches": 277,
+    "total_wins": 153,
+    "home_venue": "Wankhede Stadium, Mumbai"
+  },
+  "Punjab Kings": {
+    "overall_win_rate": 0.476,
+    "last5_win_rate": 0.471,
+    "total_matches": 264,
+    "total_wins": 122,
+    "home_venue": "Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh"
+  },
+  "Rajasthan Royals": {
+    "overall_win_rate": 0.537,
+    "last5_win_rate": 0.479,
+    "total_matches": 235,
+    "total_wins": 117,
+    "home_venue": "Sawai Mansingh Stadium, Jaipur"
+  },
+  "Royal Challengers Bengaluru": {
+    "overall_win_rate": 0.462,
+    "last5_win_rate": 0.472,
+    "total_matches": 270,
+    "total_wins": 134,
+    "home_venue": "M Chinnaswamy Stadium, Bengaluru"
+  },
+  "Sunrisers Hyderabad": {
+    "overall_win_rate": 0.507,
+    "last5_win_rate": 0.473,
+    "total_matches": 196,
+    "total_wins": 98,
+    "home_venue": "Rajiv Gandhi International Stadium, Uppal, Hyderabad"
+  }
+}

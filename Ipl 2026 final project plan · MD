@@ -1,0 +1,1092 @@
+# IPL 2026 Match Predictor — Final Project Plan
+
+> **Two Models. Live Data. Full Stack. Built with Claude Code — understood by you.**
+
+---
+
+## What You're Building
+
+An AI-powered IPL match prediction system with:
+
+1. **Pre-Match Predictor** — Input two teams, venue, toss result, playing XI → Get win probabilities
+2. **Live Win Probability Tracker** — Auto-updates during a live match using real-time score data
+3. **FastAPI Backend** — Serves predictions via REST API
+4. **React Frontend** — Visual prediction dashboard with probability meters and live charts
+5. **Live Data Pipeline** — Connects to CricAPI for automatic score fetching during live IPL matches
+
+---
+
+## How You'll Learn (The Claude Code Method)
+
+You're using Claude Code to build this. That's fine — but the goal is to **understand every line**, not just ship it. Here's how every phase works:
+
+```
+FOR EVERY PIECE OF CODE:
+
+Step 1: CLAUDE CODE BUILDS IT
+   → Claude Code writes the implementation
+
+Step 2: YOU READ IT LINE BY LINE
+   → Go through every line
+   → For each block: what does it do? why is it here?
+
+Step 3: EXPLAIN IT BACK
+   → Write a plain-English comment above each function
+   → If you can't explain it, you don't understand it
+   → Ask Claude Code: "explain this function to me like I'm a beginner"
+
+Step 4: MODIFY IT YOURSELF
+   → Change one thing manually (add a feature, fix a bug, tweak a parameter)
+   → This proves you understand the code, not just copied it
+
+Step 5: INTERVIEW PREP
+   → Write 2-3 questions an interviewer might ask about this code
+   → Write your answers
+   → Add to your Interview Q&A notebook
+
+EXAMPLE:
+   Claude Code writes a groupby to compute team win rates.
+   You read it, understand what groupby does, what agg does.
+   You write a comment: "# Groups matches by team, counts wins and total matches, divides to get win rate"
+   You modify it: add a filter for only home matches.
+   You write: "Q: Why did you use groupby here? A: Because I needed to compute a statistic (win rate) separately for each team..."
+```
+
+---
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    IPL 2026 PREDICTOR                        │
+│                                                             │
+│  DATA LAYER                                                 │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌───────────┐  │
+│  │matches   │  │deliveries│  │player    │  │2026       │  │
+│  │.csv      │  │.csv      │  │stats.csv │  │squads.csv │  │
+│  │(1000+    │  │(200K+    │  │(career   │  │(current   │  │
+│  │ matches) │  │ balls)   │  │ stats)   │  │ teams)    │  │
+│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └─────┬─────┘  │
+│       └──────────────┼───────────┬─┘              │         │
+│                      │           │                │         │
+│                      ▼           ▼                ▼         │
+│  FEATURE ENGINE                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Computes ~30 features per match:                     │   │
+│  │  • Team win rates (overall, venue, h2h, recent)       │   │
+│  │  • Toss & venue features                              │   │
+│  │  • Player aggregate stats (batting SR, bowling econ)  │   │
+│  │  • Season context                                     │   │
+│  └──────────────────────┬───────────────────────────────┘   │
+│                         │                                    │
+│         ┌───────────────┼───────────────┐                    │
+│         ▼                               ▼                    │
+│  ┌──────────────┐              ┌──────────────────┐          │
+│  │  MODEL A      │              │  MODEL B          │          │
+│  │  Pre-Match    │              │  Live Probability  │          │
+│  │               │              │                    │          │
+│  │  XGBoost      │              │  Logistic Reg +    │          │
+│  │  + Random     │              │  XGBoost           │          │
+│  │  Forest       │              │                    │          │
+│  │               │              │  Trained on 120K+  │          │
+│  │  44 features  │              │  ball-by-ball      │          │
+│  │  → Win %      │              │  snapshots         │          │
+│  └──────┬───────┘              │                    │          │
+│         │                       │  18 features       │          │
+│         │                       │  → Chase win %     │          │
+│         │                       └────────┬───────────┘          │
+│         └───────────┬────────────────────┘                    │
+│                     ▼                                          │
+│  API LAYER                                                    │
+│  ┌──────────────────────────────────────────────────────┐     │
+│  │  FastAPI                                              │     │
+│  │  POST /predict-match    → pre-match prediction        │     │
+│  │  POST /predict-live     → live win probability        │     │
+│  │  GET  /teams            → list of IPL 2026 teams      │     │
+│  │  GET  /team/{name}/stats→ team historical stats       │     │
+│  │  GET  /accuracy         → prediction accuracy tracker │     │
+│  │  GET  /live-feed        → auto-fetch from CricAPI     │     │
+│  └──────────────────────────┬───────────────────────────┘     │
+│                             │                                  │
+│  LIVE DATA PIPELINE         │                                  │
+│  ┌──────────────────────┐   │                                  │
+│  │  CricAPI Integration  │   │                                  │
+│  │  • Polls every 30s    │   │                                  │
+│  │  • Detects live match  │──┘                                  │
+│  │  • Parses JSON score   │                                     │
+│  │  • Feeds into Model B  │                                     │
+│  │  • Fallback: manual    │                                     │
+│  └──────────────────────┘                                      │
+│                                                                │
+│  FRONTEND                                                      │
+│  ┌──────────────────────────────────────────────────────┐     │
+│  │  React App                                            │     │
+│  │  Screen 1: Pre-Match Predictor                        │     │
+│  │    → Team dropdowns, venue, toss → probability bars   │     │
+│  │  Screen 2: Live Match Tracker                         │     │
+│  │    → Auto-updating score, probability meter, chart    │     │
+│  │  Screen 3: Accuracy Dashboard                         │     │
+│  │    → Past predictions vs actual results               │     │
+│  └──────────────────────────────────────────────────────┘     │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Tech Stack (Final)
+
+| Category | Tool | Purpose |
+|----------|------|---------|
+| Language | Python 3.10+ | All ML and backend |
+| Data | Pandas, NumPy | Loading, cleaning, feature engineering |
+| Visualization | Matplotlib, Seaborn | EDA charts |
+| ML Models | Scikit-learn, XGBoost | Training, evaluation, tuning |
+| Model Serving | Joblib | Save/load trained models |
+| Backend | FastAPI + Uvicorn | REST API |
+| Validation | Pydantic | Request/response schemas |
+| Live Data | CricAPI (free tier) | Real-time score fetching |
+| Frontend | React (JSX) | Prediction UI |
+| Charts | Recharts | Live probability timeline |
+| Styling | Tailwind CSS | Clean UI |
+| Containerization | Docker | Deployment |
+| Version Control | Git + GitHub | Code management |
+
+---
+
+## Algorithms (Final Decision)
+
+### Model A: Pre-Match Winner Prediction
+
+| Model | Role | Expected Accuracy |
+|-------|------|-------------------|
+| Logistic Regression | Baseline (floor) | 58-63% |
+| Random Forest (n=200) | Strong comparison | 68-78% |
+| **XGBoost (primary)** | **Best performer** | **72-82%** |
+| Voting Ensemble | Optional boost | +1-3% over best |
+
+### Model B: Live Win Probability
+
+| Model | Role | Why |
+|-------|------|-----|
+| **Logistic Regression (primary)** | **Smooth probability output** | **Naturally calibrated, fast, smooth curves** |
+| XGBoost | Comparison | More accurate but less smooth |
+
+---
+
+## Data Sources (Final)
+
+| Dataset | Source | What You Get |
+|---------|--------|-------------|
+| Match Results (2008-2025) | Kaggle: chaitu20/ipl-dataset2008-2025 | 1000+ matches with winner, toss, venue |
+| Ball-by-Ball (2008-2025) | Same Kaggle dataset | 200K+ deliveries with batter, bowler, runs, wickets |
+| Player Stats | Kaggle: saivarunreddy1904/ipl-player-stats-dataset | Career batting/bowling stats |
+| IPL 2026 Squads | Kaggle: sunnyyadav754/ipl-auction-dataset-2026 | Current team compositions |
+| Live Scores (Phase 12) | CricAPI free tier (cricketdata.org) | Real-time score JSON during live matches |
+
+---
+
+## Phase-by-Phase Plan
+
+---
+
+### Phase 1: Project Setup & Data Loading
+**Sessions:** 1-2 | **Time:** ~3-4 hours
+
+**What Claude Code builds:**
+```
+• Project folder structure (data/, notebooks/, src/, api/, frontend/, models/)
+• requirements.txt with all dependencies
+• Data loading script that reads all 4 CSVs
+• Initial exploration: shape, columns, dtypes, null counts, value_counts
+```
+
+**What you learn:**
+```
+• How pd.read_csv() works — parameters like parse_dates, dtype
+• What df.shape, df.info(), df.describe() tell you
+• What df['column'].value_counts() does and why it's useful
+• How to filter a dataframe: df[df['winner'] == 'CSK']
+• What each column in matches.csv and deliveries.csv represents
+```
+
+**Your tasks after Claude Code writes it:**
+```
+□ Read every line of the loading script
+□ Write a comment above each pd function explaining what it does
+□ Answer these WITHOUT looking at code:
+  - How many total IPL matches are in the dataset?
+  - Which team has won the most matches?
+  - What % of matches does the toss winner also win?
+  - Which venue has hosted the most matches?
+□ Add to interview notebook:
+  Q: "What's the first thing you do when you get a new dataset?"
+  A: [your answer based on what you just learned]
+```
+
+---
+
+### Phase 2: Data Cleaning
+**Sessions:** 3-4 | **Time:** ~3-4 hours
+
+**What Claude Code builds:**
+```
+• Team name standardization (mapping old names to current 10 teams)
+• Handling defunct teams (Pune Warriors, Kochi Tuskers, etc.)
+• Missing value treatment (nulls in winner, venue, player columns)
+• Date parsing and season extraction
+• Data integrity check: match_ids consistent across files
+• Output: cleaned_matches.csv, cleaned_deliveries.csv
+```
+
+**What you learn:**
+```
+• df.replace() and df.map() — transforming column values
+• Why data cleaning matters (model breaks on inconsistent data)
+• df.dropna() vs df.fillna() — when to drop vs fill
+• pd.to_datetime() — converting strings to dates
+• How to verify your cleaning worked: before vs after null counts
+```
+
+**Your tasks:**
+```
+□ Read the name_mapping dictionary — understand every mapping
+□ Manually verify: pick 3 matches with old team names, confirm they got renamed
+□ Modify: add one more team name variant if you find one in the data
+□ Write: "Q: How did you handle missing data? A: ..."
+□ Write: "Q: Why not just drop all rows with any null? A: ..."
+```
+
+---
+
+### Phase 3: Feature Engineering — Team Level
+**Sessions:** 5-8 | **Time:** ~8-10 hours (hardest phase)
+
+**What Claude Code builds:**
+```
+For each match in the dataset, compute these features using ONLY data
+available BEFORE that match date (no data leakage):
+
+HISTORICAL PERFORMANCE (features 1-7):
+1.  team_a_overall_win_rate
+2.  team_b_overall_win_rate
+3.  team_a_venue_win_rate
+4.  team_b_venue_win_rate
+5.  head_to_head_a_win_rate
+6.  team_a_bat_first_win_rate
+7.  team_b_bat_first_win_rate
+
+RECENT FORM (features 8-13):
+8.  team_a_last5_win_rate
+9.  team_b_last5_win_rate
+10. team_a_last5_avg_margin
+11. team_b_last5_avg_margin
+12. team_a_win_streak
+13. team_b_win_streak
+
+TOSS & VENUE (features 14-18):
+14. toss_winner_is_team_a (1/0)
+15. toss_decision_bat (1/0)
+16. venue_bat_first_win_rate
+17. is_home_ground_a (1/0)
+18. is_home_ground_b (1/0)
+
+SEASON CONTEXT (features 19-22):
+19. team_a_season_win_rate
+20. team_b_season_win_rate
+21. match_number_in_season
+22. is_playoff (1/0)
+
+CONDITIONS (features 23-24):
+23. is_day_night (1/0)        ← available in matches.csv
+24. venue_avg_first_innings_score ← proxy for pitch nature (high = flat, low = seaming)
+  NOTE: Real systems use pitch reports and dew factor. We can't — that data
+  isn't public. venue_avg_score is the best publicly available proxy.
+
+TARGET:
+25. team_a_won (1 if team_a won, 0 if team_b won)
+
+Output: team_features.csv — one row per match, 24 feature columns + 1 target
+```
+
+**What you learn:**
+```
+• groupby() — THE most important Pandas operation
+  df.groupby('team')['winner'].count() → matches per team
+• agg() — applying multiple functions at once
+  df.groupby('team').agg({'winner': 'count', 'win_margin': 'mean'})
+• Cumulative calculations — expanding().mean() for running averages
+• shift() — accessing previous rows (for "last 5 matches" features)
+• merge() — joining feature tables back to the main dataframe
+• WHY features matter more than algorithms (garbage in → garbage out)
+• WHAT data leakage is and why it gives fake accuracy
+```
+
+**Your tasks:**
+```
+□ For EACH feature: write one sentence explaining what it captures
+□ Pick 3 specific matches you remember watching — manually verify
+  the computed features make sense (e.g., "CSK win rate at Chepauk
+  should be high — is it?")
+□ Modify: add one new feature you think matters
+  (e.g., days_since_last_match, or avg_first_innings_score_at_venue)
+□ Write: "Q: What is data leakage? A: ..."
+□ Write: "Q: Why do you compute features using only past data? A: ..."
+□ Write: "Q: Which feature do you think is most predictive? A: ..."
+```
+
+---
+
+### Phase 4: Feature Engineering — Player Level
+**Sessions:** 9-11 | **Time:** ~6-8 hours
+
+> **Playing XI approach:** Player features are NOT computed from historical lineups.
+> Instead, the user inputs the actual playing XI **after the toss is announced** (when
+> squads are confirmed). The pre-computed player stats lookup table is ready — at
+> prediction time you pass 11 player names and the system fetches their stats and
+> aggregates to team-level features on the fly. Historical training still uses the
+> players who appeared in each past match (derived from deliveries.csv) for that match.
+
+**What Claude Code builds:**
+```
+STEP 1: Compute player career stats from deliveries.csv
+  For each batter (from ball-by-ball data):
+  • total_runs, balls_faced, dismissals
+  • batting_average = runs / dismissals
+  • strike_rate = (runs / balls) × 100
+
+  For each bowler:
+  • runs_conceded, balls_bowled, wickets
+  • economy_rate = (runs / balls) × 6
+  • bowling_strike_rate = balls / wickets
+
+STEP 2: Rolling player stats (stats as of each match date)
+  Same computation but only using matches before current date.
+  This captures CURRENT FORM, not just career averages.
+  → Export as player_career_stats.json (keyed by player name, for fast lookup at prediction time)
+
+STEP 3: Aggregate to team level per match
+  For TRAINING: derive XI from deliveries.csv (players who batted/bowled = the XI)
+  For PREDICTION: user inputs 11 player names post-toss → system looks up their stats
+  Given the 11 players in a team's lineup for a specific match:
+
+  BATTING (features 25-28):
+  25. team_a_avg_batting_sr (mean SR of top 7 batters in XI)
+  26. team_a_avg_batting_avg (mean batting avg of top 7)
+  27. team_b_avg_batting_sr
+  28. team_b_avg_batting_avg
+
+  BOWLING (features 29-32):
+  29. team_a_avg_bowling_econ (mean economy of top 5 bowlers)
+  30. team_a_avg_bowling_sr (mean bowling SR of top 5)
+  31. team_b_avg_bowling_econ
+  32. team_b_avg_bowling_sr
+
+  EXPERIENCE (features 33-34):
+  33. team_a_total_ipl_caps (sum of matches played by XI)
+  34. team_b_total_ipl_caps
+
+  STAR POWER (features 35-38):
+  35. team_a_best_batting_avg (max in XI)
+  36. team_b_best_batting_avg
+  37. team_a_best_bowling_econ (min/best in XI)
+  38. team_b_best_bowling_econ
+
+STEP 4: Player Matchup Features (what real broadcast systems use)
+  For the two XIs, compute historical batter-vs-bowler records:
+  Each ball in deliveries.csv has a batter AND bowler — mine this directly.
+
+  For each (batter, bowler) pair that has faced at least 6 balls:
+  → runs_scored, balls_faced, dismissals
+  → batter_vs_bowler_sr = (runs / balls) × 100
+  → batter_vs_bowler_dismissal_rate = dismissals / balls
+
+  Then aggregate across the two XIs:
+  MATCHUP (features 39-44):
+  39. team_a_favorable_matchups   ← count of A batters with SR > 140 vs assigned B bowlers
+  40. team_b_favorable_matchups
+  41. team_a_avg_matchup_sr       ← mean SR of A's top-order vs B's likely bowling attack
+  42. team_b_avg_matchup_sr
+  43. team_a_key_wicket_threat    ← highest dismissal rate bowler in B's XI vs A's top-3
+  44. team_b_key_wicket_threat
+
+  NOTE: This is the closest publicly achievable version of what franchises
+  do internally. Real systems use every ball ever bowled per pairing;
+  so do we — deliveries.csv has 200K+ balls with batter and bowler columns.
+
+Output: full_features.csv — 44 feature columns + target per match
+```
+
+**What you learn:**
+```
+• Complex groupby with multiple columns and aggregations
+• How to extract playing XI from deliveries.csv
+  (players who batted or bowled in a match = the XI)
+• merge() with different join types (left, inner)
+• Handling edge cases: players with <5 matches (unreliable stats)
+• Why we aggregate to team level (model can't handle 22 variable-length player inputs)
+• How to mine batter-vs-bowler matchup data from ball-by-ball records
+• Why matchup features add signal beyond team-level averages
+```
+
+**Your tasks:**
+```
+□ Look up your favorite player's computed stats — do they match
+  what you know? (e.g., Virat Kohli SR should be ~130-140)
+□ Look up a famous matchup: Rohit Sharma vs Bumrah — what does the
+  data say? (they're teammates so balls faced will be low — good edge case)
+□ Understand WHY we use "top 7 batters" not all 11
+  (tailenders skew the average)
+□ Modify: add a feature for "team_a_powerplay_avg_sr"
+  (batting SR of top-order in overs 1-6 historically)
+□ Write: "Q: How do you handle players with very few matches? A: ..."
+□ Write: "Q: What is a player matchup feature? A: ..."
+□ Write: "Q: Why aggregate player stats to team level? A: ..."
+```
+
+---
+
+### Phase 5: Visualization & EDA
+**Sessions:** 12-13 | **Time:** ~4 hours
+
+**What Claude Code builds:**
+```
+9 publication-quality charts:
+
+1. Team Win Rates (horizontal bar chart, sorted)
+2. Toss Impact by Venue (grouped bars: bat first vs chase win rate)
+3. Head-to-Head Heatmap (10×10 team grid)
+4. Recent Form vs Actual Wins (scatter: does form predict wins?)
+5. Feature Correlation Heatmap (which features correlate with winning?)
+6. Venue Analysis (batting first vs chasing, per venue + avg first innings score)
+7. Player Impact (team batting SR distribution: winners vs losers)
+8. Season Progression (win probability changes through a season)
+9. Player Matchup Heatmap — pick one match (e.g., MI vs CSK): grid of
+   top-5 batters × top-5 bowlers, cells = SR in that matchup historically
+   (this is exactly what you see in TV broadcast "matchup cards")
+
+All saved as PNG files + displayed in notebook
+```
+
+**What you learn:**
+```
+• plt.figure(), plt.bar(), plt.scatter() — basic Matplotlib
+• sns.heatmap() — correlation and head-to-head visualizations
+• plt.subplots() — multiple charts in one figure
+• How to read a correlation heatmap (which features to keep/drop)
+• What patterns exist in IPL data (home advantage? toss advantage?)
+```
+
+**Your tasks:**
+```
+□ For each chart: write 2-3 sentences about what it tells you
+□ From the correlation heatmap: identify 2 features that are
+  highly correlated with each other (redundant → drop one)
+□ Identify 1 surprising insight from the visualizations
+□ Modify: create one additional chart (your choice)
+□ Write: "Q: Walk me through your EDA process. A: ..."
+```
+
+---
+
+### Phase 6: Model A — Training Pre-Match Predictor
+**Sessions:** 14-16 | **Time:** ~6-8 hours
+
+**What Claude Code builds:**
+```
+STEP 1: Prepare data
+  • X = all 36 feature columns
+  • y = team_a_won (1 or 0)
+  • TIME-BASED SPLIT (not random!):
+    Train: 2008-2023 | Test: 2024-2025
+  • Scale with StandardScaler
+
+  DATA LEAKAGE VALIDATION (do this before training):
+  • Pick 5 matches from Jan 2024 (test set boundary)
+  • For each, print the feature values alongside the match date
+  • Confirm: team win rates only reflect matches BEFORE that date
+  • If any feature shows future data (e.g., a 2024 match win rate
+    includes 2024 results), stop and fix the feature pipeline
+  • Rule: features for match on date D must only use matches with date < D
+
+STEP 2: Train 3 models
+  • Logistic Regression (baseline)
+  • Random Forest (n_estimators=200, max_depth=10)
+  • XGBoost (n_estimators=300, max_depth=6, learning_rate=0.1)
+
+STEP 3: Evaluate each model
+  • accuracy_score
+  • classification_report (precision, recall, F1)
+  • confusion_matrix (visualized as heatmap)
+  • roc_auc_score + ROC curve plot
+  • Cross-validation (5-fold) on training data
+
+STEP 4: Feature importance
+  • Extract from Random Forest and XGBoost
+  • Plot top 15 most important features
+  • Identify and drop useless features
+  • Retrain without weak features
+
+STEP 5: Compare models
+  • Side-by-side accuracy/AUC table
+  • Pick the best model
+```
+
+**What you learn:**
+```
+• train_test_split (and WHY we use time-based, not random)
+• StandardScaler — what it does (mean=0, std=1) and why
+• How LogisticRegression, RandomForest, XGBoost work (high level)
+• What accuracy, precision, recall, F1 mean in practice
+• How to read a confusion matrix
+• What ROC-AUC measures and why it's better than accuracy
+• Feature importance — which inputs actually matter
+• Overfitting: training accuracy >> test accuracy = bad
+```
+
+**Your tasks:**
+```
+□ Compare the 3 models — which won and WHY do you think?
+□ Look at the confusion matrix — what types of matches does the
+  model get WRONG? (is it bad at predicting upsets?)
+□ Look at feature importance — are the top features what you expected?
+□ Modify: try a different max_depth or n_estimators — what changes?
+□ Write: "Q: Why XGBoost over Random Forest? A: ..."
+□ Write: "Q: What's the difference between accuracy and AUC? A: ..."
+□ Write: "Q: How did you avoid overfitting? A: ..."
+□ Write: "Q: Why time-based split instead of random? A: ..."
+```
+
+---
+
+### Phase 7: Hyperparameter Tuning
+**Sessions:** 17 | **Time:** ~2-3 hours
+
+**What Claude Code builds:**
+```
+• RandomizedSearchCV on XGBoost with param grid:
+  n_estimators: [100, 200, 300, 500]
+  max_depth: [3, 5, 7, 10]
+  learning_rate: [0.01, 0.05, 0.1, 0.2]
+  subsample: [0.8, 0.9, 1.0]
+  colsample_bytree: [0.8, 0.9, 1.0]
+  min_child_weight: [1, 3, 5]
+
+• 5-fold cross-validation, optimizing ROC-AUC
+• Print best params and best score
+• Retrain with best params on full training set
+• Final evaluation on test set
+• Save model: joblib.dump(model, 'models/pre_match_model.pkl')
+• Save scaler: joblib.dump(scaler, 'models/scaler.pkl')
+```
+
+**What you learn:**
+```
+• What hyperparameters are (knobs you tune)
+• RandomizedSearchCV vs GridSearchCV (speed vs thoroughness)
+• Cross-validation — why k=5 folds
+• How to interpret CV results
+• Model persistence with joblib
+```
+
+**Your tasks:**
+```
+□ Compare tuned vs untuned accuracy — how much did tuning help?
+□ Look at best_params — do the values make intuitive sense?
+□ Write: "Q: How did you tune your model? A: ..."
+□ Write: "Q: What's cross-validation? A: ..."
+```
+
+---
+
+### Phase 8: Model B — Live Win Probability (Data Prep)
+**Sessions:** 18-19 | **Time:** ~6-8 hours
+
+**What Claude Code builds:**
+```
+RECONSTRUCT MATCH STATE AFTER EVERY BALL from deliveries.csv:
+(This is how real broadcast systems work — not over-by-over, ball-by-ball)
+
+For each match, for each ball in the 2nd innings:
+  → Compute: score, wickets, ball number, CRR, RRR, runs remaining,
+    balls remaining, wickets in hand
+  → Label: did the chasing team eventually win? (1/0)
+
+This creates ~120 rows per match × 500+ chaseable matches = 60,000-80,000 rows
+(6× more training data than over-by-over, captures single-ball swings)
+
+  CLASS IMBALANCE NOTE:
+  In blowout chases (e.g., team needs 220, collapses early), 80 of 120
+  ball-snapshots for that match are labeled "chasing team lost". This can
+  bias the model to predict "loss" too often at early balls.
+  Fix: use class_weight='balanced' in Logistic Regression, and
+  scale_pos_weight in XGBoost. Check class distribution before training.
+
+BASE FEATURES (12):
+1.  current_score
+2.  wickets_fallen
+3.  balls_bowled           ← ball-level (not overs_completed)
+4.  target
+5.  runs_remaining
+6.  balls_remaining
+7.  wickets_in_hand
+8.  current_run_rate
+9.  required_run_rate
+10. run_rate_ratio (CRR / RRR)
+11. venue_chase_win_rate
+12. batting_team_chase_win_rate
+
+IN-MATCH MOMENTUM FEATURES (6 new — this is the "real system" difference):
+13. powerplay_score_vs_venue_avg
+    → (score at end of over 6) minus (venue's historical avg powerplay score)
+    → positive = ahead of average pace → chaser is in control
+14. last_6_balls_runs        ← runs in the last 6 deliveries (last "over" equivalent)
+15. last_6_balls_wickets     ← wickets in last 6 deliveries (pressure metric)
+16. dot_ball_pct_last_12     ← % dot balls in last 12 deliveries (tells you if batter is stuck)
+17. current_partnership_balls ← how long the current partnership has lasted
+18. wickets_in_last_3_overs  ← momentum shift indicator
+
+TARGET: chasing_team_won (1/0)
+
+Output: live_model_data.csv
+```
+
+**What you learn:**
+```
+• How to reconstruct match state ball-by-ball (not just over-by-over)
+• Cumulative sum within groups: df.groupby('match_id').cumsum()
+• Rolling window calculations: .rolling(6).sum() for last-6-balls stats
+• Why ball-by-ball matters: a wicket on ball 3 of an over is invisible
+  until the over ends — over-level models are blind to it for 5 balls
+• Why momentum features matter: CRR/RRR alone can't tell if a team is
+  collapsing under pressure vs comfortably coasting
+• Creating a fundamentally different dataset from the same raw data
+```
+
+**Your tasks:**
+```
+□ Pick a match you remember with a dramatic collapse — verify the
+  momentum features capture it:
+  (e.g., "at ball 90, MI were 3 wickets in last 3 overs — does dot_ball_pct
+  spike and last_6_balls_wickets = 2?")
+□ Compare row counts: over-by-over would give ~20 rows for this match,
+  ball-by-ball gives ~120. Confirm yours has ~120.
+□ Write: "Q: How is the live model different from the pre-match model? A: ..."
+□ Write: "Q: Why ball-by-ball instead of over-by-over? A: ..."
+□ Write: "Q: What is a momentum feature? Give an example. A: ..."
+```
+
+---
+
+### Phase 9: Model B — Training Live Predictor
+**Sessions:** 20-21 | **Time:** ~4-6 hours
+
+**What Claude Code builds:**
+```
+• Train Logistic Regression on live data (class_weight='balanced')
+• Train XGBoost on live data (scale_pos_weight = neg_samples / pos_samples)
+• Evaluate with:
+  - Accuracy at different overs (expect: low at over 1, high at over 18)
+  - Calibration curve (are 60% predictions correct 60% of the time?)
+  - Brier score (calibration quality metric)
+• Plot: accuracy by over number (line chart, should curve upward)
+• Plot: calibration curve (should be close to diagonal)
+• Apply Platt scaling if calibration is poor
+• Save model: joblib.dump(model, 'models/live_model.pkl')
+```
+
+**What you learn:**
+```
+• Probability calibration — why it matters for live prediction
+• Brier score — measures how good probability estimates are
+• How model confidence naturally increases as match progresses
+• Platt scaling — fixing poorly calibrated probabilities
+• Class imbalance — why and how to handle it in imbalanced sequence data
+```
+
+**Your tasks:**
+```
+□ Check class distribution: print value_counts on chasing_team_won — is it ~50/50?
+  If not, confirm class_weight / scale_pos_weight was applied.
+□ Check: at ball 6 (1st over), model should be ~50-55%.
+  At ball 114 (over 19), should be 85-95%.
+  Does your model behave like this?
+□ Plot probability over balls for one match — it should update every ball,
+  spike sharply on wickets, and jump on big-hitting overs.
+□ Look at calibration curve — is it close to the diagonal?
+□ SYMMETRY CHECK: for the same match state, swap batting/bowling team names —
+  does the win probability flip correctly? (e.g., MI 62% ↔ MI 38%)
+□ Write: "Q: What is probability calibration? A: ..."
+□ Write: "Q: Why does accuracy increase as the match progresses? A: ..."
+□ Write: "Q: How did you handle class imbalance? A: ..."
+```
+
+---
+
+### Phase 10: FastAPI Backend
+**Sessions:** 22-24 | **Time:** ~6-8 hours
+
+**What Claude Code builds:**
+```
+api/
+├── main.py                  ← FastAPI app with CORS
+├── routes/
+│   ├── predict.py           ← /predict-match, /predict-live
+│   ├── teams.py             ← /teams, /venues, /team/{name}/stats
+│   └── accuracy.py          ← /accuracy tracker
+├── core/
+│   ├── feature_engine.py    ← computes features on-the-fly for new matches
+│   ├── player_stats.py      ← loads precomputed player stats
+│   ├── model_loader.py      ← loads saved .pkl models at startup
+│   └── live_feed.py         ← CricAPI polling service
+├── schemas/
+│   ├── match.py             ← Pydantic: MatchPredictionRequest/Response
+│   └── live.py              ← Pydantic: LivePredictionRequest/Response
+└── data/
+    ├── team_stats.json      ← precomputed team historical stats
+    ├── player_stats.json    ← precomputed player stats (keyed by player name)
+    └── predictions_log.json ← tracks past predictions vs actuals
+                               NOTE: JSON file writes are not concurrent-safe.
+                               Two simultaneous /log-result calls could corrupt it.
+                               Wrap all writes with a threading.Lock() — or just
+                               accept the limitation for a portfolio project.
+
+ENDPOINTS:
+  POST /api/predict-match     → pre-match prediction
+  POST /api/predict-live      → live win probability
+  GET  /api/teams             → list of 10 IPL 2026 teams
+  GET  /api/venues            → list of venues
+  GET  /api/team/{name}/stats → team's historical stats
+  GET  /api/accuracy          → accuracy tracker
+  POST /api/log-result        → log actual match result after it ends
+```
+
+**What you learn:**
+```
+• Loading ML models in production (model_loader.py)
+• Computing features on-the-fly vs precomputed
+• Input validation with Pydantic
+• CORS configuration (allowing frontend to call API)
+• Structuring a FastAPI project (routes, core, schemas)
+• JSON file-based storage for prediction history
+```
+
+**Your tasks:**
+```
+□ Test every endpoint with curl or the FastAPI /docs page
+□ SYMMETRY CHECK: call /predict-match with CSK vs MI, then call again
+  with MI vs CSK (teams swapped). The win probabilities should flip
+  (e.g., CSK 65% → MI 65%). If they don't, the feature engine has a
+  team-ordering bug.
+□ Verify your .env file exists with CRICAPI_KEY=xxx and is in .gitignore
+□ Modify: add a new endpoint (e.g., /api/player/{name}/stats)
+□ Understand the feature_engine.py — can you trace how a match input
+  gets converted into the 36-feature array the model expects?
+□ Write: "Q: How do you serve ML models in production? A: ..."
+```
+
+---
+
+### Phase 11: React Frontend
+**Sessions:** 25-27 | **Time:** ~10-12 hours
+
+**What Claude Code builds:**
+```
+THREE SCREENS:
+
+Screen 1: Pre-Match Predictor
+  • Team A / Team B dropdowns (10 teams each)
+  • Venue dropdown
+  • Toss winner dropdown + bat/field toggle
+  • Playing XI input: two text areas (11 player names each, post-toss)
+    → Autocomplete from player_career_stats.json
+    → Players not found fall back to team average stats
+  • "Predict" button
+  • Result: probability bars (green/red), predicted winner, key factors
+  • Confidence meter (low/medium/high)
+
+Screen 2: Live Match Tracker
+  • Shows current live match (if any) or manual input mode
+  • Score / wickets / balls input fields (manual mode — ball-level, not overs)
+  • Auto-updating from CricAPI (auto mode)
+  • Probability bars updating in real-time after each ball
+  • Probability timeline chart (Recharts line chart, ball-by-ball x-axis)
+    → X-axis: ball number (1–120), not overs
+    → Wicket markers: red dots on the chart where wickets fell
+    → Six markers: gold dots where sixes were hit
+    → This is what Star Sports Win Predictor looks like
+  • Momentum panel: last 6 balls runs, dot ball %, current partnership
+  • Toggle: [Auto mode ●] [Manual mode ○]
+
+Screen 3: Accuracy Dashboard
+  • Table of all past predictions vs actual results
+  • Overall accuracy percentage
+  • Accuracy by team (which teams does model predict best?)
+  • Accuracy trend over time (is model getting better?)
+
+DESIGN:
+  • Dark theme (cricket broadcast feel)
+  • Team logos/colors
+  • Animated probability bars
+  • Mobile responsive
+```
+
+**What you learn:**
+```
+• React state management (useState for scores, predictions)
+• API calls from frontend (fetch to FastAPI)
+• Recharts for live probability timeline with custom dot markers (wickets/sixes)
+• Conditional rendering (show auto vs manual mode)
+• Component structure (PredictionBar, TeamSelector, LiveChart, MomentumPanel)
+• Handling high-frequency chart updates (120 data points per innings)
+```
+
+**Your tasks:**
+```
+□ Use the app to predict a real upcoming IPL match
+□ Modify: change the color scheme or add a team logo
+□ Add: a "share prediction" button that copies result to clipboard
+□ Write: "Q: How does the frontend communicate with the model? A: ..."
+```
+
+---
+
+### Phase 12: CricAPI Live Data Integration
+**Sessions:** 28-29 | **Time:** ~4-6 hours
+
+**What Claude Code builds:**
+```
+LIVE DATA PIPELINE:
+1. Sign up for CricAPI free tier (cricketdata.org)
+   RATE LIMIT WARNING: Free tier = 100 calls/day.
+   A live match lasts ~4 hours. Polling every 60s = 240 calls just for one match.
+   Strategy: poll every 90s during match hours only (skip overnight polls).
+   This keeps daily usage under 100 calls for one match per day.
+   If you need to test during non-match hours, use saved fixture JSON instead.
+   API key MUST be stored in a .env file (CRICAPI_KEY=xxx), never hardcoded.
+
+2. Background task in FastAPI that:
+   - Checks every 90 seconds during match window: is there a live IPL match?
+   - If yes: fetches current score JSON
+   - Parses: score, wickets, overs, target, batting team, bowling team
+   - Feeds into Model B's feature engine
+   - Updates prediction
+   - Pushes to frontend via polling (frontend polls /api/live-feed every 15s)
+3. Fallback: if API is down or rate limit hit, switch to manual mode automatically
+
+CRICAPI RESPONSE (example):
+  {
+    "status": "live",
+    "batting_team": "Mumbai Indians",
+    "bowling_team": "Chennai Super Kings",
+    "score": "98/3",
+    "overs": "11.2",
+    "target": "185",
+    ...
+  }
+
+PARSE → MODEL INPUT:
+  {
+    "current_score": 98,
+    "wickets": 3,
+    "overs": 11.33,
+    "target": 185,
+    ...
+  }
+
+→ Model B predicts: MI 62.3%, CSK 37.7%
+→ Frontend updates probability meter automatically
+```
+
+**What you learn:**
+```
+• External API integration (requests + API keys)
+• Background tasks in FastAPI
+• Polling architecture (frontend polls backend, backend polls CricAPI)
+• Error handling for external APIs (rate limits, downtime)
+• Real-time data pipeline design
+```
+
+---
+
+### Phase 13: Testing, Polish & Deployment
+**Sessions:** 30-32 | **Time:** ~6 hours
+
+**What Claude Code builds:**
+```
+1. Test suite:
+   - Unit tests for feature_engine.py
+   - API endpoint tests
+   - Model prediction sanity checks (CSK at Chepauk should be favored)
+
+2. Dockerfile + docker-compose:
+   - Backend container (FastAPI + models)
+   - Frontend container (React build)
+   - .env file passed at runtime (API keys never baked into image)
+   - volumes: mount models/ so you can swap models without rebuilding
+
+3. README.md:
+   - Project description
+   - Architecture diagram
+   - How to run locally
+   - API documentation
+   - Model accuracy stats
+   - Screenshots
+
+4. Polish:
+   - Loading states in frontend
+   - Error handling (what if API is down?)
+   - Mobile responsiveness
+   - Performance optimization
+
+5. requirements.txt — pin all versions explicitly:
+   pandas==2.2.x  numpy==1.26.x  xgboost==2.1.x  scikit-learn==1.5.x
+   fastapi==0.115.x  uvicorn==0.30.x  pydantic==2.x  python-dotenv==1.x
+   (XGBoost in particular has breaking API changes across major versions)
+```
+
+**What you learn:**
+```
+• Docker: what a container is vs a virtual machine
+• Dockerfile syntax: FROM, COPY, RUN, CMD
+• docker-compose: spinning up multi-container apps with one command
+• .env files: keeping secrets out of code and Docker images
+• Why pinning dependency versions matters in production
+```
+
+**Your tasks:**
+```
+□ Run: docker-compose up — does the full app start from scratch?
+□ Run the sanity checks: CSK at Chepauk favored? MI at Wankhede favored?
+□ Verify .env is listed in .gitignore before pushing to GitHub
+□ Write: "Q: Why Docker? A: ..."
+□ Write: "Q: How do you manage secrets in a deployed app? A: ..."
+```
+
+---
+
+## File Structure (Final)
+
+```
+ipl-predictor/
+├── data/
+│   ├── raw/
+│   │   ├── matches.csv
+│   │   ├── deliveries.csv
+│   │   ├── player_stats.csv
+│   │   └── ipl_2026_squads.csv
+│   └── processed/
+│       ├── cleaned_matches.csv
+│       ├── cleaned_deliveries.csv
+│       ├── player_career_stats.csv
+│       ├── team_features.csv
+│       ├── full_features.csv
+│       └── live_model_data.csv
+├── notebooks/
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_data_cleaning.ipynb
+│   ├── 03_team_features.ipynb
+│   ├── 04_player_features.ipynb
+│   ├── 05_visualization.ipynb
+│   ├── 06_model_training.ipynb
+│   ├── 07_hyperparameter_tuning.ipynb
+│   ├── 08_live_model_data.ipynb
+│   └── 09_live_model_training.ipynb
+├── src/
+│   ├── data_loader.py
+│   ├── cleaner.py
+│   ├── feature_engine.py
+│   ├── player_stats.py
+│   └── model.py
+├── api/
+│   ├── main.py
+│   ├── routes/
+│   │   ├── predict.py
+│   │   ├── teams.py
+│   │   └── accuracy.py
+│   ├── core/
+│   │   ├── feature_engine.py
+│   │   ├── model_loader.py
+│   │   ├── player_stats.py
+│   │   └── live_feed.py
+│   ├── schemas/
+│   │   ├── match.py
+│   │   └── live.py
+│   └── data/
+│       ├── team_stats.json
+│       ├── player_stats.json
+│       └── predictions_log.json
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── components/
+│   │   │   ├── PreMatchPredictor.jsx
+│   │   │   ├── LiveTracker.jsx
+│   │   │   ├── AccuracyDashboard.jsx
+│   │   │   ├── ProbabilityBar.jsx
+│   │   │   ├── ProbabilityChart.jsx
+│   │   │   └── TeamSelector.jsx
+│   │   └── api/
+│   │       └── client.js
+│   └── package.json
+├── models/
+│   ├── pre_match_model.pkl
+│   ├── live_model.pkl
+│   └── scaler.pkl
+├── tests/
+│   ├── test_features.py
+│   ├── test_api.py
+│   └── test_model.py
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── .env.example          ← commit this (shows required keys, no values)
+├── .env                  ← DO NOT commit (in .gitignore)
+├── .gitignore
+└── README.md
+```
+
+---
+
+## Timeline (Final)
+
+| Week | Phase | Build | Learn |
+|------|-------|-------|-------|
+| 1 | 1-2 | Load + clean data | Pandas basics: read_csv, filtering, replace, dropna |
+| 2 | 3 | Team features + conditions | groupby, agg, merge, cumulative calculations |
+| 3 | 4 | Player features + matchup mining | Complex groupby, batter-vs-bowler from ball-by-ball |
+| 4 | 5 | EDA + matchup heatmap | Matplotlib, Seaborn, broadcast-style matchup cards |
+| 5 | 6-7 | Model A training + tuning | Scikit-learn, XGBoost, 44-feature model, evaluation |
+| 6 | 8-9 | Model B — ball-by-ball live model | Ball-level reconstruction, momentum features, calibration |
+| 7 | 10 | FastAPI backend | Model serving, feature computation in prod, matchup lookup |
+| 8 | 11 | Frontend | React, Recharts ball-by-ball chart, wicket/six markers |
+| 9 | 12 | CricAPI live data | External API, background tasks, .env secrets |
+| 10 | 13 | Testing + deploy | Docker, testing, README, portfolio |
+
+---
+
+## Your Interview Arsenal (What You Can Talk About After This)
+
+By the end, you can confidently answer:
+```
+"I built a full-stack ML system that replicates how broadcast win predictors
+like Star Sports' Win Predictor actually work. The pre-match model uses
+XGBoost with 44 features — including player matchup stats (batter vs bowler
+historical records mined from 200K+ ball-by-ball deliveries), venue profiles,
+head-to-head records, and toss/conditions features. The live model updates
+after every single ball using 18 features including momentum signals like
+dot-ball percentage, partnership length, and wickets in the last 3 overs —
+not just score and required run rate. It's trained on 60,000+ ball-state
+snapshots. The whole thing is served via FastAPI and a React frontend with
+a ball-by-ball probability chart showing wicket and six markers — exactly
+like what you see on TV. I tracked predictions against IPL 2026 results."
+```
+
+That's a 45-second pitch covering: feature engineering depth, matchup data mining, real-time ML, broadcast-grade live prediction, and full-stack delivery.
+
+---
+
+## Start Now
+
+1. Download the 4 datasets from Kaggle
+2. Upload the CSVs
+3. We begin Phase 1 with Claude Code
