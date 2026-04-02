@@ -37,6 +37,10 @@ IPL\ -\ Player\ Performance\ Dataset/
 # (JSON files like feature_cols.json ARE committed — they're small and needed at startup)
 models/*.pkl
 
+# Personal / learning files — not part of the codebase
+Ipl\ 2026\ final\ project\ plan*
+*.· MD
+
 # Claude Code internal settings
 .claude/
 

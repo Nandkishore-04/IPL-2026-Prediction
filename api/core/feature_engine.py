@@ -15,6 +15,7 @@ import os
 from functools import lru_cache
 
 import api.core.player_stats as ps
+import api.core.season_tracker as st
 
 # ── Precomputed lookup tables (loaded once at startup) ────────────────────────
 _team_stats   = {}   # team_name -> {overall_wr, batfirst_wr, ...}
@@ -112,10 +113,31 @@ def build_prematch_features(
     """
     Returns a dict of all 42 features for a new match.
     Feature names match feature_cols.json exactly.
+
+    2026 form override: if the season tracker has live 2026 data for a team,
+    it overrides the frozen historical last5_wr / season_wr / streak so the
+    model uses current form instead of end-of-2025 stats.
     """
     ta = _get_team(team_a)
     tb = _get_team(team_b)
     v  = _get_venue(venue)
+
+    # ── 2026 live form override ───────────────────────────────────────────────
+    form_a = st.get_team_form(team_a)
+    form_b = st.get_team_form(team_b)
+
+    if form_a:
+        ta = dict(ta)   # don't mutate the cached dict
+        ta["last5_wr"]  = form_a["last5_wr"]
+        ta["season_wr"] = form_a["season_wr"]
+        ta["streak"]    = form_a["streak"]
+        match_num_in_season = form_a["match_num_in_season"]
+
+    if form_b:
+        tb = dict(tb)
+        tb["last5_wr"]  = form_b["last5_wr"]
+        tb["season_wr"] = form_b["season_wr"]
+        tb["streak"]    = form_b["streak"]
 
     toss_winner_is_ta = 1 if toss_winner == team_a else 0
     toss_decision_bat = 1 if toss_decision == "bat" else 0

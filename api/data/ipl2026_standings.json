@@ -1,0 +1,99 @@
+{
+  "season": 2026,
+  "matches": [
+    {
+      "match_num": 1,
+      "date": "2026-03-22",
+      "team_a": "Royal Challengers Bengaluru",
+      "team_b": "Sunrisers Hyderabad",
+      "winner": "Royal Challengers Bengaluru",
+      "venue": ""
+    }
+  ],
+  "team_stats": {
+    "Chennai Super Kings": {
+      "wins": 0,
+      "losses": 0,
+      "matches": 0,
+      "streak": 0,
+      "last5": [],
+      "points": 0
+    },
+    "Delhi Capitals": {
+      "wins": 0,
+      "losses": 0,
+      "matches": 0,
+      "streak": 0,
+      "last5": [],
+      "points": 0
+    },
+    "Gujarat Titans": {
+      "wins": 0,
+      "losses": 0,
+      "matches": 0,
+      "streak": 0,
+      "last5": [],
+      "points": 0
+    },
+    "Kolkata Knight Riders": {
+      "wins": 0,
+      "losses": 0,
+      "matches": 0,
+      "streak": 0,
+      "last5": [],
+      "points": 0
+    },
+    "Lucknow Super Giants": {
+      "wins": 0,
+      "losses": 0,
+      "matches": 0,
+      "streak": 0,
+      "last5": [],
+      "points": 0
+    },
+    "Mumbai Indians": {
+      "wins": 0,
+      "losses": 0,
+      "matches": 0,
+      "streak": 0,
+      "last5": [],
+      "points": 0
+    },
+    "Punjab Kings": {
+      "wins": 0,
+      "losses": 0,
+      "matches": 0,
+      "streak": 0,
+      "last5": [],
+      "points": 0
+    },
+    "Rajasthan Royals": {
+      "wins": 0,
+      "losses": 0,
+      "matches": 0,
+      "streak": 0,
+      "last5": [],
+      "points": 0
+    },
+    "Royal Challengers Bengaluru": {
+      "wins": 1,
+      "losses": 0,
+      "matches": 1,
+      "streak": 1,
+      "last5": [
+        1
+      ],
+      "points": 2
+    },
+    "Sunrisers Hyderabad": {
+      "wins": 0,
+      "losses": 1,
+      "matches": 1,
+      "streak": -1,
+      "last5": [
+        0
+      ],
+      "points": 0
+    }
+  }
+}

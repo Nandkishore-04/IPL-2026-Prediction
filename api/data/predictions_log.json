@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "match_id": "RCB-SRH-Match1",
+    "team_a": "Royal Challengers Bengaluru",
+    "team_b": "Sunrisers Hyderabad",
+    "predicted_winner": "Sunrisers Hyderabad",
+    "actual_winner": "Royal Challengers Bengaluru",
+    "correct": false,
+    "predicted_probability": 0.33,
+    "match_date": "2026-03-22",
+    "logged_at": "2026-04-02T09:08:02.581856"
+  }
+]

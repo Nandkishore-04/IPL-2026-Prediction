@@ -45,3 +45,4 @@ class LogResultRequest(BaseModel):
     predicted_winner: str
     actual_winner: str
     match_date: str
+    predicted_probability: Optional[float] = None   # e.g. 0.67 — stored for calibration
