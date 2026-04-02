@@ -15,14 +15,14 @@ venv/
 env/
 .env/
 
-# Environment variables — NEVER commit this
+# Environment variables 
 .env
 
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Data — raw and processed CSVs are large, don't commit
+# Data — raw and processed CSVs are large
 data/raw/
 data/processed/
 
@@ -41,7 +41,7 @@ models/*.pkl
 Ipl\ 2026\ final\ project\ plan*
 *.· MD
 
-# Claude Code internal settings
+# Claude internal settings
 .claude/
 
 # Node / frontend
