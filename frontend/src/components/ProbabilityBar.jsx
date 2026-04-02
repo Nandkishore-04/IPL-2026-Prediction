@@ -1,86 +1,43 @@
-/**
- * ProbabilityBar — animated dual-team probability bar.
- * Shows team A (blue) vs team B (orange) probability side by side.
- */
-
 import React from 'react'
-
-const styles = {
-  container: {
-    margin: '20px 0',
-  },
-  labels: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: '8px',
-    fontSize: '14px',
-  },
-  teamName: {
-    fontWeight: 600,
-    maxWidth: '45%',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-  },
-  bar: {
-    height: '36px',
-    display: 'flex',
-    borderRadius: '8px',
-    overflow: 'hidden',
-    background: '#1e2738',
-  },
-  segA: (pct) => ({
-    width: `${pct}%`,
-    background: 'linear-gradient(90deg, #3b82f6, #2563eb)',
-    transition: 'width 0.8s ease',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '13px',
-    fontWeight: 700,
-    color: '#fff',
-    minWidth: pct > 8 ? '50px' : '0',
-  }),
-  segB: (pct) => ({
-    width: `${pct}%`,
-    background: 'linear-gradient(90deg, #f97316, #ea580c)',
-    transition: 'width 0.8s ease',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '13px',
-    fontWeight: 700,
-    color: '#fff',
-    minWidth: pct > 8 ? '50px' : '0',
-  }),
-  percents: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginTop: '6px',
-    fontSize: '22px',
-    fontWeight: 800,
-  },
-  pA: { color: '#60a5fa' },
-  pB: { color: '#fb923c' },
-}
 
 export default function ProbabilityBar({ teamA, teamB, probA, probB }) {
   const pctA = Math.round(probA * 100)
   const pctB = Math.round(probB * 100)
+  const aWins = pctA >= pctB
 
   return (
-    <div style={styles.container}>
-      <div style={styles.labels}>
-        <span style={styles.teamName}>{teamA}</span>
-        <span style={styles.teamName}>{teamB}</span>
+    <div style={{ margin: '20px 0' }}>
+      {/* Team names + percentages */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 10 }}>
+        <div>
+          <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 3 }}>{teamA}</div>
+          <div style={{ fontSize: 28, fontWeight: 800, color: aWins ? '#60a5fa' : '#94a3b8', lineHeight: 1 }}>
+            {pctA}%
+          </div>
+        </div>
+        <div style={{ fontSize: 12, color: '#334155', fontWeight: 600, letterSpacing: '0.05em' }}>VS</div>
+        <div style={{ textAlign: 'right' }}>
+          <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 3 }}>{teamB}</div>
+          <div style={{ fontSize: 28, fontWeight: 800, color: !aWins ? '#f97316' : '#94a3b8', lineHeight: 1 }}>
+            {pctB}%
+          </div>
+        </div>
       </div>
-      <div style={styles.bar}>
-        <div style={styles.segA(pctA)}>{pctA > 10 ? `${pctA}%` : ''}</div>
-        <div style={styles.segB(pctB)}>{pctB > 10 ? `${pctB}%` : ''}</div>
-      </div>
-      <div style={styles.percents}>
-        <span style={styles.pA}>{pctA}%</span>
-        <span style={styles.pB}>{pctB}%</span>
+
+      {/* Bar */}
+      <div style={{ height: 12, borderRadius: 8, overflow: 'hidden', background: '#0f172a', display: 'flex' }}>
+        <div style={{
+          width: `${pctA}%`,
+          background: 'linear-gradient(90deg, #2563eb, #3b82f6)',
+          transition: 'width 0.9s cubic-bezier(0.4,0,0.2,1)',
+          borderRadius: '8px 0 0 8px',
+        }} />
+        <div style={{
+          width: `${pctB}%`,
+          background: 'linear-gradient(90deg, #f97316, #ea580c)',
+          transition: 'width 0.9s cubic-bezier(0.4,0,0.2,1)',
+          borderRadius: '0 8px 8px 0',
+        }} />
       </div>
     </div>
   )
