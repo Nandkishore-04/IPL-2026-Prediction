@@ -15,14 +15,14 @@ venv/
 env/
 .env/
 
-# Environment variables — NEVER commit this
+# Environment variables 
 .env
 
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Data — raw and processed CSVs are large, don't commit
+# Data — raw and processed CSVs are large
 data/raw/
 data/processed/
 
@@ -37,7 +37,7 @@ IPL\ -\ Player\ Performance\ Dataset/
 # (JSON files like feature_cols.json ARE committed — they're small and needed at startup)
 models/*.pkl
 
-# Claude Code internal settings
+# Claude internal settings
 .claude/
 
 # Node / frontend
