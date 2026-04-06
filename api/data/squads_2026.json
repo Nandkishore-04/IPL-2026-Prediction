@@ -1,0 +1,1765 @@
+{
+  "Chennai Super Kings": [
+    {
+      "name": "Ruturaj Gaikwad",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": true,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mahendra Singh Dhoni",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Sanju Samson",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Dewald Brevis",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ayush Mhatre",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Kartik Sharma",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Sarfaraz Khan",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Urvil Patel",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Aman Khan",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Jamie Overton",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ramakrishna Ghosh",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Prashant Veer",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Matthew Short",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Zak Foulkes",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Shivam Dube",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Shreyas Gopal",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Khaleel Ahmed",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Noor Ahmad",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Anshul Kamboj",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mukesh Choudhary",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Gurjapneet Singh",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Akeal Hosein",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Matt Henry",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Rahul Chahar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Spencer Johnson",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    }
+  ],
+  "Delhi Capitals": [
+    {
+      "name": "Kannur Lokesh Rahul",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": true,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Karun Nair",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "David Miller",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Pathum Nissanka",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Sahil Parakh",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Prithvi Shaw",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Abishek Porel",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Tristan Stubbs",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Axar Patel",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Sameer Rizvi",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ashutosh Sharma",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Vipraj Nigam",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ajay Mandal",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Tripurana Vijay",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Madhav Tiwari",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Nitish Rana",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mitchell Starc",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "T. Natarajan",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mukesh Kumar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Dushmantha Chameera",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Auqib Nabi",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Lungisani Ngidi",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Kyle Jamieson",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Kuldeep Yadav",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    }
+  ],
+  "Gujarat Titans": [
+    {
+      "name": "Shubman Gill",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": true,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Jos Buttler",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Kumar Kushagra",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Anuj Rawat",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Tom Banton",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Glenn Phillips",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Sai Sudharsan",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Nishant Sindhu",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Washington Sundar",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mohd. Arshad Khan",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Sai Kishore",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Jayant Yadav",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Jason Holder",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Rahul Tewatia",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Shahrukh Khan",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Kagiso Rabada",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mohammed Siraj",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Prasidh Krishna",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Manav Suthar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Gurnoor Singh Brar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ishant Sharma",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ashok Sharma",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Luke Wood",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Kulwant Khejroliya",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Rashid Khan",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    }
+  ],
+  "Kolkata Knight Riders": [
+    {
+      "name": "Ajinkya Rahane",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Rinku Singh",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Angkrish Raghuvanshi",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Manish Pandey",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Finn Allen",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Tejasvi Singh",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Rahul Tripathi",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Tim Seifert",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Rovman Powell",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Anukul Roy",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Cameron Green",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Sarthak Ranjan",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Daksh Kamra",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Rachin Ravindra",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ramandeep Singh",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Sunil Narine",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Blessing Muzarabani",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Vaibhav Arora",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Matheesha Pathirana",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Kartik Tyagi",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Prashant Solanki",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Saurabh Dubey",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Navdeep Saini",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Umran Malik",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Varun Chakaravarthy",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    }
+  ],
+  "Lucknow Super Giants": [
+    {
+      "name": "Rishabh Pant",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": true,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Aiden Markram",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Himmat Singh",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Matthew Breetzke",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mukul Choudhary",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Akshat Raghuwanshi",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Josh Inglis",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Nicholas Pooran",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Mitchell Marsh",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Abdul Samad",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Shahbaz Ahamad",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Arshin Kulkarni",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Wanindu Hasaranga",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ayush Badoni",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mohammad Shami",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Avesh Khan",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "M. Siddharth",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Digvesh Singh",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Akash Singh",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Prince Yadav",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Arjun Tendulkar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Anrich Nortje",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Naman Tiwari",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mayank Yadav",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mohsin Khan",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    }
+  ],
+  "Mumbai Indians": [
+    {
+      "name": "Rohit Sharma",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Suryakumar Yadav",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Robin Minz",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Sherfane Rutherford",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ryan Rickelton",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Quinton de Kock",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Danish Malewar",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "N. Tilak Varma",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Hardik Pandya",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": true,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Naman Dhir",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mitchell Santner",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Raj Angad Bawa",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Atharva Ankolekar",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mayank Rawat",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Corbin Bosch",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Will Jacks",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Shardul Thakur",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Trent Boult",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mayank Markande",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Deepak Chahar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ashwani Kumar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Raghu Sharma",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mohammad Izhar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Allah Ghazanfar",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Jasprit Bumrah",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    }
+  ],
+  "Punjab Kings": [
+    {
+      "name": "Shreyas Iyer",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": true,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Nehal Wadhera",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Vishnu Vinod",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Harnoor Pannu",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Pyla Avinash",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Prabhsimran Singh",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Shashank Singh",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Marcus Stoinis",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Harprett Brar",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Marco Jansen",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Azmatullah Omarzai",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Priyansh Arya",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Musheer Khan",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Suryansh Shedge",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mitch Owen",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Cooper Connolly",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ben Dwarshuis",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Arshdeep Singh",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Yuzvendra Chahal",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Vyshak Vijaykumar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Yash Thakur",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Xavier Bartlett",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Pravin Dubey",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Vishal Nishad",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Lockie Ferguson",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    }
+  ],
+  "Rajasthan Royals": [
+    {
+      "name": "Yashasvi Jaiswal",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Shimron Hetmyer",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Dhruv Jurel",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Shubham Dubey",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Vaibhav Suryavanshi",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Donovan Ferreira",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Lhuan-Dre Pretorius",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ravi Singh",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Aman Rao Perala",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Riyan Parag",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": true,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Yudhvir Singh Charak",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ravindra Jadeja",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Dasun Shanaka",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Jofra Archer",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Tushar Deshpande",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Kwena Maphaka",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Ravi Bishnoi",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Sushant Mishra",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Yash Raj Punja",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Vignesh Puthur",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Brijesh Sharma",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Adam Milne",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Kuldeep Sen",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Sandeep Sharma",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Nandre Burger",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    }
+  ],
+  "Royal Challengers Bengaluru": [
+    {
+      "name": "Virat Kohli",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Rajat Patidar",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": true,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Devdutt Padikkal",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Phil Salt",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Jitesh Sharma",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Jordan Cox",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Krunal Pandya",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Swapnil Singh",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Tim David",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Romario Shepherd",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Jacob Bethell",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Venkatesh Iyer",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Satvik Deswal",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Mangesh Yadav",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Vicky Ostwal",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Vihaan Malhotra",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Kanishk Chouhan",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Josh Hazlewood",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Rasikh Dar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Suyash Sharma",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Bhuvneshwar Kumar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Nuwan Thushara",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Abinandan Singh",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Jacob Duffy",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Yash Dayal",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    }
+  ],
+  "Sunrisers Hyderabad": [
+    {
+      "name": "Ishan Kishan",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Aniket Verma",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Smaran Ravichandran",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Salil Arora",
+      "role": "Batter",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Heinrich Klaasen",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": true
+    },
+    {
+      "name": "Travis Head",
+      "role": "Batter",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Harshal Patel",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Kamindu Mendis",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Harsh Dubey",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Brydon Carse",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Shivang Kumar",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Krains Fuletra",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Liam Livingstone",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "David Payne",
+      "role": "All Rounder",
+      "is_overseas": true,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Abhishek Sharma",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Nitish Kumar Reddy",
+      "role": "All Rounder",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Pat Cummins",
+      "role": "Bowler",
+      "is_overseas": true,
+      "is_captain": true,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Zeeshan Ansari",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Jaydev Unadkat",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Eshan Malinga",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Sakib Hussain",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Onkar Tarmale",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Amit Kumar",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Praful Hinge",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    },
+    {
+      "name": "Shivam Mavi",
+      "role": "Bowler",
+      "is_overseas": false,
+      "is_captain": false,
+      "is_wicketkeeper": false
+    }
+  ]
+}

@@ -30,9 +30,10 @@ def _write_log(data: list):
 
 def _brier_score(log: list) -> float | None:
     """
-    Brier score = mean((predicted_prob - actual_outcome)^2)
+    Brier score = mean((winner_prob - correct)^2)
+    predicted_probability is the probability of the PREDICTED WINNER (always ≥ 0.5).
+    correct = 1 if prediction was right, 0 if wrong.
     Range: 0 (perfect) to 1 (worst). Below 0.25 is good.
-    Only computed when predicted_probability is stored in the log.
     """
     entries = [r for r in log if r.get("predicted_probability") is not None]
     if not entries:
@@ -46,38 +47,40 @@ def _brier_score(log: list) -> float | None:
 
 def _calibration_buckets(log: list) -> list:
     """
-    Groups predictions into 10 probability buckets (0-10%, 10-20%, …, 90-100%).
-    For each bucket returns: predicted_mid, actual_win_rate, count.
-    A well-calibrated model has actual_win_rate ≈ predicted_mid.
+    Confidence calibration: when we say X% confidence, are we right X% of the time?
+    predicted_probability = confidence in the predicted winner (always 50-100%).
+    Groups into buckets of 10pp width from 50% to 100%.
+    A well-calibrated model has actual_win_rate ≈ predicted_prob for each bucket.
     """
     entries = [r for r in log if r.get("predicted_probability") is not None]
     if not entries:
         return []
 
-    buckets = [{
-        "range": f"{i*10}-{(i+1)*10}%",
-        "mid":   (i * 10 + 5) / 100,
-        "count": 0,
-        "wins":  0,
-    } for i in range(10)]
+    # Buckets: 50-60%, 60-70%, 70-80%, 80-90%, 90-100%
+    bucket_defs = [(0.50, 0.60), (0.60, 0.70), (0.70, 0.80), (0.80, 0.90), (0.90, 1.01)]
+    buckets = [{"range": f"{int(lo*100)}-{int(hi*100)}%",
+                "mid": (lo + min(hi, 1.0)) / 2,
+                "count": 0, "wins": 0}
+               for lo, hi in bucket_defs]
 
     for r in entries:
         prob    = r["predicted_probability"]
         correct = r["predicted_winner"] == r["actual_winner"]
-        idx     = min(int(prob * 10), 9)
-        buckets[idx]["count"] += 1
-        buckets[idx]["wins"]  += 1 if correct else 0
+        for i, (lo, hi) in enumerate(bucket_defs):
+            if lo <= prob < hi:
+                buckets[i]["count"] += 1
+                buckets[i]["wins"]  += 1 if correct else 0
+                break
 
-    result = []
-    for b in buckets:
-        if b["count"] > 0:
-            result.append({
-                "range":            b["range"],
-                "predicted_prob":   b["mid"],
-                "actual_win_rate":  round(b["wins"] / b["count"], 4),
-                "count":            b["count"],
-            })
-    return result
+    return [
+        {
+            "range":           b["range"],
+            "predicted_prob":  round(b["mid"], 3),
+            "actual_win_rate": round(b["wins"] / b["count"], 4),
+            "count":           b["count"],
+        }
+        for b in buckets if b["count"] > 0
+    ]
 
 
 @router.get("/accuracy")
@@ -96,12 +99,14 @@ def get_accuracy():
             "recent": [],
         }
 
-    correct  = sum(1 for r in log if r["predicted_winner"] == r["actual_winner"])
-    accuracy = round(correct / total, 4)
+    # Only evaluate entries that have both a prediction and a result
+    evaluated = [r for r in log if r.get("predicted_winner") and r.get("actual_winner")]
+    correct   = sum(1 for r in evaluated if r["predicted_winner"] == r["actual_winner"])
+    accuracy  = round(correct / len(evaluated), 4) if evaluated else None
 
-    # Per-team accuracy
+    # Per-team accuracy (only evaluated entries)
     team_correct, team_total = {}, {}
-    for r in log:
+    for r in evaluated:
         for team in [r["team_a"], r["team_b"]]:
             team_total[team]   = team_total.get(team, 0) + 1
             if r["predicted_winner"] == r["actual_winner"]:
@@ -117,15 +122,27 @@ def get_accuracy():
     }
 
     return {
-        "total_predictions":  total,
+        "total_predictions":  len(evaluated),
         "correct":            correct,
         "accuracy":           accuracy,
-        "accuracy_percent":   f"{accuracy*100:.1f}%",
-        "brier_score":        _brier_score(log),
-        "calibration":        _calibration_buckets(log),
+        "accuracy_percent":   f"{accuracy*100:.1f}%" if accuracy is not None else "—",
+        "brier_score":        _brier_score(evaluated),
+        "calibration":        _calibration_buckets(evaluated),
         "by_team":            by_team,
-        "recent":             log[-10:],
+        "recent":             log,
     }
+
+
+@router.delete("/prediction/{match_id}")
+def delete_prediction(match_id: str):
+    """Delete a prediction entry from the log by match_id."""
+    with _lock:
+        log = _read_log()
+        new_log = [e for e in log if e.get("match_id") != match_id]
+        if len(new_log) == len(log):
+            raise HTTPException(404, f"match_id '{match_id}' not found")
+        _write_log(new_log)
+    return {"status": "deleted", "match_id": match_id}
 
 
 @router.get("/standings")

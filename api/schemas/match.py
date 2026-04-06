@@ -12,6 +12,7 @@ class MatchPredictionRequest(BaseModel):
     toss_decision: str = Field(..., example="bat")  # "bat" or "field"
     team_a_xi: List[str] = Field(default=[], example=["Rohit Sharma", "Ishan Kishan"])
     team_b_xi: List[str] = Field(default=[], example=["MS Dhoni", "Ruturaj Gaikwad"])
+    match_date: Optional[str] = Field(default=None, example="2026-04-05")  # YYYY-MM-DD
 
 
 class TeamPrediction(BaseModel):

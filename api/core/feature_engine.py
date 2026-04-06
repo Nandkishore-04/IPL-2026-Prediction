@@ -18,23 +18,36 @@ import api.core.player_stats as ps
 import api.core.season_tracker as st
 
 # ── Precomputed lookup tables (loaded once at startup) ────────────────────────
-_team_stats   = {}   # team_name -> {overall_wr, batfirst_wr, ...}
-_venue_stats  = {}   # venue -> {batfirst_wr, avg_first_inn}
-_h2h_stats    = {}   # (team_a, team_b) -> win_rate
-_full_df      = None
+_team_stats        = {}   # team_name -> {overall_wr, batfirst_wr, ...}
+_venue_stats       = {}   # normalized_venue -> {batfirst_wr, avg_first_inn}
+_team_venue_stats  = {}   # (team, normalized_venue) -> win_rate
+_h2h_stats         = {}   # (team_a, team_b) -> win_rate
+_full_df           = None
+_career_df         = None  # player_career_ipl.csv indexed by player name
+_career_fallbacks  = {}    # batter_sr, bowler_econ, league_exp
+_name_map          = {}    # Abbr -> Full
+_reverse_name_map  = {}    # Full -> Abbr
 
+
+# Canonical home ground per team — first segment of the venue string
+# (before the first ", ") to match normalized_venue keys
 HOME_VENUES = {
-    "Chennai Super Kings":       "MA Chidambaram Stadium, Chepauk, Chennai",
-    "Delhi Capitals":            "Arun Jaitley Stadium, Delhi",
-    "Gujarat Titans":            "Narendra Modi Stadium, Ahmedabad",
-    "Kolkata Knight Riders":     "Eden Gardens, Kolkata",
-    "Lucknow Super Giants":      "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
-    "Mumbai Indians":            "Wankhede Stadium, Mumbai",
-    "Punjab Kings":              "Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",
-    "Rajasthan Royals":          "Sawai Mansingh Stadium, Jaipur",
-    "Royal Challengers Bengaluru": "M Chinnaswamy Stadium, Bengaluru",
-    "Sunrisers Hyderabad":       "Rajiv Gandhi International Stadium, Uppal, Hyderabad",
+    "Chennai Super Kings":          "MA Chidambaram Stadium",
+    "Delhi Capitals":               "Arun Jaitley Stadium",
+    "Gujarat Titans":               "Narendra Modi Stadium",
+    "Kolkata Knight Riders":        "Eden Gardens",
+    "Lucknow Super Giants":         "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+    "Mumbai Indians":               "Wankhede Stadium",
+    "Punjab Kings":                 "Punjab Cricket Association IS Bindra Stadium",
+    "Rajasthan Royals":             "Sawai Mansingh Stadium",
+    "Royal Challengers Bengaluru":  "M Chinnaswamy Stadium",
+    "Sunrisers Hyderabad":          "Rajiv Gandhi International Stadium",
 }
+
+
+def _normalize_venue(venue: str) -> str:
+    """Strip city suffix so 'Wankhede Stadium, Mumbai' == 'Wankhede Stadium'."""
+    return venue.split(",")[0].strip() if venue else venue
 
 
 def load():
@@ -60,20 +73,69 @@ def load():
             "season_wr":   float(rows["ta_season_wr"].iloc[-1])   if len(rows) > 0 else 0.5,
         }
 
-    # ── Venue stats ─────────────────────────────────────────────────────────────
+    # ── Venue stats (aggregate short + long name variants by normalized key) ────
     for venue in _full_df["venue"].unique():
         rows = _full_df[_full_df["venue"] == venue]
-        _venue_stats[venue] = {
-            "batfirst_wr":      float(rows["venue_batfirst_wr"].mean()),
-            "avg_first_inn":    float(rows["venue_avg_first_inn_score"].mean()),
+        nv   = _normalize_venue(venue)
+        if nv not in _venue_stats:
+            _venue_stats[nv] = {"batfirst_wr": [], "avg_first_inn": []}
+        _venue_stats[nv]["batfirst_wr"].append(float(rows["venue_batfirst_wr"].mean()))
+        _venue_stats[nv]["avg_first_inn"].append(float(rows["venue_avg_first_inn_score"].mean()))
+    # Average across variants
+    _venue_stats.update({
+        nv: {
+            "batfirst_wr":   float(np.mean(v["batfirst_wr"])),
+            "avg_first_inn": float(np.mean(v["avg_first_inn"])),
         }
+        for nv, v in _venue_stats.items()
+    })
+
+    # ── Team-venue win rates ──────────────────────────────────────────────────
+    # For every match: team_a win (team_a_won=1) or team_b win (team_a_won=0)
+    # Aggregate by (team, normalized_venue) across both orderings.
+    wins  = {}  # (team, nv) -> wins
+    total = {}  # (team, nv) -> total
+    for _, row in _full_df.iterrows():
+        nv = _normalize_venue(row["venue"])
+        won_a = int(row["team_a_won"])
+        for team, won in [(row["team_a"], won_a), (row["team_b"], 1 - won_a)]:
+            k = (team, nv)
+            wins[k]  = wins.get(k, 0) + won
+            total[k] = total.get(k, 0) + 1
+    for k in total:
+        if total[k] >= 3:
+            _team_venue_stats[k] = wins[k] / total[k]
 
     # ── H2H win rates ────────────────────────────────────────────────────────────
     for _, row in _full_df.iterrows():
         key = (row["team_a"], row["team_b"])
         _h2h_stats[key] = float(row["ta_h2h_wr"])
 
-    print(f"[FeatureEngine] Loaded. Teams: {len(_team_stats)}, Venues: {len(_venue_stats)}")
+    # ── Player career stats (for runtime XI computation) ──────────────────────
+    global _career_df, _career_fallbacks
+    career_path = "data/processed/player_career_ipl.csv"
+    if os.path.exists(career_path):
+        _career_df = pd.read_csv(career_path).set_index("player")
+        batters = _career_df[_career_df["career_balls_faced"] >= 100]
+        bowlers = _career_df[_career_df["career_balls_bowled"] >= 100]
+        _career_fallbacks = {
+            "batter_sr":   float(batters["career_bat_sr"].median()) if len(batters) > 0 else 124.0,
+            "bowler_econ": float(bowlers["career_bowl_econ"].median()) if len(bowlers) > 0 else 8.3,
+            "league_exp":  float(_career_df["career_matches"].median()),
+        }
+
+    # ── Player name mapping ───────────────────────────────────────────────────
+    global _name_map, _reverse_name_map
+    map_path = "data/processed/player_name_map.json"
+    if os.path.exists(map_path):
+        with open(map_path, "r") as f:
+            _name_map = json.load(f)
+            # Reverse map: Full Name -> Abbreviated Name
+            # If multiple abbreviations map to the same full name, the last one wins (usually correct)
+            _reverse_name_map = {v: k for k, v in _name_map.items()}
+
+    print(f"[FeatureEngine] Loaded. Teams: {len(_team_stats)}, Venues: {len(_venue_stats)}, Players: {len(_career_df) if _career_df is not None else 0}, Mappings: {len(_name_map)}")
+
 
 
 def _get_team(team: str) -> dict:
@@ -84,9 +146,114 @@ def _get_team(team: str) -> dict:
 
 
 def _get_venue(venue: str) -> dict:
-    return _venue_stats.get(venue, {
-        "batfirst_wr": 0.451, "avg_first_inn": 156.0,
+    """Lookup by normalized venue key so short/long forms both resolve."""
+    nv = _normalize_venue(venue)
+    return _venue_stats.get(nv, {
+        "batfirst_wr": 0.47, "avg_first_inn": 165.0,
     })
+
+
+def _get_team_venue_wr(team: str, venue: str) -> float | None:
+    """Win rate for team at this venue. Returns None if < 3 matches."""
+    nv = _normalize_venue(venue)
+    return _team_venue_stats.get((team, nv))
+
+
+def _compute_xi_quality(xi: list, use_2026_form: bool = True) -> dict:
+    """
+    Compute XI quality stats from player_career_ipl.csv.
+    Mirrors build_player_features.py logic (rules 11-14) for runtime use.
+    Returns xi_bat_sr, xi_bowl_econ, xi_experience, xi_ar_ratio.
+    """
+    if _career_df is None or not xi:
+        return {
+            "xi_bat_sr":    _career_fallbacks.get("batter_sr", 124.0),
+            "xi_bowl_econ": _career_fallbacks.get("bowler_econ", 8.3),
+            "xi_experience":_career_fallbacks.get("league_exp", 20.0),
+            "xi_ar_ratio":  0.0,
+        }
+
+    fb_sr   = _career_fallbacks.get("batter_sr",   124.0)
+    fb_econ = _career_fallbacks.get("bowler_econ",  8.3)
+    fb_exp  = _career_fallbacks.get("league_exp",   20.0)
+    MIN_MATCHES = 5
+
+    def get_stat(player, col, fallback):
+        # Normalize: if player is a full name, map back to abbreviation
+        abbr = _reverse_name_map.get(player, player)
+        if abbr not in _career_df.index:
+            return fallback
+        row = _career_df.loc[abbr]
+        if row.get("career_matches", 0) < MIN_MATCHES:
+            return fallback
+        val = row.get(col, fallback)
+        return fallback if (pd.isna(val) or np.isinf(val)) else float(val)
+
+    # Normalize the entire XI list for sorting
+    xi_normalized = [_reverse_name_map.get(p, p) for p in xi]
+
+    # Rule 11: top-6 batters by career_balls_faced
+    bat_sorted = sorted(
+        xi_normalized,
+        key=lambda p: float(_career_df.loc[p, "career_balls_faced"]) if p in _career_df.index else 0,
+        reverse=True,
+    )
+    top6 = bat_sorted[:6]
+    # Optionally blend in 2026 in-season form (weight: 60% 2026, 40% career)
+    import api.core.player_form_2026 as pf2026
+
+    def get_bat_sr(player):
+        career_sr = get_stat(player, "blend_bat_sr", fb_sr)
+        if not use_2026_form:
+            return career_sr
+        form = pf2026.get_form(player)
+        if form and form["bat_sr_2026"] is not None and form["matches"] >= 2:
+            return 0.6 * form["bat_sr_2026"] + 0.4 * career_sr
+        return career_sr
+
+    def get_bowl_econ(player):
+        career_econ = get_stat(player, "blend_bowl_econ", fb_econ)
+        if not use_2026_form:
+            return career_econ
+        form = pf2026.get_form(player)
+        if form and form["bowl_econ_2026"] is not None and form["matches"] >= 2:
+            return 0.6 * form["bowl_econ_2026"] + 0.4 * career_econ
+        return career_econ
+
+    bat_srs = [get_bat_sr(p) for p in top6]
+
+    # Rule 12: top-5 bowlers by career_balls_bowled (who actually bowled)
+    bowl_sorted = sorted(
+        xi_normalized,
+        key=lambda p: float(_career_df.loc[p, "career_balls_bowled"]) if p in _career_df.index else 0,
+        reverse=True,
+    )
+
+    top5 = [p for p in bowl_sorted
+            if p in _career_df.index and _career_df.loc[p, "career_balls_bowled"] > 0][:5]
+    if not top5:
+        top5 = bowl_sorted[:5]
+    bowl_econs = [get_bowl_econ(p) for p in top5]
+
+    # Rule 13: experience (all XI)
+    exps = [get_stat(p, "career_matches", fb_exp) for p in xi_normalized]
+
+    # Rule 14: allrounder ratio (≥60 career balls each role)
+    ar_count = sum(
+        1 for p in xi_normalized
+        if p in _career_df.index
+        and _career_df.loc[p, "career_balls_faced"]  >= 60
+        and _career_df.loc[p, "career_balls_bowled"] >= 60
+    )
+    ar_ratio = ar_count / max(len(xi_normalized), 1)
+
+    return {
+        "xi_bat_sr":     float(np.mean(bat_srs))   if bat_srs   else fb_sr,
+        "xi_bowl_econ":  float(np.mean(bowl_econs)) if bowl_econs else fb_econ,
+        "xi_experience": float(np.mean(exps))       if exps      else fb_exp,
+        "xi_ar_ratio":   ar_ratio,
+    }
+
 
 
 def _get_h2h(team_a: str, team_b: str) -> float:
@@ -109,115 +276,88 @@ def build_prematch_features(
     match_num_in_season: int = 36,
     is_playoff: int = 0,
     is_day_night: int = 1,
+    use_2026_form: bool = True,
 ) -> dict:
     """
-    Returns a dict of all 42 features for a new match.
+    Returns a dict of all features for a new match.
     Feature names match feature_cols.json exactly.
 
-    2026 form override: if the season tracker has live 2026 data for a team,
-    it overrides the frozen historical last5_wr / season_wr / streak so the
-    model uses current form instead of end-of-2025 stats.
+    use_2026_form=False: skip the 2026 season-tracker override (used for
+    retroactive predictions where 2026 data wasn't available at match time).
     """
     ta = _get_team(team_a)
     tb = _get_team(team_b)
     v  = _get_venue(venue)
 
     # ── 2026 live form override ───────────────────────────────────────────────
-    form_a = st.get_team_form(team_a)
-    form_b = st.get_team_form(team_b)
+    form_a = st.get_team_form(team_a) if use_2026_form else None
+    form_b = st.get_team_form(team_b) if use_2026_form else None
 
     if form_a:
         ta = dict(ta)   # don't mutate the cached dict
-        ta["last5_wr"]  = form_a["last5_wr"]
+        # Use EMA form as the primary form signal (recency-weighted)
+        ta["last5_wr"]  = form_a.get("ema_form", form_a["last5_wr"])
         ta["season_wr"] = form_a["season_wr"]
         ta["streak"]    = form_a["streak"]
         match_num_in_season = form_a["match_num_in_season"]
 
     if form_b:
         tb = dict(tb)
-        tb["last5_wr"]  = form_b["last5_wr"]
+        tb["last5_wr"]  = form_b.get("ema_form", form_b["last5_wr"])
         tb["season_wr"] = form_b["season_wr"]
         tb["streak"]    = form_b["streak"]
 
     toss_winner_is_ta = 1 if toss_winner == team_a else 0
     toss_decision_bat = 1 if toss_decision == "bat" else 0
 
-    # Home ground flags
-    ta_home = 1 if HOME_VENUES.get(team_a, "") == venue else 0
-    tb_home = 1 if HOME_VENUES.get(team_b, "") == venue else 0
+    # Home ground flags — compare normalized venue keys
+    nv = _normalize_venue(venue)
+    ta_home = 1 if HOME_VENUES.get(team_a, "") == nv else 0
+    tb_home = 1 if HOME_VENUES.get(team_b, "") == nv else 0
 
-    # Player features — if XI supplied, compute from stats; else use team defaults
-    if team_a_xi:
-        bat_a  = ps.aggregate_batting(team_a_xi)
-        bowl_a = ps.aggregate_bowling(team_a_xi)
-        exp_a  = ps.aggregate_experience(team_a_xi)
-    else:
-        bat_a  = {"avg_batting_sr": 124.0, "avg_batting_avg": 22.5, "best_batting_avg": 38.8}
-        bowl_a = {"avg_bowling_econ": 8.3, "avg_bowling_sr": 22.4, "best_bowling_econ": 7.3}
-        exp_a  = {"total_caps": 1025}
+    # Venue-specific team win rates (fall back to overall if < 3 matches at venue)
+    ta_venue_wr = _get_team_venue_wr(team_a, venue)
+    if ta_venue_wr is None:
+        ta_venue_wr = ta["overall_wr"]
+    tb_venue_wr = _get_team_venue_wr(team_b, venue)
+    if tb_venue_wr is None:
+        tb_venue_wr = tb["overall_wr"]
 
-    if team_b_xi:
-        bat_b  = ps.aggregate_batting(team_b_xi)
-        bowl_b = ps.aggregate_bowling(team_b_xi)
-        exp_b  = ps.aggregate_experience(team_b_xi)
-    else:
-        bat_b  = {"avg_batting_sr": 124.0, "avg_batting_avg": 22.5, "best_batting_avg": 38.8}
-        bowl_b = {"avg_bowling_econ": 8.3, "avg_bowling_sr": 22.4, "best_bowling_econ": 7.3}
-        exp_b  = {"total_caps": 1025}
+    # ── XI quality (from player_career_ipl.csv) ───────────────────────────────
+    qa = _compute_xi_quality(team_a_xi or [])
+    qb = _compute_xi_quality(team_b_xi or [])
 
-    # Matchup features — simplified: favorable = batters with high SR
-    ta_fav = sum(1 for n in team_a_xi if ps.get_player_stats(n)
-                 and ps.get_player_stats(n).get("batting_sr", 0) > 140)
-    tb_fav = sum(1 for n in team_b_xi if ps.get_player_stats(n)
-                 and ps.get_player_stats(n).get("batting_sr", 0) > 140)
-    ta_avg_matchup_sr = bat_a["avg_batting_sr"]
-    tb_avg_matchup_sr = bat_b["avg_batting_sr"]
+    xi_bat_sr_diff    = qa["xi_bat_sr"]    - qb["xi_bat_sr"]
+    xi_bowl_econ_diff = qb["xi_bowl_econ"] - qa["xi_bowl_econ"]   # +ve = A cheaper
+    xi_exp_diff       = qa["xi_experience"] - qb["xi_experience"]
+    xi_ar_ratio_diff  = qa["xi_ar_ratio"]  - qb["xi_ar_ratio"]
 
     return {
-        "ta_overall_wr":      ta["overall_wr"],
-        "tb_overall_wr":      tb["overall_wr"],
-        "ta_venue_wr":        ta["overall_wr"],   # venue-specific not precomputed per prediction; use overall as proxy
-        "tb_venue_wr":        tb["overall_wr"],
+        # Differential features (model v2 — fixes multicollinearity sign-flip)
+        "form_wr_diff":       ta["last5_wr"]    - tb["last5_wr"],
+        "form_margin_diff":   ta["last5_margin"] - tb["last5_margin"],
+        "overall_wr_diff":    ta["overall_wr"]  - tb["overall_wr"],
+        "venue_wr_diff":      ta_venue_wr       - tb_venue_wr,
+        "batfirst_wr_diff":   ta["batfirst_wr"] - tb["batfirst_wr"],
+        "season_wr_diff":     ta["season_wr"]   - tb["season_wr"],
+
+        # XI quality differential
+        "xi_bat_sr_diff":     xi_bat_sr_diff,
+        "xi_bowl_econ_diff":  xi_bowl_econ_diff,
+        "xi_exp_diff":        xi_exp_diff,
+        "xi_ar_ratio_diff":   xi_ar_ratio_diff,
+
+        # Singleton features
         "ta_h2h_wr":          _get_h2h(team_a, team_b),
-        "ta_batfirst_wr":     ta["batfirst_wr"],
-        "tb_batfirst_wr":     tb["batfirst_wr"],
-        "ta_last5_wr":        ta["last5_wr"],
-        "tb_last5_wr":        tb["last5_wr"],
-        "ta_last5_margin":    ta["last5_margin"],
-        "tb_last5_margin":    tb["last5_margin"],
-        "ta_streak":          ta["streak"],
         "tb_streak":          tb["streak"],
         "toss_winner_is_ta":  toss_winner_is_ta,
         "toss_decision_bat":  toss_decision_bat,
         "venue_batfirst_wr":  v["batfirst_wr"],
+        "venue_avg_first_inn_score": v["avg_first_inn"],
         "ta_home":            ta_home,
         "tb_home":            tb_home,
-        "ta_season_wr":       ta["season_wr"],
-        "tb_season_wr":       tb["season_wr"],
         "match_num_in_season":match_num_in_season,
         "is_playoff":         is_playoff,
-        "is_day_night":       is_day_night,
-        "venue_avg_first_inn_score": v["avg_first_inn"],
-        # Team A player features
-        "ta_avg_batting_sr":   bat_a["avg_batting_sr"],
-        "ta_avg_batting_avg":  bat_a["avg_batting_avg"],
-        "ta_best_batting_avg": bat_a["best_batting_avg"],
-        "ta_avg_bowling_econ": bowl_a["avg_bowling_econ"],
-        "ta_avg_bowling_sr":   bowl_a["avg_bowling_sr"],
-        "ta_best_bowling_econ":bowl_a["best_bowling_econ"],
-        "ta_total_caps":       exp_a["total_caps"],
-        "ta_favorable_matchups": ta_fav,
-        "ta_avg_matchup_sr":   ta_avg_matchup_sr,
-        # Team B player features
-        "tb_avg_batting_sr":   bat_b["avg_batting_sr"],
-        "tb_avg_batting_avg":  bat_b["avg_batting_avg"],
-        "tb_best_batting_avg": bat_b["best_batting_avg"],
-        "tb_avg_bowling_econ": bowl_b["avg_bowling_econ"],
-        "tb_avg_bowling_sr":   bowl_b["avg_bowling_sr"],
-        "tb_best_bowling_econ":bowl_b["best_bowling_econ"],
-        "tb_total_caps":       exp_b["total_caps"],
-        "tb_favorable_matchups": tb_fav,
-        "tb_avg_matchup_sr":   tb_avg_matchup_sr,
     }
 
 

@@ -3,13 +3,53 @@ POST /api/predict-match   — pre-match winner prediction
 POST /api/predict-live    — live ball-by-ball win probability
 """
 
+import json
+import os
 import numpy as np
+from datetime import datetime
 from fastapi import APIRouter, HTTPException
 
 from api.schemas.match import MatchPredictionRequest, MatchPredictionResponse, TeamPrediction
 from api.schemas.live  import LivePredictionRequest, LivePredictionResponse
 import api.core.model_loader  as ml
 import api.core.feature_engine as fe
+
+_PREDICTIONS_LOG = "api/data/predictions_log.json"
+
+
+def _save_prediction(req, predicted_winner: str, ta_prob: float):
+    """Upsert a prediction into predictions_log.json. Does not overwrite actual_winner."""
+    date = req.match_date or datetime.utcnow().strftime("%Y-%m-%d")
+    match_id = f"{req.team_a[:3].upper()}-{req.team_b[:3].upper()}-{date}"
+
+    try:
+        with open(_PREDICTIONS_LOG) as f:
+            logs = json.load(f)
+    except Exception:
+        logs = []
+
+    existing = next((e for e in logs if e.get("match_id") == match_id), None)
+    if existing:
+        existing["predicted_winner"]      = predicted_winner
+        existing["predicted_probability"] = round(ta_prob, 4)
+        if existing.get("actual_winner"):
+            existing["correct"] = existing["actual_winner"] == predicted_winner
+    else:
+        logs.append({
+            "match_id":              match_id,
+            "team_a":                req.team_a,
+            "team_b":                req.team_b,
+            "actual_winner":         None,
+            "match_date":            date,
+            "venue":                 req.venue,
+            "predicted_winner":      predicted_winner,
+            "predicted_probability": round(ta_prob, 4),
+            "correct":               None,
+            "source":                "pre_match_predictor",
+        })
+
+    with open(_PREDICTIONS_LOG, "w") as f:
+        json.dump(logs, f, indent=2)
 
 router = APIRouter()
 
@@ -28,9 +68,8 @@ def _key_factors(features: dict, team_a: str, team_b: str) -> list:
     """Generate top 3 plain-English reasons for the prediction."""
     reasons = []
 
-    wr_diff = features["ta_overall_wr"] - features["tb_overall_wr"]
-    if abs(wr_diff) > 0.05:
-        favoured = team_a if wr_diff > 0 else team_b
+    if abs(features["overall_wr_diff"]) > 0.05:
+        favoured = team_a if features["overall_wr_diff"] > 0 else team_b
         reasons.append(f"{favoured} has a stronger overall win record")
 
     h2h = features["ta_h2h_wr"]
@@ -43,7 +82,6 @@ def _key_factors(features: dict, team_a: str, team_b: str) -> list:
     elif features["tb_home"] == 1:
         reasons.append(f"{team_b} is playing at their home ground")
 
-    # Toss advantage if venue favours bat-first
     if features["toss_winner_is_ta"] == 1 and features["toss_decision_bat"] == 1:
         if features["venue_batfirst_wr"] > 0.52:
             reasons.append(f"{team_a} won toss & chose to bat — venue favours batting first")
@@ -51,17 +89,9 @@ def _key_factors(features: dict, team_a: str, team_b: str) -> list:
         if features["venue_batfirst_wr"] < 0.48:
             reasons.append(f"{team_b} won toss & chose to field — venue favours chasing")
 
-    form_a = features["ta_last5_wr"]
-    form_b = features["tb_last5_wr"]
-    if abs(form_a - form_b) > 0.2:
-        favoured = team_a if form_a > form_b else team_b
+    if abs(features["form_wr_diff"]) > 0.2:
+        favoured = team_a if features["form_wr_diff"] > 0 else team_b
         reasons.append(f"{favoured} is in better recent form (last 5 matches)")
-
-    bowl_a = features["ta_avg_bowling_econ"]
-    bowl_b = features["tb_avg_bowling_econ"]
-    if abs(bowl_a - bowl_b) > 0.5:
-        favoured = team_a if bowl_a < bowl_b else team_b
-        reasons.append(f"{favoured}'s bowling attack has a better economy rate")
 
     return reasons[:4] if reasons else ["Closely matched teams — prediction is uncertain"]
 
@@ -74,7 +104,6 @@ def predict_match(req: MatchPredictionRequest):
     the Logistic Regression model. Returns win probabilities for both teams.
     """
     model   = ml.get_pre_match_model()
-    scaler  = ml.get_pre_match_scaler()
     feature_cols = ml.get_feature_cols()
 
     if model is None:
@@ -91,17 +120,19 @@ def predict_match(req: MatchPredictionRequest):
         team_b_xi    = req.team_b_xi,
     )
 
-    # Build ordered numpy array matching feature_cols
+    # Build ordered numpy array — scaler is embedded in GB pipeline, pass raw X
     X = np.array([[feat_dict[c] for c in feature_cols]])
-    X_scaled = scaler.transform(X)
 
-    proba = model.predict_proba(X_scaled)[0]
+    proba = model.predict_proba(X)[0]
     ta_prob = float(proba[1])   # index 1 = team_a wins
     tb_prob = 1.0 - ta_prob
 
     predicted_winner = req.team_a if ta_prob >= 0.5 else req.team_b
+    winner_prob = ta_prob if ta_prob >= 0.5 else tb_prob   # always ≥ 50%
     confidence = _confidence_label(ta_prob)
     factors = _key_factors(feat_dict, req.team_a, req.team_b)
+
+    _save_prediction(req, predicted_winner, winner_prob)
 
     return MatchPredictionResponse(
         team_a=TeamPrediction(

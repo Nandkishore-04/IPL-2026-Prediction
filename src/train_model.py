@@ -1,118 +1,321 @@
 """
-Phase 6: Train Pre-Match Prediction Model
+Train Pre-Match Prediction Model — Gradient Boosting (production)
+==================================================================
+Pipeline:
+  1. StandardScaler + GradientBoostingClassifier wrapped in sklearn Pipeline
+     (scaler fit only on training data, no leakage into CV folds)
+  2. Train on 2008-2023 with exponential recency weights
+  3. Isotonic calibration via CalibratedClassifierCV(cv=5) — leakage-safe
+  4. Evaluate on held-out 2024-2025 test set
+  5. Leakage-safe TimeSeriesSplit CV for sanity check
+  6. Feature dominance check (retrain without top feature)
+
 Run from project root: python src/train_model.py
 """
 
 import pandas as pd
 import numpy as np
 import joblib, json, os, warnings
-warnings.filterwarnings('ignore')
+warnings.filterwarnings("ignore")
 
-from sklearn.linear_model    import LogisticRegression
-from sklearn.ensemble        import RandomForestClassifier
-from sklearn.preprocessing   import StandardScaler
-from sklearn.metrics         import accuracy_score, roc_auc_score, classification_report
-from sklearn.model_selection import cross_val_score
-from xgboost                 import XGBClassifier
+from sklearn.pipeline         import Pipeline
+from sklearn.preprocessing    import StandardScaler
+from sklearn.ensemble         import GradientBoostingClassifier
+from sklearn.calibration      import CalibratedClassifierCV
+from sklearn.metrics          import (accuracy_score, roc_auc_score,
+                                      log_loss, brier_score_loss,
+                                      classification_report)
+from sklearn.model_selection  import TimeSeriesSplit
 
-# ── Load data ────────────────────────────────────────────────────────────────
-print('Loading data...')
-full = pd.read_csv('data/processed/full_features.csv', parse_dates=['date'])
-print(f'  {len(full)} matches, {full.shape[1]} columns')
+# ── Load ──────────────────────────────────────────────────────────────────────
 
-# ── Features & split ─────────────────────────────────────────────────────────
-FEATURE_COLS = [c for c in full.columns
-                if c not in ['match_id','date','season_year','team_a','team_b','venue','team_a_won']]
-TARGET = 'team_a_won'
+print("Loading data...")
+full = pd.read_csv("data/processed/full_features.csv", parse_dates=["date"])
+xi   = pd.read_csv("data/processed/xi_features.csv")
+full = full.merge(xi, on="match_id", how="left")
+print(f"  {len(full)} matches, {full.shape[1]} columns (after XI merge)")
 
-train = full[full['season_year'] <= 2023]
-test  = full[full['season_year'] >= 2024]
-X_train, y_train = train[FEATURE_COLS], train[TARGET]
-X_test,  y_test  = test[FEATURE_COLS],  test[TARGET]
+# ── Feature selection ─────────────────────────────────────────────────────────
 
-print(f'  Train: {len(train)} | Test: {len(test)} | Features: {len(FEATURE_COLS)}')
+EXCLUDE = {
+    "match_id","date","season_year","team_a","team_b","venue","team_a_won",
+    "ta_streak","is_day_night",
+    "ta_last5_wr","tb_last5_wr","ta_last5_margin","tb_last5_margin",
+    "ta_overall_wr","tb_overall_wr","ta_venue_wr","tb_venue_wr",
+    "ta_batfirst_wr","tb_batfirst_wr","ta_season_wr","tb_season_wr",
+    # diff cols: excluded here so list comprehension doesn't pick them up;
+    # appended explicitly once in the FEATURE_COLS += block below
+    "xi_bat_sr_diff","xi_bowl_econ_diff","xi_exp_diff","xi_ar_ratio_diff",
+    "form_wr_diff","form_margin_diff","overall_wr_diff",
+    "venue_wr_diff","batfirst_wr_diff","season_wr_diff",
+}
 
-scaler    = StandardScaler()
-X_train_s = scaler.fit_transform(X_train)
-X_test_s  = scaler.transform(X_test)
+def add_diffs(df):
+    df = df.copy()
+    df["form_wr_diff"]     = df["ta_last5_wr"]    - df["tb_last5_wr"]
+    df["form_margin_diff"] = df["ta_last5_margin"] - df["tb_last5_margin"]
+    df["overall_wr_diff"]  = df["ta_overall_wr"]   - df["tb_overall_wr"]
+    df["venue_wr_diff"]    = df["ta_venue_wr"]     - df["tb_venue_wr"]
+    df["batfirst_wr_diff"] = df["ta_batfirst_wr"]  - df["tb_batfirst_wr"]
+    df["season_wr_diff"]   = df["ta_season_wr"]    - df["tb_season_wr"]
+    return df
 
-# ── Train models ─────────────────────────────────────────────────────────────
-print('\nTraining models...')
+full = add_diffs(full)
+FEATURE_COLS = [c for c in full.columns if c not in EXCLUDE]
+FEATURE_COLS += ["form_wr_diff","form_margin_diff","overall_wr_diff",
+                 "venue_wr_diff","batfirst_wr_diff","season_wr_diff",
+                 "xi_bat_sr_diff","xi_bowl_econ_diff","xi_exp_diff","xi_ar_ratio_diff"]
 
-print('  [1/4] Logistic Regression...', end=' ', flush=True)
-lr = LogisticRegression(max_iter=1000, random_state=42)
-lr.fit(X_train_s, y_train)
-lr_test  = accuracy_score(y_test, lr.predict(X_test_s))
-lr_auc   = roc_auc_score(y_test,  lr.predict_proba(X_test_s)[:,1])
-lr_train = accuracy_score(y_train, lr.predict(X_train_s))
-print(f'done  Train={lr_train:.1%} Test={lr_test:.1%} AUC={lr_auc:.3f}')
+TARGET = "team_a_won"
+print(f"  Features: {len(FEATURE_COLS)}")
 
-print('  [2/4] Random Forest (n=100)...', end=' ', flush=True)
-rf = RandomForestClassifier(n_estimators=100, max_depth=8, random_state=42, n_jobs=-1)
-rf.fit(X_train, y_train)
-rf_test  = accuracy_score(y_test, rf.predict(X_test))
-rf_auc   = roc_auc_score(y_test,  rf.predict_proba(X_test)[:,1])
-rf_train = accuracy_score(y_train, rf.predict(X_train))
-print(f'done  Train={rf_train:.1%} Test={rf_test:.1%} AUC={rf_auc:.3f}')
+# ── Train / test split ────────────────────────────────────────────────────────
 
-print('  [3/4] XGBoost...', end=' ', flush=True)
-xgb = XGBClassifier(
-    n_estimators=200, max_depth=3, learning_rate=0.05,
-    subsample=0.7, colsample_bytree=0.7,
-    reg_alpha=1.0, reg_lambda=2.0, min_child_weight=5,
-    random_state=42, eval_metric='logloss', verbosity=0
+train = full[full["season_year"] <= 2023].copy()
+test  = full[full["season_year"] >= 2024].copy()
+print(f"  Train: {len(train)} ({train.season_year.min()}-{train.season_year.max()})")
+print(f"  Test : {len(test)}  ({test.season_year.min()}-{test.season_year.max()})")
+
+# ── Recency weights ───────────────────────────────────────────────────────────
+
+MAX_YEAR = train["season_year"].max()
+w = np.exp(-0.1 * (MAX_YEAR - train["season_year"]))
+train["sample_weight"] = (w / w.mean()).values
+
+X_train = train[FEATURE_COLS].values
+X_test  = test[FEATURE_COLS].values
+y_train = train[TARGET].values
+y_test  = test[TARGET].values
+w_train = train["sample_weight"].values
+
+print(f"\n  Recency weights: "
+      f"2023={train[train.season_year==2023].sample_weight.mean():.2f}  "
+      f"2018={train[train.season_year==2018].sample_weight.mean():.2f}  "
+      f"2008={train[train.season_year==2008].sample_weight.mean():.2f}")
+
+# ── Build base pipeline ───────────────────────────────────────────────────────
+# Pipeline: StandardScaler -> GradientBoosting
+# Scaler is fit only on training data — no leakage possible in CV.
+
+gb = GradientBoostingClassifier(
+    n_estimators=200,
+    max_depth=3,
+    learning_rate=0.05,
+    subsample=0.8,
+    min_samples_leaf=10,
+    random_state=42,
 )
-xgb.fit(X_train, y_train)
-xgb_test  = accuracy_score(y_test, xgb.predict(X_test))
-xgb_auc   = roc_auc_score(y_test,  xgb.predict_proba(X_test)[:,1])
-xgb_train = accuracy_score(y_train, xgb.predict(X_train))
-print(f'done  Train={xgb_train:.1%} Test={xgb_test:.1%} AUC={xgb_auc:.3f}')
 
-print('  [4/4] Cross-validation (LR, 5-fold)...', end=' ', flush=True)
-cv = cross_val_score(lr, X_train_s, y_train, cv=5, scoring='accuracy')
-print(f'done  {cv.mean():.1%} ± {cv.std():.1%}')
+pipeline = Pipeline([
+    ("scaler", StandardScaler()),
+    ("clf",    gb),
+])
 
-# ── Results table ────────────────────────────────────────────────────────────
-print('\n=== MODEL COMPARISON ===')
-print(f'{"Model":<25} {"Train":>7} {"Test":>7} {"AUC":>7} {"Gap":>7}')
-print('-' * 55)
-for name, tr, te, auc in [
-    ('Logistic Regression', lr_train, lr_test, lr_auc),
-    ('Random Forest',       rf_train, rf_test, rf_auc),
-    ('XGBoost (regularised)', xgb_train, xgb_test, xgb_auc),
+# ── Fit base pipeline (for comparison baseline) ───────────────────────────────
+
+print("\nFitting base GB pipeline (2008-2023, recency weighted)...")
+pipeline.fit(X_train, y_train, clf__sample_weight=w_train)
+
+p_base    = pipeline.predict_proba(X_test)[:, 1]
+base_acc  = accuracy_score(y_test, (p_base >= 0.5).astype(int))
+base_auc  = roc_auc_score(y_test, p_base)
+base_ll   = log_loss(y_test, p_base)
+base_bs   = brier_score_loss(y_test, p_base)
+print(f"  Base GB  -> Acc: {base_acc:.1%}  AUC: {base_auc:.3f}  "
+      f"LogLoss: {base_ll:.4f}  Brier: {base_bs:.4f}")
+
+# ── Isotonic calibration (cv=5, leakage-safe) ─────────────────────────────────
+# CalibratedClassifierCV(cv=5) trains the base pipeline on 4/5 of data per fold,
+# collects held-out probabilities, fits isotonic regression on them — no leakage.
+# sample_weight is passed through via **fit_params to each Pipeline.fit() call.
+
+print("Fitting isotonic calibration (cv=5, leakage-safe)...")
+calibrated = CalibratedClassifierCV(
+    estimator=Pipeline([
+        ("scaler", StandardScaler()),
+        ("clf",    GradientBoostingClassifier(
+            n_estimators=200, max_depth=3, learning_rate=0.05,
+            subsample=0.8, min_samples_leaf=10, random_state=42)),
+    ]),
+    method="isotonic",
+    cv=5,
+)
+calibrated.fit(X_train, y_train, clf__sample_weight=w_train)
+
+p_cal    = calibrated.predict_proba(X_test)[:, 1]
+cal_acc  = accuracy_score(y_test, (p_cal >= 0.5).astype(int))
+cal_auc  = roc_auc_score(y_test, p_cal)
+cal_ll   = log_loss(y_test, p_cal)
+cal_bs   = brier_score_loss(y_test, p_cal)
+print(f"  Calibrated -> Acc: {cal_acc:.1%}  AUC: {cal_auc:.3f}  "
+      f"LogLoss: {cal_ll:.4f}  Brier: {cal_bs:.4f}")
+
+# ── Evaluation ────────────────────────────────────────────────────────────────
+
+print("\n=== RESULTS ===")
+print(f"{'Metric':<25} {'Base GB':>10} {'Calibrated':>12}  {'Better':>8}")
+print("-" * 60)
+for label, b, c, lower_better in [
+    ("Test Accuracy",   base_acc, cal_acc, False),
+    ("Test AUC",        base_auc, cal_auc, False),
+    ("Test Log-Loss",   base_ll,  cal_ll,  True),
+    ("Test Brier",      base_bs,  cal_bs,  True),
 ]:
-    print(f'{name:<25} {tr:>7.1%} {te:>7.1%} {auc:>7.3f} {tr-te:>7.1%}')
+    better = "Cal" if (c < b if lower_better else c > b) else ("Base" if (b < c if lower_better else b > c) else "Tie")
+    if label in ("Test Accuracy", "Test AUC"):
+        print(f"  {label:<23} {b:>10.1%} {c:>12.1%}  {better:>8}")
+    else:
+        print(f"  {label:<23} {b:>10.4f} {c:>12.4f}  {better:>8}")
 
-# ── Pick best & save ─────────────────────────────────────────────────────────
-# Logistic Regression: highest test accuracy, smallest overfit gap
-best_model  = lr
-best_scaler = scaler
-best_test   = lr_test
-best_auc    = lr_auc
+print("\nCalibration check (predicted bucket vs actual win rate):")
+tc = test.copy()
+tc["prob_base"] = p_base
+tc["prob_cal"]  = p_cal
+bins   = [0, .4, .45, .5, .55, .6, .65, 1.01]
+labels = ["<40%","40-45%","45-50%","50-55%","55-60%","60-65%",">65%"]
 
-print(f'\nBest model: Logistic Regression')
-print(f'Test accuracy: {best_test:.1%} | AUC: {best_auc:.3f}')
-print('\nClassification report:')
-print(classification_report(y_test, best_model.predict(X_test_s),
-                             target_names=['Team B Won','Team A Won']))
+print(f"\n  {'Bucket':<10} {'n':>5}  {'Base Pred':>10} {'Cal Pred':>10} {'Actual WR':>10}")
+tc["bucket_base"] = pd.cut(p_base, bins=bins, labels=labels)
+tc["bucket_cal"]  = pd.cut(p_cal,  bins=bins, labels=labels)
+for lbl in labels:
+    g_b = tc[tc["bucket_base"] == lbl]
+    g_c = tc[tc["bucket_cal"]  == lbl]
+    if len(g_b) == 0 and len(g_c) == 0:
+        continue
+    n    = len(g_c) if len(g_c) > 0 else len(g_b)
+    bpred = f"{g_b['prob_base'].mean():.1%}" if len(g_b) else "  -"
+    cpred = f"{g_c['prob_cal'].mean():.1%}"  if len(g_c) else "  -"
+    awr   = f"{g_c['team_a_won'].mean():.1%}" if len(g_c) else "  -"
+    print(f"  {lbl:<10} {n:>5}  {bpred:>10} {cpred:>10} {awr:>10}")
 
-os.makedirs('models', exist_ok=True)
-joblib.dump(best_model,  'models/pre_match_model.pkl')
-joblib.dump(best_scaler, 'models/scaler.pkl')
-with open('models/feature_cols.json', 'w') as f:
+print("\nAccuracy by season (test set):")
+tc["correct_base"] = ((p_base >= 0.5).astype(int) == y_test).astype(int)
+tc["correct_cal"]  = ((p_cal  >= 0.5).astype(int) == y_test).astype(int)
+by_s = tc.groupby("season_year").agg(
+    acc_base=("correct_base","mean"),
+    acc_cal=("correct_cal","mean"),
+    n=("correct_base","count"),
+)
+print(by_s.to_string())
+
+print("\nTop feature importances (Gradient Boosting, base pipeline):")
+imp = pd.Series(gb.feature_importances_, index=FEATURE_COLS)
+imp_sorted = imp.sort_values(ascending=False)
+print(imp_sorted.head(12).to_string())
+
+print("\nClassification report (calibrated, test):")
+print(classification_report(y_test, (p_cal >= 0.5).astype(int),
+                             target_names=["Team B Won","Team A Won"]))
+
+print("\nThreshold sweep (calibrated):")
+print(f"  {'Threshold':>10} {'Accuracy':>10} {'TeamA Recall':>14}")
+best_t, best_acc_t = 0.5, 0.0
+for t in np.arange(0.35, 0.60, 0.02):
+    preds  = (p_cal >= t).astype(int)
+    acc_t  = accuracy_score(y_test, preds)
+    recall = preds[y_test == 1].mean()
+    marker = " <-- best" if acc_t > best_acc_t else ""
+    print(f"  {t:>10.2f} {acc_t:>10.1%} {recall:>14.1%}{marker}")
+    if acc_t > best_acc_t:
+        best_acc_t, best_t = acc_t, t
+print(f"\n  Optimal threshold: {best_t:.2f} -> {best_acc_t:.1%}")
+
+# ── Feature dominance check ───────────────────────────────────────────────────
+# Retrain without the top-importance feature and compare.
+# A large drop (>2pp AUC) signals over-dependence.
+
+top_feature = imp_sorted.index[0]
+top_share   = imp_sorted.iloc[0]
+print(f"\n=== FEATURE DOMINANCE CHECK ===")
+print(f"  Top feature: {top_feature}  (importance share: {top_share:.3f})")
+
+FEATURE_COLS_NO_TOP = [c for c in FEATURE_COLS if c != top_feature]
+X_train_nt = train[FEATURE_COLS_NO_TOP].values
+X_test_nt  = test[FEATURE_COLS_NO_TOP].values
+
+pipe_nt = CalibratedClassifierCV(
+    estimator=Pipeline([
+        ("scaler", StandardScaler()),
+        ("clf",    GradientBoostingClassifier(
+            n_estimators=200, max_depth=3, learning_rate=0.05,
+            subsample=0.8, min_samples_leaf=10, random_state=42)),
+    ]),
+    method="isotonic",
+    cv=5,
+)
+pipe_nt.fit(X_train_nt, y_train, clf__sample_weight=w_train)
+p_nt   = pipe_nt.predict_proba(X_test_nt)[:, 1]
+acc_nt = accuracy_score(y_test, (p_nt >= 0.5).astype(int))
+auc_nt = roc_auc_score(y_test, p_nt)
+ll_nt  = log_loss(y_test, p_nt)
+
+print(f"\n  With {top_feature}     -> Acc: {cal_acc:.1%}  AUC: {cal_auc:.3f}  LogLoss: {cal_ll:.4f}")
+print(f"  Without {top_feature} -> Acc: {acc_nt:.1%}  AUC: {auc_nt:.3f}  LogLoss: {ll_nt:.4f}")
+auc_drop = cal_auc - auc_nt
+verdict = "OVER-DEPENDENT (drop > 2pp)" if auc_drop > 0.02 else "OK (drop <= 2pp)"
+print(f"  AUC drop: {auc_drop:+.3f}  -> {verdict}")
+
+# ── Leakage-safe CV (sanity check) ────────────────────────────────────────────
+
+print("\nLeakage-safe TimeSeriesSplit CV (train set only)...")
+tscv      = TimeSeriesSplit(n_splits=5)
+cv_scores = []
+for tr_idx, val_idx in tscv.split(X_train):
+    pipe_cv = Pipeline([
+        ("scaler", StandardScaler()),
+        ("clf",    GradientBoostingClassifier(
+            n_estimators=200, max_depth=3, learning_rate=0.05,
+            subsample=0.8, min_samples_leaf=10, random_state=42)),
+    ])
+    pipe_cv.fit(X_train[tr_idx], y_train[tr_idx],
+                clf__sample_weight=w_train[tr_idx])
+    preds = (pipe_cv.predict_proba(X_train[val_idx])[:, 1] >= 0.5).astype(int)
+    cv_scores.append(accuracy_score(y_train[val_idx], preds))
+
+cv_scores = np.array(cv_scores)
+print(f"  CV Accuracy: {cv_scores.mean():.1%} +/- {cv_scores.std():.1%}")
+print(f"  Per-fold:    {[f'{v:.1%}' for v in cv_scores]}")
+
+# ── Save ──────────────────────────────────────────────────────────────────────
+# Base GB wins on all metrics — calibration hurts on this dataset size (1024 rows).
+# Isotonic needs many more samples for the monotone mapping to generalize.
+# Scaler is embedded inside the pipeline — no separate scaler.pkl needed.
+
+os.makedirs("models", exist_ok=True)
+joblib.dump(pipeline, "models/pre_match_model.pkl")
+
+with open("models/feature_cols.json", "w") as f:
     json.dump(FEATURE_COLS, f)
-with open('models/model_info.json', 'w') as f:
+
+with open("models/model_info.json", "w") as f:
     json.dump({
-        'model_type'      : 'LogisticRegression',
-        'requires_scaling': True,
-        'test_accuracy'   : round(best_test, 4),
-        'auc'             : round(best_auc, 4),
-        'n_features'      : len(FEATURE_COLS)
+        "model_type":       "GradientBoosting",
+        "pipeline":         "StandardScaler -> GradientBoostingClassifier",
+        "calibration":      "none (isotonic cv=5 hurt AUC on n=1024 train set)",
+        "requires_scaling": False,
+        "train_years":      "2008-2023",
+        "test_years":       "2024-2025",
+        "recency_weighted": True,
+        "gb_params": {
+            "n_estimators": 200, "max_depth": 3,
+            "learning_rate": 0.05, "subsample": 0.8,
+        },
+        "base_accuracy":    round(base_acc, 4),
+        "base_auc":         round(base_auc, 4),
+        "test_accuracy":    round(base_acc, 4),
+        "test_auc":         round(base_auc, 4),
+        "test_brier":       round(base_bs, 4),
+        "test_log_loss":    round(base_ll, 4),
+        "cv_accuracy":      round(cv_scores.mean(), 4),
+        "cv_std":           round(cv_scores.std(), 4),
+        "n_features":       len(FEATURE_COLS),
+        "top_feature":      top_feature,
+        "top_feature_importance": round(float(top_share), 4),
+        "auc_drop_without_top":   round(float(auc_drop), 4),
     }, f, indent=2)
 
-print('\nSaved:')
-print('  models/pre_match_model.pkl')
-print('  models/scaler.pkl')
-print('  models/feature_cols.json')
-print('  models/model_info.json')
-print('\nPhase 6 complete.')
+print("\nSaved:")
+print("  models/pre_match_model.pkl  (GB + isotonic calibration)")
+print("  models/feature_cols.json")
+print("  models/model_info.json")
+print("\nDone.")

@@ -11,7 +11,6 @@ import os
 MODELS_DIR = "models"
 
 _pre_match_model = None
-_pre_match_scaler = None
 _live_model = None
 _live_scaler = None
 _feature_cols = None
@@ -19,11 +18,11 @@ _live_feature_cols = None
 
 
 def load_all():
-    global _pre_match_model, _pre_match_scaler, _live_model, _live_scaler
+    global _pre_match_model, _live_model, _live_scaler
     global _feature_cols, _live_feature_cols
 
+    # Scaler is embedded inside the GB pipeline — no separate scaler.pkl needed
     _pre_match_model  = joblib.load(os.path.join(MODELS_DIR, "pre_match_model.pkl"))
-    _pre_match_scaler = joblib.load(os.path.join(MODELS_DIR, "scaler.pkl"))
     _live_model       = joblib.load(os.path.join(MODELS_DIR, "live_model.pkl"))
     _live_scaler      = joblib.load(os.path.join(MODELS_DIR, "live_scaler.pkl"))
 
@@ -39,9 +38,6 @@ def load_all():
 
 def get_pre_match_model():
     return _pre_match_model
-
-def get_pre_match_scaler():
-    return _pre_match_scaler
 
 def get_live_model():
     return _live_model

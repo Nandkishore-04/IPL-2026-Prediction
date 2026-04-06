@@ -1,7 +1,27 @@
 {
-  "model_type": "LogisticRegression",
-  "requires_scaling": true,
-  "test_accuracy": 0.6414,
-  "auc": 0.687,
-  "n_features": 42
+  "model_type": "GradientBoosting",
+  "pipeline": "StandardScaler -> GradientBoostingClassifier",
+  "calibration": "none (isotonic cv=5 hurt AUC on n=1024 train set)",
+  "requires_scaling": false,
+  "train_years": "2008-2023",
+  "test_years": "2024-2025",
+  "recency_weighted": true,
+  "gb_params": {
+    "n_estimators": 200,
+    "max_depth": 3,
+    "learning_rate": 0.05,
+    "subsample": 0.8
+  },
+  "base_accuracy": 0.5862,
+  "base_auc": 0.6261,
+  "test_accuracy": 0.5862,
+  "test_auc": 0.6261,
+  "test_brier": 0.2386,
+  "test_log_loss": 0.6704,
+  "cv_accuracy": 0.5482,
+  "cv_std": 0.04,
+  "n_features": 20,
+  "top_feature": "xi_ar_ratio_diff",
+  "top_feature_importance": 0.14,
+  "auc_drop_without_top": 0.0907
 }

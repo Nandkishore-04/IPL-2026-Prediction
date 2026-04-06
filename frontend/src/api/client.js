@@ -30,8 +30,10 @@ export const api = {
   getTeams:     ()     => get('/teams'),
   getVenues:    ()     => get('/venues'),
   getTeamStats: (name) => get(`/team/${encodeURIComponent(name)}/stats`),
+  getSquads:    ()     => get('/squads'),
   getAccuracy:  ()     => get('/accuracy'),
   getLiveFeed:  ()     => get('/live-feed'),
-  logResult:    (data) => post('/log-result', data),
-  manualUpdate: (data) => post('/live-feed/manual', data),
+  logResult:         (data)     => post('/log-result', data),
+  manualUpdate:      (data)     => post('/live-feed/manual', data),
+  deletePrediction:  (matchId)  => fetch(`${BASE}/prediction/${encodeURIComponent(matchId)}`, { method: 'DELETE' }).then(r => r.json()),
 }

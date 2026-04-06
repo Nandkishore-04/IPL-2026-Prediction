@@ -6,6 +6,8 @@ Used at prediction time to look up stats for a given playing XI.
 import json
 import os
 
+import api.core.feature_engine as fe
+
 _player_stats = None
 
 def load():
@@ -20,7 +22,16 @@ def get_player_stats(name: str) -> dict:
     """Return stats dict for a player, or None if not found."""
     if _player_stats is None:
         return None
-    return _player_stats.get(name)
+    
+    # Try abbreviation directly
+    stats = _player_stats.get(name)
+    if stats:
+        return stats
+        
+    # Try mapping full name back to abbreviation
+    abbr = fe._reverse_name_map.get(name, name)
+    return _player_stats.get(abbr)
+
 
 
 def get_all() -> dict:

@@ -19,10 +19,11 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-import api.core.model_loader  as ml
-import api.core.feature_engine as fe
-import api.core.player_stats   as ps
-import api.core.live_feed      as lf
+import api.core.model_loader      as ml
+import api.core.feature_engine    as fe
+import api.core.player_stats      as ps
+import api.core.live_feed         as lf
+import api.core.player_form_2026  as pf
 
 from api.routes import predict, teams, accuracy, live
 
@@ -34,8 +35,10 @@ async def lifespan(app: FastAPI):
     ml.load_all()
     fe.load()
     ps.load()
-    # Start CricAPI polling loop as a background task
+    pf.init()
+    # Start CricAPI polling loop and 2026 form backfill as background tasks
     task = asyncio.create_task(lf.polling_loop())
+    asyncio.create_task(pf.backfill_all())
     yield
     # Shutdown
     lf._polling_active = False

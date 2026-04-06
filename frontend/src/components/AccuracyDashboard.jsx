@@ -1,18 +1,14 @@
 import { useState, useEffect } from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine, ResponsiveContainer } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import { api } from '../api/client.js'
 
-const card = {
-  background: '#0d1424', borderRadius: '14px',
-  padding: '22px 24px', marginBottom: '16px', border: '1px solid #1a2235',
-}
 const inputStyle = {
-  width: '100%', padding: '10px 13px',
-  background: '#0a0f1e', border: '1px solid #1e2d45',
-  borderRadius: '8px', color: '#e2e8f0', fontSize: '14px', outline: 'none',
+  width: '100%', padding: '11px 14px',
+  background: 'var(--bg)', border: '1px solid rgba(255,255,255,0.08)',
+  borderRadius: 10, color: 'var(--text)', fontSize: 14, outline: 'none',
+  fontFamily: 'inherit', appearance: 'none',
 }
-const labelStyle  = { fontSize: 12, color: '#64748b', marginBottom: 6, display: 'block' }
-const sectionTitle = { fontSize: 11, fontWeight: 700, color: '#475569', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 16 }
+const labelStyle = { fontSize: 12, color: 'var(--text-muted)', marginBottom: 7, display: 'block', fontWeight: 500 }
 
 const TEAMS = [
   'Chennai Super Kings','Delhi Capitals','Gujarat Titans','Kolkata Knight Riders',
@@ -20,41 +16,47 @@ const TEAMS = [
   'Royal Challengers Bengaluru','Sunrisers Hyderabad',
 ]
 
-// ── Calibration chart tooltip ────────────────────────────────────────────────
 const CalibTip = ({ active, payload }) => {
   if (!active || !payload?.length) return null
   const d = payload[0]?.payload
   return (
-    <div style={{ background: '#0d1424', border: '1px solid #1a2235', padding: '10px 14px', borderRadius: 8, fontSize: 13 }}>
-      <p style={{ color: '#94a3b8' }}>Predicted: {(d.predicted_prob * 100).toFixed(0)}%</p>
+    <div style={{ background: '#0c1220', border: '1px solid rgba(255,255,255,0.1)', padding: '10px 14px', borderRadius: 8, fontSize: 13 }}>
+      <p style={{ color: 'var(--text-muted)' }}>Predicted: {(d.predicted_prob * 100).toFixed(0)}%</p>
       <p style={{ color: '#60a5fa', fontWeight: 700 }}>Actual: {(d.actual_win_rate * 100).toFixed(0)}%</p>
-      <p style={{ color: '#475569' }}>{d.count} predictions</p>
+      <p style={{ color: 'var(--text-dim)' }}>{d.count} predictions</p>
     </div>
   )
 }
 
-// ── Streak indicator ─────────────────────────────────────────────────────────
 const Streak = ({ val }) => {
-  if (val === 0) return <span style={{ color: '#475569' }}>—</span>
+  if (val === 0) return <span style={{ color: 'var(--text-dim)' }}>—</span>
   const color = val > 0 ? '#22c55e' : '#ef4444'
-  const label = val > 0 ? `W${val}` : `L${Math.abs(val)}`
-  return <span style={{ color, fontWeight: 700, fontSize: 12 }}>{label}</span>
+  return (
+    <span style={{
+      color, fontWeight: 700, fontSize: 11,
+      background: val > 0 ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)',
+      padding: '2px 7px', borderRadius: 6,
+    }}>
+      {val > 0 ? `W${val}` : `L${Math.abs(val)}`}
+    </span>
+  )
 }
 
-// ── Last 5 dots ──────────────────────────────────────────────────────────────
 const Last5 = ({ results }) => (
   <div style={{ display: 'flex', gap: 3 }}>
     {results.map((r, i) => (
-      <div key={i} style={{ width: 8, height: 8, borderRadius: '50%', background: r ? '#22c55e' : '#ef4444' }} />
+      <div key={i} style={{ width: 8, height: 8, borderRadius: '50%', background: r ? '#22c55e' : '#ef4444', boxShadow: r ? '0 0 4px rgba(34,197,94,0.5)' : 'none' }} />
     ))}
     {Array(5 - results.length).fill(0).map((_, i) => (
-      <div key={`e${i}`} style={{ width: 8, height: 8, borderRadius: '50%', background: '#1a2235' }} />
+      <div key={`e${i}`} style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--text-dim)', opacity: 0.3 }} />
     ))}
   </div>
 )
 
+const positionColors = ['#f5a623', '#94a3b8', '#cd7f32']
+
 export default function AccuracyDashboard() {
-  const [tab, setTab]         = useState('standings')   // 'standings' | 'accuracy' | 'log'
+  const [tab, setTab]         = useState('standings')
   const [data, setData]       = useState(null)
   const [standings, setStandings] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -86,142 +88,156 @@ export default function AccuracyDashboard() {
         predicted_probability: logForm.predicted_probability ? parseFloat(logForm.predicted_probability) / 100 : null,
       }
       await api.logResult(payload)
-      setLogMsg('✓ Result logged. Model form stats updated for next prediction.')
+      setLogMsg('Result logged — form stats updated.')
       setTimeout(() => setLogMsg(''), 4000)
       load()
     } catch (e) { setLogMsg('Error: ' + e.message) }
   }
 
-  // Calibration data — add perfect diagonal for reference
   const calibData = data?.calibration?.length
-    ? [{ predicted_prob: 0, actual_win_rate: 0, count: 0, range: 'ideal' },
+    ? [{ predicted_prob: 0, actual_win_rate: 0, count: 0 },
        ...data.calibration,
-       { predicted_prob: 1, actual_win_rate: 1, count: 0, range: 'ideal' }]
+       { predicted_prob: 1, actual_win_rate: 1, count: 0 }]
     : []
 
   const tabStyle = (t) => ({
-    padding: '10px 20px', background: 'none',
+    padding: '8px 18px', background: 'none',
     border: 'none',
     borderBottom: `2px solid ${tab === t ? '#3b82f6' : 'transparent'}`,
-    color: tab === t ? '#e2e8f0' : '#475569',
-    cursor: 'pointer', fontWeight: tab === t ? 600 : 400, fontSize: 14,
+    color: tab === t ? 'var(--text)' : 'var(--text-muted)',
+    cursor: 'pointer', fontWeight: tab === t ? 600 : 400, fontSize: 13,
+    fontFamily: 'inherit', transition: 'color 0.15s',
   })
 
   return (
     <div>
-      <div style={{ marginBottom: 20 }}>
-        <h2 style={{ fontSize: 20, fontWeight: 800, color: '#f1f5f9', marginBottom: 4 }}>Accuracy Dashboard</h2>
-        <p style={{ fontSize: 13, color: '#475569' }}>Track predictions and live 2026 season standings</p>
-      </div>
+      <h2 className="page-title">Season Dashboard</h2>
+      <p className="page-sub">Live 2026 standings, model accuracy tracking, and result logging</p>
 
       {/* Tab bar */}
-      <div style={{ display: 'flex', gap: 0, borderBottom: '1px solid #1a2235', marginBottom: 20 }}>
+      <div style={{ display: 'flex', borderBottom: '1px solid var(--border)', marginBottom: 20 }}>
         {[['standings','🏆 Standings'], ['accuracy','📊 Accuracy'], ['log','+ Log Result']].map(([t, lbl]) => (
           <button key={t} style={tabStyle(t)} onClick={() => setTab(t)}>{lbl}</button>
         ))}
       </div>
 
       {loading ? (
-        <div style={{ ...card, textAlign: 'center', color: '#334155', padding: 40 }}>Loading...</div>
+        <div className="card" style={{ textAlign: 'center', color: 'var(--text-muted)', padding: 48 }}>Loading...</div>
       ) : (
         <>
-          {/* ── STANDINGS TAB ────────────────────────────────────────────── */}
+          {/* ── STANDINGS ─────────────────────────────────────────────────── */}
           {tab === 'standings' && (
-            <div style={card}>
-              <div style={sectionTitle}>IPL 2026 Points Table</div>
+            <div className="card">
+              <div className="section-label">IPL 2026 Points Table</div>
               {standings?.table && standings.table.some(t => t.matches > 0) ? (
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
                   <thead>
                     <tr>
                       {['#','Team','M','W','L','Pts','Last 5','Streak'].map(h => (
-                        <th key={h} style={{ padding: '8px 10px', textAlign: h === 'Team' ? 'left' : 'center', color: '#334155', fontWeight: 600, borderBottom: '1px solid #1a2235', whiteSpace: 'nowrap' }}>{h}</th>
+                        <th key={h} style={{
+                          padding: '8px 10px',
+                          textAlign: h === 'Team' ? 'left' : 'center',
+                          color: 'var(--text-dim)', fontWeight: 600, fontSize: 11,
+                          borderBottom: '1px solid var(--border)',
+                          textTransform: 'uppercase', letterSpacing: '0.07em',
+                        }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {standings.table.map((row, i) => (
-                      <tr key={row.team} style={{ borderBottom: '1px solid #0d1424', opacity: row.matches === 0 ? 0.35 : 1 }}>
-                        <td style={{ padding: '11px 10px', textAlign: 'center', color: i < 4 ? '#22c55e' : '#475569', fontWeight: 700 }}>{i + 1}</td>
-                        <td style={{ padding: '11px 10px', color: '#e2e8f0', fontWeight: 500 }}>{row.team}</td>
-                        <td style={{ padding: '11px 10px', textAlign: 'center', color: '#94a3b8' }}>{row.matches}</td>
-                        <td style={{ padding: '11px 10px', textAlign: 'center', color: '#22c55e' }}>{row.wins}</td>
-                        <td style={{ padding: '11px 10px', textAlign: 'center', color: '#ef4444' }}>{row.losses}</td>
-                        <td style={{ padding: '11px 10px', textAlign: 'center', color: '#f1f5f9', fontWeight: 700 }}>{row.points}</td>
-                        <td style={{ padding: '11px 10px', textAlign: 'center' }}><Last5 results={row.last5} /></td>
-                        <td style={{ padding: '11px 10px', textAlign: 'center' }}><Streak val={row.streak} /></td>
+                      <tr key={row.team} style={{
+                        borderBottom: '1px solid var(--border)',
+                        opacity: row.matches === 0 ? 0.3 : 1,
+                        background: i < 4 ? 'rgba(59,130,246,0.025)' : 'transparent',
+                      }}>
+                        <td style={{ padding: '12px 10px', textAlign: 'center' }}>
+                          {i < 3 ? (
+                            <span style={{ color: positionColors[i], fontWeight: 800, fontSize: 14 }}>
+                              {i === 0 ? '🥇' : i === 1 ? '🥈' : '🥉'}
+                            </span>
+                          ) : (
+                            <span style={{ color: i < 4 ? '#60a5fa' : 'var(--text-muted)', fontWeight: 700 }}>{i + 1}</span>
+                          )}
+                        </td>
+                        <td style={{ padding: '12px 10px', color: 'var(--text)', fontWeight: 500 }}>
+                          {row.team}
+                          {i < 4 && <span style={{ marginLeft: 6, fontSize: 10, color: '#3b82f6', fontWeight: 600 }}>playoff</span>}
+                        </td>
+                        <td style={{ padding: '12px 10px', textAlign: 'center', color: 'var(--text-muted)' }}>{row.matches}</td>
+                        <td style={{ padding: '12px 10px', textAlign: 'center', color: '#22c55e', fontWeight: 600 }}>{row.wins}</td>
+                        <td style={{ padding: '12px 10px', textAlign: 'center', color: '#ef4444', fontWeight: 600 }}>{row.losses}</td>
+                        <td style={{ padding: '12px 10px', textAlign: 'center', color: 'var(--text)', fontWeight: 800 }}>{row.points}</td>
+                        <td style={{ padding: '12px 10px', textAlign: 'center' }}><Last5 results={row.last5} /></td>
+                        <td style={{ padding: '12px 10px', textAlign: 'center' }}><Streak val={row.streak} /></td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               ) : (
-                <div style={{ textAlign: 'center', color: '#334155', padding: '40px 0' }}>
-                  <div style={{ fontSize: 32, marginBottom: 12 }}>🏏</div>
-                  No 2026 matches logged yet.<br />
-                  <span style={{ fontSize: 13 }}>Log your first result in the "Log Result" tab — standings update automatically.</span>
+                <div style={{ textAlign: 'center', padding: '48px 0', color: 'var(--text-muted)' }}>
+                  <div style={{ fontSize: 36, marginBottom: 14 }}>🏆</div>
+                  <div style={{ fontWeight: 600, marginBottom: 6 }}>No matches logged yet</div>
+                  <div style={{ fontSize: 13, color: 'var(--text-dim)' }}>Log results in the "Log Result" tab — standings update automatically.</div>
                 </div>
               )}
             </div>
           )}
 
-          {/* ── ACCURACY TAB ─────────────────────────────────────────────── */}
+          {/* ── ACCURACY ──────────────────────────────────────────────────── */}
           {tab === 'accuracy' && data && (
             <>
-              {/* Stats row */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 16 }}>
+              <div className="grid-4" style={{ marginBottom: 16 }}>
                 {[
-                  ['Predictions', data.total_predictions, '#60a5fa'],
-                  ['Correct',     data.correct,            '#22c55e'],
-                  ['Accuracy',    data.accuracy_percent || '—', '#f59e0b'],
-                  ['Brier Score', data.brier_score != null ? data.brier_score.toFixed(3) : '—', '#a78bfa'],
-                ].map(([lbl, val, color]) => (
-                  <div key={lbl} style={{ ...card, textAlign: 'center', marginBottom: 0, border: `1px solid ${color}18` }}>
-                    <div style={{ color, fontSize: 22, fontWeight: 800, marginBottom: 4 }}>{val}</div>
-                    <div style={{ color: '#475569', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em' }}>{lbl}</div>
-                    {lbl === 'Brier Score' && <div style={{ color: '#334155', fontSize: 10, marginTop: 4 }}>lower = better (0=perfect)</div>}
+                  { label: 'Total',      value: data.total_predictions,                                 color: '#60a5fa', icon: '🎯' },
+                  { label: 'Correct',    value: data.correct,                                           color: '#22c55e', icon: '✓' },
+                  { label: 'Accuracy',   value: data.accuracy_percent || '—',                           color: '#f59e0b', icon: '%' },
+                  { label: 'Brier',      value: data.brier_score != null ? data.brier_score.toFixed(3) : '—', color: '#a78bfa', icon: '◈' },
+                ].map(({ label, value, color, icon }) => (
+                  <div key={label} className="card" style={{ textAlign: 'center', marginBottom: 0, padding: '18px 12px' }}>
+                    <div style={{ fontSize: 11, color, marginBottom: 8, fontWeight: 700 }}>{icon}</div>
+                    <div style={{ fontSize: 24, fontWeight: 900, color, letterSpacing: '-0.5px', marginBottom: 4 }}>{value}</div>
+                    <div style={{ fontSize: 10.5, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>{label}</div>
                   </div>
                 ))}
               </div>
 
-              {/* Calibration chart */}
               {calibData.length > 2 ? (
-                <div style={card}>
-                  <div style={sectionTitle}>Calibration Curve</div>
-                  <p style={{ fontSize: 12, color: '#334155', marginBottom: 16 }}>
-                    Blue line should follow the grey diagonal — if our model says 70%, teams should win 70% of those games.
+                <div className="card">
+                  <div className="section-label">Calibration Curve</div>
+                  <p style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 18 }}>
+                    If the model says 70%, teams should win ~70% of those games. Blue = model, dashed = perfect.
                   </p>
-                  <ResponsiveContainer width="100%" height={220}>
+                  <ResponsiveContainer width="100%" height={210}>
                     <LineChart data={calibData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#1a2235" />
-                      <XAxis dataKey="predicted_prob" tickFormatter={v => `${(v*100).toFixed(0)}%`} stroke="#334155" tick={{ fill: '#475569', fontSize: 11 }} />
-                      <YAxis tickFormatter={v => `${(v*100).toFixed(0)}%`} domain={[0, 1]} stroke="#334155" tick={{ fill: '#475569', fontSize: 11 }} />
+                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
+                      <XAxis dataKey="predicted_prob" tickFormatter={v => `${(v*100).toFixed(0)}%`} stroke="transparent" tick={{ fill: 'var(--text-muted)', fontSize: 11 }} />
+                      <YAxis tickFormatter={v => `${(v*100).toFixed(0)}%`} domain={[0, 1]} stroke="transparent" tick={{ fill: 'var(--text-muted)', fontSize: 11 }} />
                       <Tooltip content={<CalibTip />} />
-                      {/* Perfect diagonal */}
-                      <Line type="linear" dataKey="predicted_prob" stroke="#1e2d45" strokeWidth={1} strokeDasharray="4 4" dot={false} name="Perfect" />
-                      {/* Actual calibration */}
-                      <Line type="monotone" dataKey="actual_win_rate" stroke="#3b82f6" strokeWidth={2} dot={{ fill: '#3b82f6', r: 4 }} name="Model" />
+                      <Line type="linear" dataKey="predicted_prob" stroke="rgba(255,255,255,0.1)" strokeWidth={1} strokeDasharray="5 5" dot={false} />
+                      <Line type="monotone" dataKey="actual_win_rate" stroke="#3b82f6" strokeWidth={2.5} dot={{ fill: '#3b82f6', r: 4, strokeWidth: 2, stroke: '#06090f' }} />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
               ) : (
-                <div style={{ ...card, textAlign: 'center', color: '#334155', padding: 30, fontSize: 13 }}>
-                  Log predictions with win % to see calibration curve (needs 5+ entries with probability stored).
+                <div className="card" style={{ textAlign: 'center', color: 'var(--text-muted)', padding: 32, fontSize: 13 }}>
+                  Log 5+ predictions with a win % to see the calibration curve.
                 </div>
               )}
 
-              {/* Per-team accuracy */}
               {Object.keys(data.by_team).length > 0 && (
-                <div style={card}>
-                  <div style={sectionTitle}>Accuracy by Team</div>
+                <div className="card">
+                  <div className="section-label">Accuracy by Team</div>
                   {Object.entries(data.by_team).sort((a, b) => b[1].accuracy - a[1].accuracy).map(([team, stats]) => {
                     const color = stats.accuracy >= 0.65 ? '#22c55e' : stats.accuracy >= 0.5 ? '#f59e0b' : '#ef4444'
                     return (
-                      <div key={team} style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 10 }}>
-                        <span style={{ width: 190, fontSize: 13, color: '#94a3b8', flexShrink: 0 }}>{team}</span>
-                        <div style={{ flex: 1, height: 6, background: '#0a0f1e', borderRadius: 4, overflow: 'hidden' }}>
-                          <div style={{ height: '100%', borderRadius: 4, width: `${stats.accuracy * 100}%`, background: color, transition: 'width 0.7s ease' }} />
+                      <div key={team} style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 12 }}>
+                        <span style={{ width: 200, fontSize: 13, color: 'var(--text-muted)', flexShrink: 0 }}>{team}</span>
+                        <div style={{ flex: 1, height: 5, background: 'var(--bg)', borderRadius: 4, overflow: 'hidden' }}>
+                          <div style={{ height: '100%', borderRadius: 4, width: `${stats.accuracy * 100}%`, background: color, transition: 'width 0.8s ease' }} />
                         </div>
-                        <span style={{ width: 90, fontSize: 12, color: '#64748b', textAlign: 'right', flexShrink: 0 }}>
-                          {(stats.accuracy * 100).toFixed(0)}% <span style={{ color: '#334155' }}>({stats.correct}/{stats.total})</span>
+                        <span style={{ width: 80, fontSize: 12, color: 'var(--text-muted)', textAlign: 'right', flexShrink: 0 }}>
+                          {(stats.accuracy * 100).toFixed(0)}% <span style={{ color: 'var(--text-dim)' }}>({stats.correct}/{stats.total})</span>
                         </span>
                       </div>
                     )
@@ -229,57 +245,86 @@ export default function AccuracyDashboard() {
                 </div>
               )}
 
-              {/* Recent predictions */}
               {data.recent.length > 0 && (
-                <div style={card}>
-                  <div style={sectionTitle}>Recent Predictions</div>
+                <div className="card">
+                  <div className="section-label">Recent Predictions</div>
                   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
                     <thead>
                       <tr>
-                        {['Date','Match','Predicted','Prob','Actual',''].map(h => (
-                          <th key={h} style={{ padding: '8px 10px', textAlign: 'left', color: '#334155', fontWeight: 600, borderBottom: '1px solid #1a2235' }}>{h}</th>
+                        {['Date','Match','Predicted','Prob','Actual','Result',''].map(h => (
+                          <th key={h} style={{ padding: '8px 10px', textAlign: 'left', color: 'var(--text-dim)', fontWeight: 600, fontSize: 11, borderBottom: '1px solid var(--border)', textTransform: 'uppercase', letterSpacing: '0.07em' }}>{h}</th>
                         ))}
                       </tr>
                     </thead>
                     <tbody>
-                      {[...data.recent].reverse().map((r, i) => (
-                        <tr key={i} style={{ borderBottom: '1px solid #0d1424' }}>
-                          <td style={{ padding: '10px', color: '#475569' }}>{r.match_date}</td>
-                          <td style={{ padding: '10px', color: '#64748b' }}>{r.team_a} vs {r.team_b}</td>
-                          <td style={{ padding: '10px', color: '#60a5fa' }}>{r.predicted_winner}</td>
-                          <td style={{ padding: '10px', color: '#94a3b8' }}>
-                            {r.predicted_probability != null ? `${(r.predicted_probability * 100).toFixed(0)}%` : '—'}
-                          </td>
-                          <td style={{ padding: '10px', color: '#e2e8f0' }}>{r.actual_winner}</td>
-                          <td style={{ padding: '10px' }}>
-                            <span style={{ padding: '3px 10px', borderRadius: 12, fontSize: 11, fontWeight: 700, background: r.correct ? '#14532d' : '#450a0a', color: r.correct ? '#86efac' : '#fca5a5' }}>
-                              {r.correct ? 'Correct' : 'Wrong'}
-                            </span>
-                          </td>
-                        </tr>
-                      ))}
+                      {[...data.recent].reverse().map((r, i) => {
+                        const hasPrediction = r.predicted_winner != null
+                        const hasResult     = r.actual_winner != null
+                        return (
+                          <tr key={i} style={{ borderBottom: '1px solid var(--border)' }}>
+                            <td style={{ padding: '11px 10px', color: 'var(--text-muted)' }}>{r.match_date}</td>
+                            <td style={{ padding: '11px 10px', color: 'var(--text-muted)', fontSize: 12 }}>{r.team_a} vs {r.team_b}</td>
+                            <td style={{ padding: '11px 10px', color: hasPrediction ? '#60a5fa' : 'var(--text-dim)', fontWeight: hasPrediction ? 500 : 400 }}>
+                              {hasPrediction ? r.predicted_winner : '—'}
+                            </td>
+                            <td style={{ padding: '11px 10px', color: 'var(--text-muted)' }}>
+                              {r.predicted_probability != null ? `${(r.predicted_probability * 100).toFixed(0)}%` : '—'}
+                            </td>
+                            <td style={{ padding: '11px 10px', color: 'var(--text)', fontWeight: 500 }}>
+                              {hasResult ? r.actual_winner : '—'}
+                            </td>
+                            <td style={{ padding: '11px 10px' }}>
+                              {!hasPrediction || !hasResult ? (
+                                <span style={{ color: 'var(--text-dim)', fontSize: 12 }}>—</span>
+                              ) : (
+                                <span style={{
+                                  padding: '3px 10px', borderRadius: 6, fontSize: 11, fontWeight: 700,
+                                  background: r.correct ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)',
+                                  color: r.correct ? '#4ade80' : '#f87171',
+                                  border: `1px solid ${r.correct ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}`,
+                                }}>
+                                  {r.correct ? '✓ Correct' : '✗ Wrong'}
+                                </span>
+                              )}
+                            </td>
+                            <td style={{ padding: '11px 10px' }}>
+                              <button onClick={async () => {
+                                await api.deletePrediction(r.match_id)
+                                load()
+                              }} style={{
+                                background: 'none', border: '1px solid rgba(239,68,68,0.2)',
+                                color: '#f87171', borderRadius: 6, padding: '3px 9px',
+                                cursor: 'pointer', fontSize: 12, fontFamily: 'inherit',
+                                transition: 'all 0.15s',
+                              }} title="Delete entry">
+                                ✕
+                              </button>
+                            </td>
+                          </tr>
+                        )
+                      })}
                     </tbody>
                   </table>
                 </div>
               )}
 
               {data.total_predictions === 0 && (
-                <div style={{ ...card, textAlign: 'center', color: '#334155', padding: 40 }}>
-                  <div style={{ fontSize: 32, marginBottom: 12 }}>🏏</div>
-                  No predictions logged yet.
+                <div className="card" style={{ textAlign: 'center', color: 'var(--text-muted)', padding: 48 }}>
+                  <div style={{ fontSize: 36, marginBottom: 12 }}>📊</div>
+                  <div style={{ fontWeight: 600 }}>No predictions logged yet</div>
                 </div>
               )}
             </>
           )}
 
-          {/* ── LOG RESULT TAB ───────────────────────────────────────────── */}
+          {/* ── LOG RESULT ────────────────────────────────────────────────── */}
           {tab === 'log' && (
-            <div style={card}>
-              <div style={sectionTitle}>Log a Match Result</div>
-              <p style={{ color: '#334155', fontSize: 12, marginBottom: 20 }}>
-                After each IPL 2026 match — log the result. The model's form stats update automatically so the next prediction uses current 2026 form.
+            <div className="card">
+              <div className="section-label">Log a Match Result</div>
+              <p style={{ color: 'var(--text-muted)', fontSize: 13, marginBottom: 22, lineHeight: 1.6 }}>
+                After each IPL 2026 match — log the result here. Team form stats update automatically so the next prediction uses current 2026 form.
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 14 }}>
                 <div>
                   <label style={labelStyle}>Match ID</label>
                   <input value={logForm.match_id} onChange={e => setL('match_id', e.target.value)} style={inputStyle} placeholder="e.g. RCB-SRH-Match1" />
@@ -310,7 +355,7 @@ export default function AccuracyDashboard() {
                   </select>
                 </div>
                 <div>
-                  <label style={labelStyle}>Our Predicted Win % (for calibration)</label>
+                  <label style={labelStyle}>Predicted Win % (for calibration)</label>
                   <input type="number" min="0" max="100" value={logForm.predicted_probability} onChange={e => setL('predicted_probability', e.target.value)} style={inputStyle} placeholder="e.g. 67" />
                 </div>
                 <div style={{ gridColumn: '1/-1' }}>
@@ -322,15 +367,12 @@ export default function AccuracyDashboard() {
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                <button onClick={logResult} style={{
-                  padding: '11px 28px',
-                  background: 'linear-gradient(90deg, #2563eb, #7c3aed)',
-                  color: '#fff', border: 'none', borderRadius: '8px',
-                  fontSize: '14px', fontWeight: 700, cursor: 'pointer',
-                }}>
+                <button onClick={logResult} className="btn-primary" style={{ width: 'auto', padding: '11px 28px' }}>
                   Log Result →
                 </button>
-                {logMsg && <span style={{ fontSize: 13, color: logMsg.startsWith('Error') ? '#fca5a5' : '#86efac' }}>{logMsg}</span>}
+                {logMsg && (
+                  <span style={{ fontSize: 13, color: logMsg.startsWith('Error') ? '#f87171' : '#4ade80', fontWeight: 500 }}>{logMsg}</span>
+                )}
               </div>
             </div>
           )}
