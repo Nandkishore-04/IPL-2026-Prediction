@@ -1,66 +1,98 @@
-# 🏏 IPL 2026 Prediction Engine
+# 🏏 IPL 2026 Engine: Prediction & Analytics
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776ab?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-19.2.4-20232a?style=for-the-badge&logo=react&logoColor=61dafb)](https://react.dev/)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.5.0-f7931e?style=for-the-badge&logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
 
-A professional-grade machine learning platform for IPL 2026, delivering pre-match win projections and live ball-by-ball win probabilities. The system integrates 18 years of historical data with real-time 2026 season form using advanced ensemble models and credit-efficient data pipelines.
+A full-stack predictive platform delivering pre-match winner forecasts and live ball-by-ball win probabilities for the IPL 2026 season. Built with a focus on system design, data calibration, and real-time inference.
+
+---
+
+## ⚡ Quick Demo
+
+The platform provides two primary interfaces:
+
+### 1. Pre-Match Predictor
+*   **Input**: Team A squad, Team B squad, Venue, and Toss details.
+*   **Output**: Calibrated win probability based on 42 historical and situational features.
+
+### 2. Live Match Tracker
+*   **Update Frequency**: Every ball (via smart polling).
+*   **Visualization**: Dynamic win-probability trends and situational momentum shifts.
+
+> [!TIP]
+> Use the **Accuracy Dashboard** to see the model's performance in real-time as the 2026 season progresses.
+
+---
+
+## 📈 Model Performance
+
+The pre-match model was trained on historical IPL data (2008–2023) and validated on the 2024–2025 seasons.
+
+| Metric | Value | Interpretation |
+| :--- | :--- | :--- |
+| **Accuracy** | 58.6% | Strong for high-variance sports forecasting |
+| **AUC** | 0.626 | Indicates solid discriminative power |
+| **Brier Score** | 0.238 | Measures the quality of probability forecasts |
+| **Calibration** | Isotonic | Ensures predicted 70% win rate matches reality |
+
+---
+
+## 🧠 Feature Engineering
+
+Rather than using raw cumulative totals, the engine focuses on **differential features** to eliminate team-order bias and capture relative strength:
+
+*   **`xi_exp_diff`**: The gap in match experience between the selected Playing XIs.
+*   **`form_wr_diff`**: Momentum difference calculated via **Exponential Moving Average (EMA)**.
+*   **`venue_wr_diff`**: Historical win-rate advantage specialized to the specific venue.
+*   **`ar_ratio_diff`**: Difference in "All-rounder density"—a key factor in T20 depth.
 
 ---
 
 ## 🏗 System Architecture
 
-The project is built with a decoupled architecture focusing on data integrity and real-time responsiveness:
+### Pre-Match Model
+*   **Algorithm**: Gradient Boosting Classifier (Scikit-Learn).
+*   **Training**: Recency-weighted training (2008–2025) favoring modern T20 dynamics.
+*   **Inference**: Processes 42 engineered features at runtime.
 
-### 1. The Machine Learning Core
-*   **Pre-Match Model**: A **Gradient Boosting Classifier** trained on 2008–2025 data. 
-    *   **Feature Engineering**: Implements **42 differential features** (venue bias, H2H, team momentum) to eliminate multi-collinearity.
-    *   **Recency Weighting**: Uses an exponential decay function to prioritize recent seasons (2023-2025) over older history.
-    *   **Calibration**: Wrapped in **Isotonic Regression** (`CalibratedClassifierCV`) to ensure that a 70% probability forecast translates to a 70% actual win rate.
-*   **Live Predictor**: A situational model (optimized via **XGBoost** / **Random Forest**) analyzing 18 real-time features like **RRR**, **Dot Ball %**, and **Partnership Momentum**.
+### Live Model
+*   **Algorithm**: XGBoost / Logistic Regression ensemble choice.
+*   **Context**: 18 real-time situational signals (RRR, Dot %, Wickets in hand).
+*   **Optimization**: Calibrated using isotonic regression for reliable betting/analysis metrics.
 
-### 2. Intelligent Data Pipeline (`LiveFeed.py`)
-*   **Credit-Efficient Polling**: Instead of 24/7 polling, the system uses "Match Window Awareness." It sleeps until scheduled match times (3:30/7:30 PM IST), reducing API consumption by **90%**.
-*   **Auto-Logging**: Automatically detects match endings, logs results to the `season_tracker`, and triggers a **Scorecard Backfill** to update 2026 player form.
-
-### 3. Adaptive Form Engine (`FeatureEngine.py`)
-*   **EMA Momentum**: Team form is calculated using an **Exponential Moving Average (α=0.3)**, allowing the model to adapt to 2026 season shifts faster than static averages.
-*   **60/40 Form Blending**: Player quality is a weighted blend of **Career Stats (40%)** and **Current 2026 Season Form (60%)**, ensuring the model recognizes "in-form" players instantly.
+### Data Infrastructure
+*   **Credit-Aware Polling**: Smart "match window" logic reduces API credit usage by **90%**.
+*   **Form Blending Engine**: Blends 2026 season-to-date form (60%) with career stats (40%) dynamically.
+*   **Auto-Logging**: background tasks handle scorecard logging and standings updates instantly upon match completion.
 
 ---
 
-## 📊 Technical Highlights
+## ⚙️ Design Decisions
 
-*   **Brier Score Monitoring**: Real-time accuracy evaluation using Brier scores (Standard for probability forecasting).
-*   **Washout Handling**: Robust logic to handle "No Result" or Abandoned games—splitting points (1pt) in standings while excluding them from model accuracy metrics.
-*   **Name Resolution**: Intelligent mapping between abbreviated player names (Cricsheet) and full names (CricAPI).
-*   **Differential Features**: Uses `form_wr_diff` and `xi_exp_diff` instead of raw stats to help the model learn the *relative* advantage between two teams.
-
----
-
-## 🚀 Deployment & Usage
-
-### Backend (FastAPI)
-The backend manages the polling loop and serves the ML models.
-```bash
-python -m uvicorn api.main:app --reload --port 8000
-```
-
-### Frontend (Vite + React)
-A dark-themed dashboard featuring real-time win probability charts and an accuracy calibration view.
-```bash
-cd frontend && npm run dev
-```
+*   **Decoupled Architecture**: Strictly separated ML, API, and UI layers for independent scalability.
+*   **Isotonic Calibration**: Prioritized probability reliability over raw accuracy to support strategic analysis.
+*   **Normalization**: Implemented custom name-matching and venue-normalization logic to handle inconsistent data sources.
+*   **State Management**: Real-time React dashboard with background polling for live match states.
 
 ---
 
-## 🛠 Tech Stack Summary
-*   **Backend**: Python, FastAPI, Pydantic, Joblib, Scikit-learn, XGBoost.
-*   **Frontend**: React 19, Vite, Recharts, Axios.
-*   **Data**: Pandas, NumPy (Vectorized feature engineering).
-*   **Integration**: CricAPI (Live Feeds), Cricsheet (Historical Data).
+## 🎯 Why This Matters
+
+This project demonstrates proficiency in the full data product lifecycle:
+1.  **Data Science**: Handling non-stationary data (team form) and ensuring model calibration.
+2.  **Engineering**: Building a production-ready API with background task orchestration.
+3.  **Product**: Creating a user-centric dashboard for complex statistical insights.
 
 ---
 
-*This project is a demonstration of Applied Machine Learning, Full-Stack Engineering, and Systems Design in a sports analytics context.*
+## 🔮 Future Improvements
+
+*   **Player-level Embeddings**: Moving from hand-crafted features to deep learning-based player vectors.
+*   **Match Simulation Engine**: Monte Carlo simulations for hypothetical squad compositions.
+*   **Cloud Streaming**: Migrating to a Kafka-based real-time match event pipeline.
+
+---
+
+
