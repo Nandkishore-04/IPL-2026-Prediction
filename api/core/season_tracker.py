@@ -71,32 +71,43 @@ def log_match(team_a: str, team_b: str, winner: str, match_date: str, venue: str
             "venue":     venue,
         })
 
-        # Update each team
-        for team in [team_a, team_b]:
-            won = (team == winner)
-            ts[team]["matches"] += 1
+    # Update each team
+    for team in [team_a, team_b]:
+        is_no_result = (winner.lower() in ["no result", "washout", "abandoned"])
+        won = (team == winner)
+        
+        ts[team]["matches"] += 1
+        
+        if is_no_result:
+            ts[team]["points"]  += 1
+            # Streak resets on washout
+            ts[team]["streak"] = 0
+            # Result for EMA: neutral 0.5
+            result = 0.5
+        else:
             ts[team]["wins"]    += 1 if won else 0
             ts[team]["losses"]  += 0 if won else 1
             ts[team]["points"]  += 2 if won else 0
-
-            # last5: keep only the 5 most recent results (1=win, 0=loss)
+            
+            # last5: 1=win, 0=loss (only for completed matches)
             ts[team]["last5"].append(1 if won else 0)
             ts[team]["last5"] = ts[team]["last5"][-5:]
-
-            # ema_form: exponential moving average — recent matches weighted more
-            result = 1.0 if won else 0.0
-            ts[team]["ema_form"] = round(
-                EMA_ALPHA * result + (1 - EMA_ALPHA) * ts[team].get("ema_form", 0.5),
-                4,
-            )
-
+            
             # streak: +N = N-win streak, -N = N-loss streak
             if won:
                 ts[team]["streak"] = max(ts[team]["streak"], 0) + 1
             else:
                 ts[team]["streak"] = min(ts[team]["streak"], 0) - 1
+            
+            result = 1.0 if won else 0.0
 
-        _write(data)
+        # ema_form: exponential moving average
+        ts[team]["ema_form"] = round(
+            EMA_ALPHA * result + (1 - EMA_ALPHA) * ts[team].get("ema_form", 0.5),
+            4,
+        )
+
+    _write(data)
 
     # Back-fill 'correct' flag on any matching prediction
     _evaluate_prediction(team_a, team_b, winner, match_date)

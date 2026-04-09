@@ -79,7 +79,7 @@ export default function App() {
 
         {/* Live badge */}
         <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 7, padding: '5px 12px', background: 'rgba(34,197,94,0.07)', border: '1px solid rgba(34,197,94,0.18)', borderRadius: 20 }}>
-          <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 7px #22c55e' }} />
+          <div className="pulse" />
           <span style={{ fontSize: 11, color: '#4ade80', fontWeight: 600, letterSpacing: '0.04em' }}>Model Live</span>
         </div>
       </nav>

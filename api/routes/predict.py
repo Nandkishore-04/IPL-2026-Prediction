@@ -64,36 +64,52 @@ def _confidence_label(prob: float) -> str:
     return "High"
 
 
-def _key_factors(features: dict, team_a: str, team_b: str) -> list:
-    """Generate top 3 plain-English reasons for the prediction."""
+def _key_factors(features: dict, team_a: str, team_b: str, predicted_winner: str) -> list:
+    """Generate top 3 plain-English reasons specifically supporting the prediction."""
     reasons = []
+    winner = predicted_winner
+    is_a = (winner == team_a)
+    
+    # 1. Squad Quality (The strongest signal)
+    if "xi_bat_sr_diff" in features:
+        val = features["xi_bat_sr_diff"] if is_a else -features["xi_bat_sr_diff"]
+        if val > 4.0:
+            reasons.append(f"{winner} has a significantly more explosive batting lineup")
+            
+    if "xi_exp_diff" in features:
+        val = features["xi_exp_diff"] if is_a else -features["xi_exp_diff"]
+        if val > 15:
+            reasons.append(f"{winner} has a much more experienced Playing XI in big-match situations")
 
-    if abs(features["overall_wr_diff"]) > 0.05:
-        favoured = team_a if features["overall_wr_diff"] > 0 else team_b
-        reasons.append(f"{favoured} has a stronger overall win record")
-
+    # 2. H2H & Venue
     h2h = features["ta_h2h_wr"]
-    if abs(h2h - 0.5) > 0.1:
-        favoured = team_a if h2h > 0.5 else team_b
-        reasons.append(f"{favoured} leads the head-to-head record")
+    if (is_a and h2h > 0.58) or (not is_a and h2h < 0.42):
+        reasons.append(f"{winner} has historically dominated this head-to-head matchup")
 
-    if features["ta_home"] == 1:
-        reasons.append(f"{team_a} is playing at their home ground")
-    elif features["tb_home"] == 1:
-        reasons.append(f"{team_b} is playing at their home ground")
+    if (is_a and features["ta_home"] == 1) or (not is_a and features["tb_home"] == 1):
+        reasons.append(f"{winner} is playing at their home ground with strong local support")
 
-    if features["toss_winner_is_ta"] == 1 and features["toss_decision_bat"] == 1:
+    # 3. Toss & Strategy
+    if features["toss_winner_is_ta"] == 1 and is_a and features["toss_decision_bat"] == 1:
         if features["venue_batfirst_wr"] > 0.52:
-            reasons.append(f"{team_a} won toss & chose to bat — venue favours batting first")
-    elif features["toss_winner_is_ta"] == 0 and features["toss_decision_bat"] == 0:
+            reasons.append(f"{winner} won toss & chose to bat on a surface favoring first-innings scores")
+    elif features["toss_winner_is_ta"] == 0 and not is_a and features["toss_decision_bat"] == 0:
         if features["venue_batfirst_wr"] < 0.48:
-            reasons.append(f"{team_b} won toss & chose to field — venue favours chasing")
+            reasons.append(f"{winner} won toss & chose to field, playing into the venue's chasing bias")
 
-    if abs(features["form_wr_diff"]) > 0.2:
-        favoured = team_a if features["form_wr_diff"] > 0 else team_b
-        reasons.append(f"{favoured} is in better recent form (last 5 matches)")
+    # 4. Momentum (EMA 2026 Form)
+    wr_diff = features["form_wr_diff"] if is_a else -features["form_wr_diff"]
+    if wr_diff > 0.15:
+        reasons.append(f"{winner} is in superior recent form (EMA momentum)")
 
-    return reasons[:4] if reasons else ["Closely matched teams — prediction is uncertain"]
+    # Fallback if no specific factors found
+    if not reasons:
+        if abs(features["overall_wr_diff"]) > 0.05:
+            favoured = team_a if features["overall_wr_diff"] > 0 else team_b
+            if favoured == winner:
+                reasons.append(f"{winner} has a stronger overall historical win record")
+        
+    return reasons[:3] if reasons else ["Stronger squad metrics and consistency metrics favour " + winner]
 
 
 @router.post("/predict-match", response_model=MatchPredictionResponse)
@@ -109,28 +125,52 @@ def predict_match(req: MatchPredictionRequest):
     if model is None:
         raise HTTPException(500, "Models not loaded")
 
-    # Build feature dict
-    feat_dict = fe.build_prematch_features(
-        team_a       = req.team_a,
-        team_b       = req.team_b,
-        venue        = req.venue,
-        toss_winner  = req.toss_winner,
-        toss_decision= req.toss_decision,
-        team_a_xi    = req.team_a_xi,
-        team_b_xi    = req.team_b_xi,
-    )
+    def _predict_with_toss(toss_winner, toss_decision) -> float:
+        feat = fe.build_prematch_features(
+            team_a        = req.team_a,
+            team_b        = req.team_b,
+            venue         = req.venue,
+            toss_winner   = toss_winner,
+            toss_decision = toss_decision,
+            team_a_xi     = req.team_a_xi,
+            team_b_xi     = req.team_b_xi,
+        )
+        X = np.array([[feat[c] for c in feature_cols]])
+        return float(model.predict_proba(X)[0][1])
 
-    # Build ordered numpy array — scaler is embedded in GB pipeline, pass raw X
-    X = np.array([[feat_dict[c] for c in feature_cols]])
+    toss_known = req.toss_winner and req.toss_decision
 
-    proba = model.predict_proba(X)[0]
-    ta_prob = float(proba[1])   # index 1 = team_a wins
+    if toss_known:
+        feat_dict = fe.build_prematch_features(
+            team_a        = req.team_a,
+            team_b        = req.team_b,
+            venue         = req.venue,
+            toss_winner   = req.toss_winner,
+            toss_decision = req.toss_decision,
+            team_a_xi     = req.team_a_xi,
+            team_b_xi     = req.team_b_xi,
+        )
+        X = np.array([[feat_dict[c] for c in feature_cols]])
+        ta_prob = float(model.predict_proba(X)[0][1])
+    else:
+        # Toss unknown — average over all 4 toss scenarios (toss has <0.5% feature importance)
+        scenarios = [
+            (req.team_a, "bat"), (req.team_a, "field"),
+            (req.team_b, "bat"), (req.team_b, "field"),
+        ]
+        ta_prob = float(np.mean([_predict_with_toss(tw, td) for tw, td in scenarios]))
+        # Use the neutral scenario for key_factors display
+        feat_dict = fe.build_prematch_features(
+            team_a=req.team_a, team_b=req.team_b, venue=req.venue,
+            toss_winner=req.team_a, toss_decision="bat",
+            team_a_xi=req.team_a_xi, team_b_xi=req.team_b_xi,
+        )
     tb_prob = 1.0 - ta_prob
 
     predicted_winner = req.team_a if ta_prob >= 0.5 else req.team_b
     winner_prob = ta_prob if ta_prob >= 0.5 else tb_prob   # always ≥ 50%
     confidence = _confidence_label(ta_prob)
-    factors = _key_factors(feat_dict, req.team_a, req.team_b)
+    factors = _key_factors(feat_dict, req.team_a, req.team_b, predicted_winner)
 
     _save_prediction(req, predicted_winner, winner_prob)
 

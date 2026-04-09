@@ -273,20 +273,31 @@ export default function AccuracyDashboard() {
                             <td style={{ padding: '11px 10px', color: 'var(--text)', fontWeight: 500 }}>
                               {hasResult ? r.actual_winner : '—'}
                             </td>
-                            <td style={{ padding: '11px 10px' }}>
-                              {!hasPrediction || !hasResult ? (
-                                <span style={{ color: 'var(--text-dim)', fontSize: 12 }}>—</span>
-                              ) : (
-                                <span style={{
-                                  padding: '3px 10px', borderRadius: 6, fontSize: 11, fontWeight: 700,
-                                  background: r.correct ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)',
-                                  color: r.correct ? '#4ade80' : '#f87171',
-                                  border: `1px solid ${r.correct ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}`,
-                                }}>
-                                  {r.correct ? '✓ Correct' : '✗ Wrong'}
-                                </span>
-                              )}
-                            </td>
+            <td style={{ padding: '11px 10px' }}>
+              {!hasPrediction || !hasResult ? (
+                <span style={{ color: 'var(--text-dim)', fontSize: 12 }}>—</span>
+              ) : (r.actual_winner && (r.actual_winner.toLowerCase().includes('no result') || r.actual_winner.toLowerCase().includes('washout'))) ? (
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 6,
+                  padding: '3px 10px', borderRadius: 4, fontSize: 11, fontWeight: 700,
+                  background: 'rgba(255,255,255,0.05)', color: 'var(--text-dim)',
+                  border: '1px solid rgba(255,255,255,0.1)', minWidth: 85, justifyContent: 'center'
+                }}>
+                   Washout
+                </span>
+              ) : (
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 6,
+                  padding: '3px 10px', borderRadius: 4, fontSize: 11, fontWeight: 700,
+                  background: r.correct ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)',
+                  color: r.correct ? '#4ade80' : '#f87171',
+                  border: `1px solid ${r.correct ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)'}`,
+                  minWidth: 85, justifyContent: 'center'
+                }}>
+                  {r.correct ? '✓ Correct' : '✘ Wrong'}
+                </span>
+              )}
+            </td>
                             <td style={{ padding: '11px 10px' }}>
                               <button onClick={async () => {
                                 await api.deletePrediction(r.match_id)
@@ -363,6 +374,7 @@ export default function AccuracyDashboard() {
                   <select value={logForm.actual_winner} onChange={e => setL('actual_winner', e.target.value)} style={inputStyle}>
                     <option value="">Select...</option>
                     {[logForm.team_a, logForm.team_b].filter(Boolean).map(t => <option key={t} value={t}>{t}</option>)}
+                    <option value="No Result">No Result / Washout</option>
                   </select>
                 </div>
               </div>

@@ -34,14 +34,15 @@ export default function PreMatchPredictor() {
   const setTeamB = (v) => { setForm(f => ({ ...f, team_b: v, toss_winner: '' })); setXiB([]) }
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
-  const canPredict = form.team_a && form.team_b && form.venue && form.toss_winner
+  const canPredict = form.team_a && form.team_b && form.venue
 
   const predict = async () => {
     setLoading(true); setError(''); setSaved(false)
     try {
       const r = await api.predictMatch({
         team_a: form.team_a, team_b: form.team_b, venue: form.venue,
-        toss_winner: form.toss_winner, toss_decision: form.toss_decision,
+        toss_winner: form.toss_winner || null,
+        toss_decision: form.toss_winner ? form.toss_decision : null,
         team_a_xi: xiA, team_b_xi: xiB,
         match_date: matchDate,
       })
@@ -54,7 +55,8 @@ export default function PreMatchPredictor() {
     try {
       await api.predictMatch({
         team_a: form.team_a, team_b: form.team_b, venue: form.venue,
-        toss_winner: form.toss_winner, toss_decision: form.toss_decision,
+        toss_winner: form.toss_winner || null,
+        toss_decision: form.toss_winner ? form.toss_decision : null,
         team_a_xi: xiA, team_b_xi: xiB,
         match_date: matchDate,
       })
@@ -93,12 +95,12 @@ export default function PreMatchPredictor() {
 
       {/* Toss */}
       <div className="card">
-        <div className="section-label">Toss</div>
+        <div className="section-label">Toss <span style={{fontSize:11, color:'var(--text-muted)', fontWeight:400}}>(optional)</span></div>
         <div className="grid-2">
           <div>
             <label className="label">Toss Winner</label>
             <select value={form.toss_winner} onChange={e => set('toss_winner', e.target.value)} className="input">
-              <option value="">Select...</option>
+              <option value="">Not announced yet</option>
               {[form.team_a, form.team_b].filter(Boolean).map(t => <option key={t} value={t}>{t}</option>)}
             </select>
           </div>

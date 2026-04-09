@@ -8,34 +8,61 @@ import os
 
 import api.core.feature_engine as fe
 
-_player_stats = None
+import sqlite3
+import os
+
+DB_PATH = "data/ipl_engine.db"
+
+# In-memory cache for frequently accessed players
+_player_cache = {}
 
 def load():
-    global _player_stats
-    path = os.path.join("api", "data", "player_stats.json")
-    with open(path) as f:
-        _player_stats = json.load(f)
-    print(f"[PlayerStats] Loaded stats for {len(_player_stats)} players")
+    """Initial check of the database."""
+    if not os.path.exists(DB_PATH):
+        print(f"⚠️ [PlayerStats] Database not found at {DB_PATH}")
+        return
+    print(f"[PlayerStats] Using SQLite Engine: {DB_PATH}")
 
 
 def get_player_stats(name: str) -> dict:
-    """Return stats dict for a player, or None if not found."""
-    if _player_stats is None:
-        return None
+    """Return stats dict for a player from the SQLite database."""
+    if name in _player_cache:
+        return _player_cache[name]
     
-    # Try abbreviation directly
-    stats = _player_stats.get(name)
-    if stats:
-        return stats
-        
-    # Try mapping full name back to abbreviation
-    abbr = fe._reverse_name_map.get(name, name)
-    return _player_stats.get(abbr)
+    # Try via full name mapping if needed
+    from api.core.feature_engine import _reverse_name_map
+    search_name = _reverse_name_map.get(name, name)
 
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        conn.row_factory = sqlite3.Row  # Returns dict-like objects
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM player_stats WHERE name = ?", (search_name,))
+        row = cursor.fetchone()
+        conn.close()
+
+        if row:
+            stats = dict(row)
+            _player_cache[name] = stats
+            return stats
+    except Exception as e:
+        print(f"❌ [PlayerStats] Error querying player {name}: {e}")
+    
+    return None
 
 
 def get_all() -> dict:
-    return _player_stats or {}
+    """Loads all stats into memory (for dashboard/bulk ops)."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM player_stats")
+        rows = cursor.fetchall()
+        conn.close()
+        return {r["name"]: dict(r) for r in rows}
+    except Exception:
+        return {}
 
 
 def aggregate_batting(xi: list) -> dict:

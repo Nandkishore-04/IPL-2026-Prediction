@@ -141,5 +141,40 @@
     "predicted_probability": 0.5938,
     "match_date": "2026-04-05",
     "logged_at": "2026-04-06T10:38:35.083824"
+  },
+  {
+    "match_id": "KOL-PUN-2026-04-06",
+    "team_a": "Kolkata Knight Riders",
+    "team_b": "Punjab Kings",
+    "predicted_winner": "Punjab Kings",
+    "actual_winner": "No Result",
+    "correct": false,
+    "predicted_probability": 0.6552,
+    "match_date": "2026-04-06",
+    "logged_at": "2026-04-07T06:15:29.000Z"
+  },
+  {
+    "match_id": "RAJ-MUM-2026-04-07",
+    "team_a": "Rajasthan Royals",
+    "team_b": "Mumbai Indians",
+    "actual_winner": "Rajasthan Royals",
+    "match_date": "2026-04-07",
+    "venue": "Barsapara Cricket Stadium, Guwahati",
+    "predicted_winner": "Mumbai Indians",
+    "predicted_probability": 0.7262,
+    "correct": false,
+    "source": "pre_match_predictor"
+  },
+  {
+    "match_id": "DEL-GUJ-2026-04-08",
+    "team_a": "Delhi Capitals",
+    "team_b": "Gujarat Titans",
+    "actual_winner": "Gujarat Titans",
+    "match_date": "2026-04-08",
+    "venue": "Arun Jaitley Stadium, Delhi",
+    "predicted_winner": "Gujarat Titans",
+    "predicted_probability": 0.7169,
+    "correct": true,
+    "source": "pre_match_predictor"
   }
 ]

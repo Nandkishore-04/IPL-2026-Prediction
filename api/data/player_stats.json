@@ -1,5 +1,5 @@
 {
-  "A Ashish Reddy": {
+  "Ashish Reddy": {
     "batting_runs": 280.0,
     "balls_faced": 193.0,
     "batting_sr": 145.08,
@@ -11,7 +11,7 @@
     "innings_bowled": 20.0,
     "ipl_caps": 28
   },
-  "A Badoni": {
+  "Ayush Badoni": {
     "batting_runs": 963.0,
     "balls_faced": 693.0,
     "batting_sr": 138.96,
@@ -23,7 +23,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 48
   },
-  "A Chandila": {
+  "Ajit Chandila": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -35,7 +35,7 @@
     "innings_bowled": 12.0,
     "ipl_caps": 12
   },
-  "A Chopra": {
+  "Aakash Chopra": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -47,7 +47,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "A Choudhary": {
+  "Aniket Choudhary": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -59,7 +59,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "A Dananjaya": {
+  "Akila Dananjaya": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -71,7 +71,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "A Flintoff": {
+  "Andrew Flintoff": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -83,7 +83,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "A Kamboj": {
+  "Anshul Kamboj": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -95,7 +95,7 @@
     "innings_bowled": 11.0,
     "ipl_caps": 11
   },
-  "A Kumble": {
+  "Anil Kumble": {
     "batting_runs": 35.0,
     "balls_faced": 47.0,
     "batting_sr": 74.47,
@@ -107,7 +107,7 @@
     "innings_bowled": 42.0,
     "ipl_caps": 42
   },
-  "A Manohar": {
+  "Abhinav Manohar": {
     "batting_runs": 292.0,
     "balls_faced": 235.0,
     "batting_sr": 124.26,
@@ -119,7 +119,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 20
   },
-  "A Mhatre": {
+  "Ayush Mhatre": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -131,7 +131,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "A Mishra": {
+  "Amit Mishra": {
     "batting_runs": 381.0,
     "balls_faced": 417.0,
     "batting_sr": 91.37,
@@ -143,7 +143,7 @@
     "innings_bowled": 162.0,
     "ipl_caps": 162
   },
-  "A Mithun": {
+  "Abhimanyu Mithun": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -155,7 +155,7 @@
     "innings_bowled": 16.0,
     "ipl_caps": 16
   },
-  "A Mukund": {
+  "Abhinav Mukund": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -167,7 +167,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "A Nehra": {
+  "Ashish Nehra": {
     "batting_runs": 41.0,
     "balls_faced": 60.0,
     "batting_sr": 68.33,
@@ -179,7 +179,7 @@
     "innings_bowled": 88.0,
     "ipl_caps": 88
   },
-  "A Nel": {
+  "Andre Nel": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -191,7 +191,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "A Nortje": {
+  "Anrich Nortje": {
     "batting_runs": 49.0,
     "balls_faced": 49.0,
     "batting_sr": 100.0,
@@ -203,7 +203,7 @@
     "innings_bowled": 48.0,
     "ipl_caps": 48
   },
-  "A Raghuvanshi": {
+  "Angkrish Raghuvanshi": {
     "batting_runs": 463.0,
     "balls_faced": 319.0,
     "batting_sr": 145.14,
@@ -215,19 +215,19 @@
     "innings_bowled": NaN,
     "ipl_caps": 18
   },
-  "A Singh": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": 28.0,
-    "bowling_econ": 7.86,
-    "bowling_sr": 16.89,
-    "innings_bowled": 23.0,
-    "ipl_caps": 23
+  "Arshdeep Singh": {
+    "batting_runs": 31.0,
+    "balls_faced": 46.0,
+    "batting_sr": 67.39,
+    "batting_avg": 5.17,
+    "innings_played": 13.0,
+    "wickets": 97.0,
+    "bowling_econ": 9.0,
+    "bowling_sr": 17.67,
+    "innings_bowled": 81.0,
+    "ipl_caps": 81
   },
-  "A Symonds": {
+  "Andrew Symonds": {
     "batting_runs": 974.0,
     "balls_faced": 745.0,
     "batting_sr": 130.74,
@@ -239,7 +239,7 @@
     "innings_bowled": 30.0,
     "ipl_caps": 36
   },
-  "A Tomar": {
+  "Abhijeet Tomar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -251,7 +251,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "A Uniyal": {
+  "Amit Uniyal": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -263,7 +263,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "A Zampa": {
+  "Adam Zampa": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -275,7 +275,7 @@
     "innings_bowled": 22.0,
     "ipl_caps": 22
   },
-  "AA Bilakhia": {
+  "Azhar Bilakhia": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -287,7 +287,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "AA Chavan": {
+  "Ankeet Chavan": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -299,7 +299,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 13
   },
-  "AA Jhunjhunwala": {
+  "Abhishek Jhunjhunwala": {
     "batting_runs": 217.0,
     "balls_faced": 209.0,
     "batting_sr": 103.83,
@@ -311,7 +311,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 18
   },
-  "AA Kazi": {
+  "Abrar Kazi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -323,7 +323,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "AA Kulkarni": {
+  "Arshin Kulkarni": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -335,7 +335,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "AA Noffke": {
+  "Ashley Noffke": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -347,7 +347,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "AB Agarkar": {
+  "Ajit Agarkar": {
     "batting_runs": 179.0,
     "balls_faced": 151.0,
     "batting_sr": 118.54,
@@ -359,7 +359,7 @@
     "innings_bowled": 42.0,
     "ipl_caps": 42
   },
-  "AB Barath": {
+  "Adrian Barath": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -371,7 +371,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "AB Dinda": {
+  "Ashok Dinda": {
     "batting_runs": 26.0,
     "balls_faced": 48.0,
     "batting_sr": 54.17,
@@ -383,7 +383,7 @@
     "innings_bowled": 75.0,
     "ipl_caps": 76
   },
-  "AB McDonald": {
+  "Andrew McDonald": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -395,7 +395,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 10
   },
-  "AB de Villiers": {
+  "Abraham Benjamin de Villiers": {
     "batting_runs": 5181.0,
     "balls_faced": 3400.0,
     "batting_sr": 152.38,
@@ -407,7 +407,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 170
   },
-  "AC Blizzard": {
+  "Aiden Blizzard": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -419,7 +419,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "AC Gilchrist": {
+  "Adam Gilchrist": {
     "batting_runs": 2069.0,
     "balls_faced": 1483.0,
     "batting_sr": 139.51,
@@ -431,7 +431,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 80
   },
-  "AC Thomas": {
+  "Alfonso Thomas": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -443,7 +443,7 @@
     "innings_bowled": 15.0,
     "ipl_caps": 15
   },
-  "AC Voges": {
+  "Adam Voges": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -455,7 +455,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "AD Hales": {
+  "Alex Hales": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -467,7 +467,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "AD Mascarenhas": {
+  "Dimitri Mascarenhas": {
     "batting_runs": 79.0,
     "balls_faced": 78.0,
     "batting_sr": 101.28,
@@ -479,7 +479,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 13
   },
-  "AD Mathews": {
+  "Angelo Mathews": {
     "batting_runs": 724.0,
     "balls_faced": 573.0,
     "batting_sr": 126.35,
@@ -491,7 +491,7 @@
     "innings_bowled": 44.0,
     "ipl_caps": 46
   },
-  "AD Nath": {
+  "Akshdeep Nath": {
     "batting_runs": 90.0,
     "balls_faced": 98.0,
     "batting_sr": 91.84,
@@ -503,7 +503,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 10
   },
-  "AD Russell": {
+  "Andre Russell": {
     "batting_runs": 2655.0,
     "balls_faced": 1508.0,
     "batting_sr": 176.06,
@@ -515,7 +515,7 @@
     "innings_bowled": 121.0,
     "ipl_caps": 134
   },
-  "AF Milne": {
+  "Adam Milne": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -527,7 +527,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 10
   },
-  "AG Murtaza": {
+  "Ali Murtaza": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -539,7 +539,7 @@
     "innings_bowled": 12.0,
     "ipl_caps": 12
   },
-  "AG Paunikar": {
+  "Amit Paunikar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -551,7 +551,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "AJ Finch": {
+  "Aaron Finch": {
     "batting_runs": 2092.0,
     "balls_faced": 1626.0,
     "batting_sr": 128.66,
@@ -563,7 +563,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 90
   },
-  "AJ Hosein": {
+  "Akeal Hosein": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -575,7 +575,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "AJ Turner": {
+  "Ashton Turner": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -587,7 +587,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "AJ Tye": {
+  "Andrew Tye": {
     "batting_runs": 91.0,
     "balls_faced": 75.0,
     "batting_sr": 121.33,
@@ -599,7 +599,7 @@
     "innings_bowled": 30.0,
     "ipl_caps": 30
   },
-  "AK Markram": {
+  "Aiden Markram": {
     "batting_runs": 1440.0,
     "balls_faced": 1062.0,
     "batting_sr": 135.59,
@@ -611,7 +611,7 @@
     "innings_bowled": 19.0,
     "ipl_caps": 56
   },
-  "AL Menaria": {
+  "Ashok Menaria": {
     "batting_runs": 401.0,
     "balls_faced": 354.0,
     "batting_sr": 113.28,
@@ -623,7 +623,7 @@
     "innings_bowled": 12.0,
     "ipl_caps": 25
   },
-  "AM Nayar": {
+  "Abhishek Nayar": {
     "batting_runs": 672.0,
     "balls_faced": 573.0,
     "batting_sr": 117.28,
@@ -635,7 +635,7 @@
     "innings_bowled": 19.0,
     "ipl_caps": 51
   },
-  "AM Rahane": {
+  "Ajinkya Rahane": {
     "batting_runs": 5032.0,
     "balls_faced": 4021.0,
     "batting_sr": 125.14,
@@ -647,7 +647,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 183
   },
-  "AM Salvi": {
+  "Aavishkar Salvi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -659,7 +659,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "AN Ahmed": {
+  "Abu Nechim": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -671,7 +671,7 @@
     "innings_bowled": 17.0,
     "ipl_caps": 17
   },
-  "AN Ghosh": {
+  "Arindam Ghosh": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -683,7 +683,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "AP Dole": {
+  "Aditya Dole": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -695,7 +695,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "AP Majumdar": {
+  "Anustup Majumdar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -707,7 +707,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "AP Tare": {
+  "Aditya Tare": {
     "batting_runs": 339.0,
     "balls_faced": 272.0,
     "batting_sr": 124.63,
@@ -719,7 +719,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 27
   },
-  "AR Bawne": {
+  "Ankit Bawne": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -731,7 +731,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "AR Patel": {
+  "Axar Patel": {
     "batting_runs": 1916.0,
     "balls_faced": 1425.0,
     "batting_sr": 134.46,
@@ -743,7 +743,7 @@
     "innings_bowled": 160.0,
     "ipl_caps": 163
   },
-  "AS Joseph": {
+  "Alzarri Joseph": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -755,7 +755,7 @@
     "innings_bowled": 22.0,
     "ipl_caps": 22
   },
-  "AS Rajpoot": {
+  "Ankit Rajpoot": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -767,7 +767,7 @@
     "innings_bowled": 29.0,
     "ipl_caps": 29
   },
-  "AS Raut": {
+  "Abhishek Raut": {
     "batting_runs": 194.0,
     "balls_faced": 167.0,
     "batting_sr": 116.17,
@@ -779,7 +779,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 17
   },
-  "AS Roy": {
+  "Anukul Roy": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -791,19 +791,19 @@
     "innings_bowled": 10.0,
     "ipl_caps": 11
   },
-  "AS Yadav": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
+  "Suryakumar Yadav": {
+    "batting_runs": 4311.0,
+    "balls_faced": 2889.0,
+    "batting_sr": 149.22,
+    "batting_avg": 35.05,
+    "innings_played": 151.0,
     "wickets": NaN,
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 6
+    "ipl_caps": 152
   },
-  "AT Carey": {
+  "Alex Carey": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -815,7 +815,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "AT Rayudu": {
+  "Ambati Rayudu": {
     "batting_runs": 4348.0,
     "balls_faced": 3391.0,
     "batting_sr": 128.22,
@@ -827,7 +827,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 185
   },
-  "AU Rashid": {
+  "Adil Rashid": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -839,7 +839,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "AUK Pathan": {
+  "Asad Pathan": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1091,18 +1091,6 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "Arshdeep Singh": {
-    "batting_runs": 31.0,
-    "balls_faced": 46.0,
-    "batting_sr": 67.39,
-    "batting_avg": 5.17,
-    "innings_played": 13.0,
-    "wickets": 97.0,
-    "bowling_econ": 9.0,
-    "bowling_sr": 17.67,
-    "innings_bowled": 81.0,
-    "ipl_caps": 81
-  },
   "Ashutosh Sharma": {
     "batting_runs": 393.0,
     "balls_faced": 236.0,
@@ -1175,7 +1163,7 @@
     "innings_bowled": 15.0,
     "ipl_caps": 15
   },
-  "B Akhil": {
+  "Balachandra Akhil": {
     "batting_runs": 76.0,
     "balls_faced": 55.0,
     "batting_sr": 138.18,
@@ -1187,7 +1175,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 15
   },
-  "B Chipli": {
+  "Bharat Chipli": {
     "batting_runs": 280.0,
     "balls_faced": 250.0,
     "batting_sr": 112.0,
@@ -1199,7 +1187,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 21
   },
-  "B Geeves": {
+  "Brett Geeves": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1211,7 +1199,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "B Indrajith": {
+  "Baba Indrajith": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1223,7 +1211,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "B Kumar": {
+  "Bhuvneshwar Kumar": {
     "batting_runs": 320.0,
     "balls_faced": 350.0,
     "batting_sr": 91.43,
@@ -1235,7 +1223,7 @@
     "innings_bowled": 190.0,
     "ipl_caps": 190
   },
-  "B Laughlin": {
+  "Ben Laughlin": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1247,7 +1235,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 9
   },
-  "B Lee": {
+  "Brett Lee": {
     "batting_runs": 124.0,
     "balls_faced": 96.0,
     "batting_sr": 129.17,
@@ -1259,7 +1247,7 @@
     "innings_bowled": 38.0,
     "ipl_caps": 38
   },
-  "B Sai Sudharsan": {
+  "Sai Sudharsan": {
     "batting_runs": 1793.0,
     "balls_faced": 1220.0,
     "batting_sr": 146.97,
@@ -1271,7 +1259,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 40
   },
-  "B Stanlake": {
+  "Billy Stanlake": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1283,7 +1271,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "B Sumanth": {
+  "Bodapati Sumanth": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1295,7 +1283,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "BA Bhatt": {
+  "Bhargav Bhatt": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1307,7 +1295,7 @@
     "innings_bowled": 15.0,
     "ipl_caps": 15
   },
-  "BA Stokes": {
+  "Ben Stokes": {
     "batting_runs": 935.0,
     "balls_faced": 695.0,
     "batting_sr": 134.53,
@@ -1319,19 +1307,19 @@
     "innings_bowled": 38.0,
     "ipl_caps": 45
   },
-  "BAW Mendis": {
+  "Ajantha Mendis": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
     "batting_avg": 20.0,
     "innings_played": NaN,
-    "wickets": 8.0,
-    "bowling_econ": 7.45,
-    "bowling_sr": 30.5,
-    "innings_bowled": 10.0,
-    "ipl_caps": 10
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 3
   },
-  "BB McCullum": {
+  "Brendon McCullum": {
     "batting_runs": 2882.0,
     "balls_faced": 2176.0,
     "batting_sr": 132.44,
@@ -1343,7 +1331,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 109
   },
-  "BB Samantray": {
+  "Biplab Samantray": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1355,7 +1343,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "BB Sran": {
+  "Barinder Sran": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1367,7 +1355,7 @@
     "innings_bowled": 24.0,
     "ipl_caps": 24
   },
-  "BCJ Cutting": {
+  "Ben Cutting": {
     "batting_runs": 238.0,
     "balls_faced": 141.0,
     "batting_sr": 168.79,
@@ -1379,7 +1367,7 @@
     "innings_bowled": 17.0,
     "ipl_caps": 21
   },
-  "BE Hendricks": {
+  "Beuran Hendricks": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1391,7 +1379,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "BJ Haddin": {
+  "Brad Haddin": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1403,7 +1391,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "BJ Hodge": {
+  "Brad Hodge": {
     "batting_runs": 1400.0,
     "balls_faced": 1112.0,
     "batting_sr": 125.9,
@@ -1415,7 +1403,7 @@
     "innings_bowled": 20.0,
     "ipl_caps": 63
   },
-  "BJ Rohrer": {
+  "Ben Rohrer": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1427,7 +1415,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "BKG Mendis": {
+  "Jeevan Mendis": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1439,7 +1427,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "BMAJ Mendis": {
+  "Ben Dunk": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1451,19 +1439,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "BR Dunk": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 3
-  },
-  "BR Sharath": {
+  "Bharath Sharath": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1475,7 +1451,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "BW Hilfenhaus": {
+  "Ben Hilfenhaus": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1511,7 +1487,7 @@
     "innings_bowled": 28.0,
     "ipl_caps": 29
   },
-  "C Bosch": {
+  "Corbin Bosch": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1523,7 +1499,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "C Ganapathy": {
+  "Chandrasekar Ganapathy": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1535,7 +1511,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "C Green": {
+  "Cameron Green": {
     "batting_runs": 707.0,
     "balls_faced": 457.0,
     "batting_sr": 154.7,
@@ -1547,7 +1523,7 @@
     "innings_bowled": 29.0,
     "ipl_caps": 29
   },
-  "C Madan": {
+  "Chandan Madan": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1559,7 +1535,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "C Munro": {
+  "Colin Munro": {
     "batting_runs": 177.0,
     "balls_faced": 141.0,
     "batting_sr": 125.53,
@@ -1571,7 +1547,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 12
   },
-  "C Nanda": {
+  "Chetanya Nanda": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1583,7 +1559,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "C Sakariya": {
+  "Chetan Sakariya": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1595,7 +1571,7 @@
     "innings_bowled": 20.0,
     "ipl_caps": 20
   },
-  "C de Grandhomme": {
+  "Colin de Grandhomme": {
     "batting_runs": 303.0,
     "balls_faced": 224.0,
     "batting_sr": 135.27,
@@ -1607,7 +1583,7 @@
     "innings_bowled": 19.0,
     "ipl_caps": 25
   },
-  "CA Ingram": {
+  "Colin Ingram": {
     "batting_runs": 205.0,
     "balls_faced": 179.0,
     "batting_sr": 114.53,
@@ -1619,7 +1595,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 15
   },
-  "CA Lynn": {
+  "Chris Lynn": {
     "batting_runs": 1329.0,
     "balls_faced": 941.0,
     "batting_sr": 141.23,
@@ -1631,7 +1607,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 42
   },
-  "CA Pujara": {
+  "Cheteshwar Pujara": {
     "batting_runs": 390.0,
     "balls_faced": 390.0,
     "batting_sr": 100.0,
@@ -1643,7 +1619,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 22
   },
-  "CH Gayle": {
+  "Chris Gayle": {
     "batting_runs": 4997.0,
     "balls_faced": 3331.0,
     "batting_sr": 150.02,
@@ -1655,7 +1631,7 @@
     "innings_bowled": 38.0,
     "ipl_caps": 141
   },
-  "CH Morris": {
+  "Chris Morris": {
     "batting_runs": 618.0,
     "balls_faced": 397.0,
     "batting_sr": 155.67,
@@ -1667,7 +1643,7 @@
     "innings_bowled": 81.0,
     "ipl_caps": 81
   },
-  "CJ Anderson": {
+  "Corey Anderson": {
     "batting_runs": 538.0,
     "balls_faced": 421.0,
     "batting_sr": 127.79,
@@ -1679,7 +1655,7 @@
     "innings_bowled": 22.0,
     "ipl_caps": 30
   },
-  "CJ Dala": {
+  "Junior Dala": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1691,7 +1667,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "CJ Ferguson": {
+  "Callum Ferguson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1703,7 +1679,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "CJ Green": {
+  "Chris Green": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1715,7 +1691,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "CJ Jordan": {
+  "Chris Jordan": {
     "batting_runs": 81.0,
     "balls_faced": 77.0,
     "batting_sr": 105.19,
@@ -1727,7 +1703,7 @@
     "innings_bowled": 34.0,
     "ipl_caps": 34
   },
-  "CJ McKay": {
+  "Clint McKay": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1739,7 +1715,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "CK Kapugedera": {
+  "Chamara Kapugedera": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1751,7 +1727,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "CK Langeveldt": {
+  "Charl Langeveldt": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1763,7 +1739,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "CL White": {
+  "Cameron White": {
     "batting_runs": 971.0,
     "balls_faced": 757.0,
     "batting_sr": 128.27,
@@ -1787,7 +1763,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 13
   },
-  "CR Brathwaite": {
+  "Carlos Brathwaite": {
     "batting_runs": 181.0,
     "balls_faced": 110.0,
     "batting_sr": 164.55,
@@ -1799,7 +1775,7 @@
     "innings_bowled": 16.0,
     "ipl_caps": 16
   },
-  "CR Woakes": {
+  "Chris Woakes": {
     "batting_runs": 78.0,
     "balls_faced": 77.0,
     "batting_sr": 101.3,
@@ -1811,7 +1787,7 @@
     "innings_bowled": 21.0,
     "ipl_caps": 21
   },
-  "CRD Fernando": {
+  "Dilhara Fernando": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1823,7 +1799,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 10
   },
-  "CV Varun": {
+  "Varun Chakaravarthy": {
     "batting_runs": 26.0,
     "balls_faced": 47.0,
     "batting_sr": 55.32,
@@ -1835,7 +1811,7 @@
     "innings_bowled": 83.0,
     "ipl_caps": 83
   },
-  "D Brevis": {
+  "Dewald Brevis": {
     "batting_runs": 455.0,
     "balls_faced": 297.0,
     "batting_sr": 153.2,
@@ -1847,7 +1823,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 16
   },
-  "D Ferreira": {
+  "Donovan Ferreira": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1859,7 +1835,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "D Jansen": {
+  "Duan Jansen": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1871,7 +1847,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "D Kalyankrishna": {
+  "Doddapaneni Kalyankrishna": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1883,7 +1859,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "D Padikkal": {
+  "Devdutt Padikkal": {
     "batting_runs": 1806.0,
     "balls_faced": 1425.0,
     "batting_sr": 126.74,
@@ -1895,7 +1871,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 74
   },
-  "D Pretorius": {
+  "Dwaine Pretorius": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1907,7 +1883,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "D Salunkhe": {
+  "Dinesh Salunkhe": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1919,7 +1895,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "D Wiese": {
+  "David Wiese": {
     "batting_runs": 148.0,
     "balls_faced": 100.0,
     "batting_sr": 148.0,
@@ -1931,7 +1907,7 @@
     "innings_bowled": 15.0,
     "ipl_caps": 18
   },
-  "D du Preez": {
+  "Dillon du Preez": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1943,7 +1919,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "DA Miller": {
+  "David Miller": {
     "batting_runs": 3077.0,
     "balls_faced": 2212.0,
     "batting_sr": 139.1,
@@ -1955,7 +1931,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 133
   },
-  "DA Warner": {
+  "David Warner": {
     "batting_runs": 6567.0,
     "balls_faced": 4680.0,
     "batting_sr": 140.32,
@@ -1967,7 +1943,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 184
   },
-  "DAJ Bracewell": {
+  "Doug Bracewell": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -1979,7 +1955,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "DB Das": {
+  "Debabrata Das": {
     "batting_runs": 304.0,
     "balls_faced": 260.0,
     "batting_sr": 116.92,
@@ -1991,7 +1967,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 22
   },
-  "DB Ravi Teja": {
+  "Dwaraka Ravi Teja": {
     "batting_runs": 375.0,
     "balls_faced": 315.0,
     "batting_sr": 119.05,
@@ -2003,7 +1979,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 25
   },
-  "DE Bollinger": {
+  "Doug Bollinger": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2015,7 +1991,7 @@
     "innings_bowled": 27.0,
     "ipl_caps": 27
   },
-  "DG Nalkande": {
+  "Darshan Nalkande": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2027,7 +2003,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "DH Yagnik": {
+  "Dishant Yagnik": {
     "batting_runs": 170.0,
     "balls_faced": 133.0,
     "batting_sr": 127.82,
@@ -2039,7 +2015,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 17
   },
-  "DJ Bravo": {
+  "Dwayne Bravo": {
     "batting_runs": 1560.0,
     "balls_faced": 1196.0,
     "batting_sr": 130.43,
@@ -2051,7 +2027,7 @@
     "innings_bowled": 158.0,
     "ipl_caps": 160
   },
-  "DJ Harris": {
+  "Daniel Harris": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2063,7 +2039,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "DJ Hooda": {
+  "Deepak Hooda": {
     "batting_runs": 1497.0,
     "balls_faced": 1167.0,
     "batting_sr": 128.28,
@@ -2075,7 +2051,7 @@
     "innings_bowled": 34.0,
     "ipl_caps": 107
   },
-  "DJ Hussey": {
+  "David Hussey": {
     "batting_runs": 1322.0,
     "balls_faced": 1070.0,
     "batting_sr": 123.55,
@@ -2087,7 +2063,7 @@
     "innings_bowled": 26.0,
     "ipl_caps": 61
   },
-  "DJ Jacobs": {
+  "Davy Jacobs": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2099,7 +2075,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "DJ Malan": {
+  "Dawid Malan": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2111,7 +2087,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "DJ Mitchell": {
+  "Daryl Mitchell": {
     "batting_runs": 351.0,
     "balls_faced": 267.0,
     "batting_sr": 131.46,
@@ -2123,7 +2099,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 15
   },
-  "DJ Muthuswami": {
+  "Domnic Muthuswami": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2135,7 +2111,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "DJ Thornely": {
+  "Dominic Thornely": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2147,7 +2123,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "DJ Willey": {
+  "David Willey": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2159,7 +2135,7 @@
     "innings_bowled": 11.0,
     "ipl_caps": 11
   },
-  "DJG Sammy": {
+  "Darren Sammy": {
     "batting_runs": 295.0,
     "balls_faced": 241.0,
     "batting_sr": 122.41,
@@ -2171,7 +2147,7 @@
     "innings_bowled": 19.0,
     "ipl_caps": 22
   },
-  "DJM Short": {
+  "D'Arcy Short": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2183,7 +2159,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "DL Chahar": {
+  "Deepak Chahar": {
     "batting_runs": 117.0,
     "balls_faced": 84.0,
     "batting_sr": 139.29,
@@ -2195,7 +2171,7 @@
     "innings_bowled": 95.0,
     "ipl_caps": 95
   },
-  "DL Vettori": {
+  "Daniel Vettori": {
     "batting_runs": 121.0,
     "balls_faced": 112.0,
     "batting_sr": 108.04,
@@ -2207,7 +2183,7 @@
     "innings_bowled": 34.0,
     "ipl_caps": 34
   },
-  "DM Bravo": {
+  "Darren Bravo": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2219,7 +2195,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "DNT Zoysa": {
+  "Nuwan Zoysa": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2231,7 +2207,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "DP Conway": {
+  "Devon Conway": {
     "batting_runs": 1080.0,
     "balls_faced": 770.0,
     "batting_sr": 140.26,
@@ -2243,7 +2219,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 28
   },
-  "DP Nannes": {
+  "Dirk Nannes": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2267,7 +2243,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 9
   },
-  "DPMD Jayawardene": {
+  "Mahela Jayawardene": {
     "batting_runs": 1808.0,
     "balls_faced": 1462.0,
     "batting_sr": 123.67,
@@ -2279,7 +2255,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 78
   },
-  "DR Martyn": {
+  "Damien Martyn": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2291,7 +2267,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "DR Sams": {
+  "Daniel Sams": {
     "batting_runs": 44.0,
     "balls_faced": 44.0,
     "batting_sr": 100.0,
@@ -2303,7 +2279,7 @@
     "innings_bowled": 16.0,
     "ipl_caps": 16
   },
-  "DR Shorey": {
+  "Dhruv Shorey": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2315,7 +2291,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "DR Smith": {
+  "Dwayne Smith": {
     "batting_runs": 2385.0,
     "balls_faced": 1755.0,
     "batting_sr": 135.9,
@@ -2327,7 +2303,7 @@
     "innings_bowled": 46.0,
     "ipl_caps": 91
   },
-  "DS Kulkarni": {
+  "Dhawal Kulkarni": {
     "batting_runs": 104.0,
     "balls_faced": 108.0,
     "batting_sr": 96.3,
@@ -2339,7 +2315,7 @@
     "innings_bowled": 92.0,
     "ipl_caps": 92
   },
-  "DS Lehmann": {
+  "Darren Lehmann": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2351,7 +2327,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "DS Rathi": {
+  "Dhiraj Rathi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2363,7 +2339,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 13
   },
-  "DT Christian": {
+  "Dan Christian": {
     "batting_runs": 460.0,
     "balls_faced": 394.0,
     "batting_sr": 116.75,
@@ -2375,7 +2351,7 @@
     "innings_bowled": 49.0,
     "ipl_caps": 49
   },
-  "DT Patil": {
+  "Datta Patil": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2387,7 +2363,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "DW Steyn": {
+  "Dale Steyn": {
     "batting_runs": 167.0,
     "balls_faced": 160.0,
     "batting_sr": 104.38,
@@ -2400,18 +2376,18 @@
     "ipl_caps": 95
   },
   "Dhruv Jurel": {
-    "batting_runs": 680.0,
-    "balls_faced": 442.0,
-    "batting_sr": 153.85,
+    "batting_runs": 682.0,
+    "balls_faced": 445.0,
+    "batting_sr": 153.26,
     "batting_avg": 30.91,
-    "innings_played": 35.0,
+    "innings_played": 36.0,
     "wickets": NaN,
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 35
+    "ipl_caps": 36
   },
-  "E Lewis": {
+  "Evin Lewis": {
     "batting_runs": 654.0,
     "balls_faced": 477.0,
     "batting_sr": 137.11,
@@ -2423,7 +2399,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 26
   },
-  "E Malinga": {
+  "Eshan Malinga": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2435,7 +2411,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "EJG Morgan": {
+  "Eoin Morgan": {
     "batting_runs": 1406.0,
     "balls_faced": 1147.0,
     "batting_sr": 122.58,
@@ -2447,7 +2423,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 74
   },
-  "ER Dwivedi": {
+  "Eklavya Dwivedi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2459,7 +2435,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "F Behardien": {
+  "Farhaan Behardien": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2471,7 +2447,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "F du Plessis": {
+  "Faf du Plessis": {
     "batting_runs": 4773.0,
     "balls_faced": 3506.0,
     "batting_sr": 136.14,
@@ -2483,7 +2459,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 147
   },
-  "FA Allen": {
+  "Fabian Allen": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2495,7 +2471,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "FH Edwards": {
+  "Fidel Edwards": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2507,7 +2483,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "FY Fazal": {
+  "Faiz Fazal": {
     "batting_runs": 183.0,
     "balls_faced": 172.0,
     "batting_sr": 106.4,
@@ -2531,7 +2507,7 @@
     "innings_bowled": 12.0,
     "ipl_caps": 12
   },
-  "G Coetzee": {
+  "Gerald Coetzee": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2543,7 +2519,7 @@
     "innings_bowled": 14.0,
     "ipl_caps": 14
   },
-  "G Gambhir": {
+  "Gautam Gambhir": {
     "batting_runs": 4217.0,
     "balls_faced": 3394.0,
     "batting_sr": 124.25,
@@ -2555,7 +2531,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 151
   },
-  "GB Hogg": {
+  "Brad Hogg": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2567,7 +2543,7 @@
     "innings_bowled": 21.0,
     "ipl_caps": 21
   },
-  "GC Smith": {
+  "Graeme Smith": {
     "batting_runs": 739.0,
     "balls_faced": 664.0,
     "batting_sr": 111.3,
@@ -2579,7 +2555,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 29
   },
-  "GC Viljoen": {
+  "Hardus Viljoen": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2591,7 +2567,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "GD McGrath": {
+  "Glenn McGrath": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2603,7 +2579,7 @@
     "innings_bowled": 14.0,
     "ipl_caps": 14
   },
-  "GD Phillips": {
+  "Glenn Phillips": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2615,7 +2591,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "GH Vihari": {
+  "Hanuma Vihari": {
     "batting_runs": 284.0,
     "balls_faced": 319.0,
     "batting_sr": 89.03,
@@ -2627,7 +2603,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 23
   },
-  "GHS Garton": {
+  "George Garton": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2639,7 +2615,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "GJ Bailey": {
+  "George Bailey": {
     "batting_runs": 663.0,
     "balls_faced": 541.0,
     "batting_sr": 122.55,
@@ -2651,7 +2627,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 36
   },
-  "GJ Maxwell": {
+  "Glenn Maxwell": {
     "batting_runs": 2820.0,
     "balls_faced": 1810.0,
     "batting_sr": 155.8,
@@ -2663,7 +2639,7 @@
     "innings_bowled": 85.0,
     "ipl_caps": 140
   },
-  "GR Napier": {
+  "Graham Napier": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2675,7 +2651,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "GS Sandhu": {
+  "Gurinder Sandhu": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2735,7 +2711,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "H Das": {
+  "Halhadar Das": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2747,7 +2723,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "H Klaasen": {
+  "Heinrich Klaasen": {
     "batting_runs": 1480.0,
     "balls_faced": 863.0,
     "batting_sr": 171.49,
@@ -2759,7 +2735,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 45
   },
-  "H Sharma": {
+  "Himanshu Sharma": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2771,7 +2747,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "HC Brook": {
+  "Harry Brook": {
     "batting_runs": 190.0,
     "balls_faced": 153.0,
     "batting_sr": 124.18,
@@ -2783,7 +2759,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 11
   },
-  "HE van der Dussen": {
+  "Rassie van der Dussen": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2795,7 +2771,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "HF Gurney": {
+  "Harry Gurney": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2807,7 +2783,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "HH Gibbs": {
+  "Herschelle Gibbs": {
     "batting_runs": 886.0,
     "balls_faced": 805.0,
     "batting_sr": 110.06,
@@ -2819,19 +2795,19 @@
     "innings_bowled": NaN,
     "ipl_caps": 36
   },
-  "HH Pandya": {
-    "batting_runs": 2758.0,
-    "balls_faced": 1866.0,
-    "batting_sr": 147.8,
+  "Hardik Pandya": {
+    "batting_runs": 2767.0,
+    "balls_faced": 1872.0,
+    "batting_sr": 147.81,
     "batting_avg": 27.86,
-    "innings_played": 140.0,
+    "innings_played": 141.0,
     "wickets": 78.0,
     "bowling_econ": 9.18,
     "bowling_sr": 20.87,
     "innings_bowled": 107.0,
-    "ipl_caps": 149
+    "ipl_caps": 150
   },
-  "HM Amla": {
+  "Hashim Amla": {
     "batting_runs": 577.0,
     "balls_faced": 406.0,
     "batting_sr": 142.12,
@@ -2843,7 +2819,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 16
   },
-  "HR Shokeen": {
+  "Hrithik Shokeen": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2855,7 +2831,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 13
   },
-  "HV Patel": {
+  "Harshal Patel": {
     "batting_runs": 270.0,
     "balls_faced": 229.0,
     "batting_sr": 117.9,
@@ -2939,7 +2915,7 @@
     "innings_bowled": 32.0,
     "ipl_caps": 32
   },
-  "I Malhotra": {
+  "Ishan Malhotra": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2951,7 +2927,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "I Sharma": {
+  "Ishant Sharma": {
     "batting_runs": 57.0,
     "balls_faced": 69.0,
     "batting_sr": 82.61,
@@ -2963,7 +2939,7 @@
     "innings_bowled": 117.0,
     "ipl_caps": 117
   },
-  "I Udana": {
+  "Isuru Udana": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2975,7 +2951,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 10
   },
-  "IC Pandey": {
+  "Ishwar Pandey": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2987,7 +2963,7 @@
     "innings_bowled": 24.0,
     "ipl_caps": 24
   },
-  "IC Porel": {
+  "Ishan Porel": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -2999,7 +2975,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "IK Pathan": {
+  "Irfan Pathan": {
     "batting_runs": 1150.0,
     "balls_faced": 947.0,
     "batting_sr": 121.44,
@@ -3011,7 +2987,7 @@
     "innings_bowled": 101.0,
     "ipl_caps": 102
   },
-  "IR Jaggi": {
+  "Ishank Jaggi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3023,7 +2999,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "IS Sodhi": {
+  "Ish Sodhi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3071,7 +3047,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 112
   },
-  "J Arunkumar": {
+  "Jagadeesh Arunkumar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3083,7 +3059,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "J Botha": {
+  "Johan Botha": {
     "batting_runs": 409.0,
     "balls_faced": 358.0,
     "batting_sr": 114.25,
@@ -3095,7 +3071,7 @@
     "innings_bowled": 34.0,
     "ipl_caps": 34
   },
-  "J Fraser-McGurk": {
+  "Jake Fraser-McGurk": {
     "batting_runs": 385.0,
     "balls_faced": 191.0,
     "batting_sr": 201.57,
@@ -3107,7 +3083,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 15
   },
-  "J Little": {
+  "Joshua Little": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3119,7 +3095,7 @@
     "innings_bowled": 11.0,
     "ipl_caps": 11
   },
-  "J Overton": {
+  "Jamie Overton": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3131,7 +3107,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "J Suchith": {
+  "Jagadeesha Suchith": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3143,7 +3119,7 @@
     "innings_bowled": 21.0,
     "ipl_caps": 21
   },
-  "J Syed Mohammad": {
+  "Jamaluddin Syed Mohammad": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3155,7 +3131,7 @@
     "innings_bowled": 11.0,
     "ipl_caps": 11
   },
-  "J Theron": {
+  "Juan Theron": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3167,7 +3143,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 10
   },
-  "J Yadav": {
+  "Jayant Yadav": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3179,7 +3155,7 @@
     "innings_bowled": 20.0,
     "ipl_caps": 20
   },
-  "JA Morkel": {
+  "Albie Morkel": {
     "batting_runs": 975.0,
     "balls_faced": 683.0,
     "batting_sr": 142.75,
@@ -3191,7 +3167,7 @@
     "innings_bowled": 87.0,
     "ipl_caps": 90
   },
-  "JA Richardson": {
+  "Jhye Richardson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3203,19 +3179,19 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "JC Archer": {
+  "Jofra Archer": {
     "batting_runs": 262.0,
     "balls_faced": 173.0,
     "batting_sr": 151.45,
     "batting_avg": 14.56,
     "innings_played": 30.0,
-    "wickets": 59.0,
+    "wickets": 60.0,
     "bowling_econ": 7.89,
     "bowling_sr": 20.64,
-    "innings_bowled": 52.0,
-    "ipl_caps": 52
+    "innings_bowled": 53.0,
+    "ipl_caps": 53
   },
-  "JC Buttler": {
+  "Jos Buttler": {
     "batting_runs": 4121.0,
     "balls_faced": 2749.0,
     "batting_sr": 149.91,
@@ -3227,7 +3203,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 119
   },
-  "JD Ryder": {
+  "Jesse Ryder": {
     "batting_runs": 604.0,
     "balls_faced": 455.0,
     "batting_sr": 132.75,
@@ -3239,7 +3215,7 @@
     "innings_bowled": 16.0,
     "ipl_caps": 29
   },
-  "JD Unadkat": {
+  "Jaydev Unadkat": {
     "batting_runs": 197.0,
     "balls_faced": 166.0,
     "batting_sr": 118.67,
@@ -3251,7 +3227,7 @@
     "innings_bowled": 111.0,
     "ipl_caps": 111
   },
-  "JDP Oram": {
+  "Jacob Oram": {
     "batting_runs": 106.0,
     "balls_faced": 107.0,
     "batting_sr": 99.07,
@@ -3263,7 +3239,7 @@
     "innings_bowled": 14.0,
     "ipl_caps": 15
   },
-  "JDS Neesham": {
+  "Jimmy Neesham": {
     "batting_runs": 92.0,
     "balls_faced": 93.0,
     "batting_sr": 98.92,
@@ -3275,7 +3251,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 14
   },
-  "JE Root": {
+  "Joe Root": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3287,7 +3263,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "JE Taylor": {
+  "Jerome Taylor": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3299,7 +3275,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "JEC Franklin": {
+  "James Franklin": {
     "batting_runs": 327.0,
     "balls_faced": 300.0,
     "batting_sr": 109.0,
@@ -3311,7 +3287,7 @@
     "innings_bowled": 15.0,
     "ipl_caps": 19
   },
-  "JG Bethell": {
+  "Jacob Bethell": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3323,7 +3299,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "JH Kallis": {
+  "Jacques Kallis": {
     "batting_runs": 2427.0,
     "balls_faced": 2213.0,
     "batting_sr": 109.67,
@@ -3335,7 +3311,7 @@
     "innings_bowled": 89.0,
     "ipl_caps": 98
   },
-  "JJ Bumrah": {
+  "Jasprit Bumrah": {
     "batting_runs": 68.0,
     "balls_faced": 78.0,
     "batting_sr": 87.18,
@@ -3347,7 +3323,7 @@
     "innings_bowled": 145.0,
     "ipl_caps": 145
   },
-  "JJ Roy": {
+  "Jason Roy": {
     "batting_runs": 614.0,
     "balls_faced": 441.0,
     "batting_sr": 139.23,
@@ -3359,7 +3335,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 21
   },
-  "JJ van der Wath": {
+  "Johan van der Wath": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3371,7 +3347,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "JL Denly": {
+  "Joe Denly": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3383,7 +3359,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "JL Pattinson": {
+  "James Pattinson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3395,7 +3371,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 10
   },
-  "JM Bairstow": {
+  "Jonny Bairstow": {
     "batting_runs": 1674.0,
     "balls_faced": 1142.0,
     "batting_sr": 146.58,
@@ -3407,7 +3383,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 52
   },
-  "JM Kemp": {
+  "Justin Kemp": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3419,7 +3395,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "JM Sharma": {
+  "Jitesh Sharma": {
     "batting_runs": 991.0,
     "balls_faced": 628.0,
     "batting_sr": 157.8,
@@ -3431,7 +3407,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 47
   },
-  "JO Holder": {
+  "Jason Holder": {
     "batting_runs": 259.0,
     "balls_faced": 209.0,
     "batting_sr": 123.92,
@@ -3443,7 +3419,7 @@
     "innings_bowled": 46.0,
     "ipl_caps": 46
   },
-  "JP Behrendorff": {
+  "Jason Behrendorff": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3455,7 +3431,7 @@
     "innings_bowled": 17.0,
     "ipl_caps": 17
   },
-  "JP Duminy": {
+  "Jean-Paul Duminy": {
     "batting_runs": 2029.0,
     "balls_faced": 1631.0,
     "batting_sr": 124.4,
@@ -3467,7 +3443,7 @@
     "innings_bowled": 49.0,
     "ipl_caps": 79
   },
-  "JP Faulkner": {
+  "James Faulkner": {
     "batting_runs": 527.0,
     "balls_faced": 385.0,
     "batting_sr": 136.88,
@@ -3479,7 +3455,7 @@
     "innings_bowled": 60.0,
     "ipl_caps": 60
   },
-  "JP Inglis": {
+  "Josh Inglis": {
     "batting_runs": 278.0,
     "balls_faced": 171.0,
     "batting_sr": 162.57,
@@ -3491,7 +3467,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 11
   },
-  "JPR Scantlebury-Searles": {
+  "Javon Searles": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3503,7 +3479,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "JR Hazlewood": {
+  "Josh Hazlewood": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3515,7 +3491,7 @@
     "innings_bowled": 39.0,
     "ipl_caps": 39
   },
-  "JR Hopes": {
+  "James Hopes": {
     "batting_runs": 417.0,
     "balls_faced": 305.0,
     "batting_sr": 136.72,
@@ -3527,7 +3503,7 @@
     "innings_bowled": 20.0,
     "ipl_caps": 20
   },
-  "JR Philippe": {
+  "Josh Philippe": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3539,7 +3515,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "JW Hastings": {
+  "John Hastings": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3587,7 +3563,7 @@
     "innings_bowled": 15.0,
     "ipl_caps": 16
   },
-  "K Goel": {
+  "Karan Goel": {
     "batting_runs": 218.0,
     "balls_faced": 231.0,
     "batting_sr": 94.37,
@@ -3599,7 +3575,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 16
   },
-  "K Gowtham": {
+  "Krishnappa Gowtham": {
     "batting_runs": 247.0,
     "balls_faced": 147.0,
     "batting_sr": 168.03,
@@ -3611,7 +3587,7 @@
     "innings_bowled": 35.0,
     "ipl_caps": 36
   },
-  "K Kartikeya": {
+  "Kumar Kartikeya": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3623,7 +3599,7 @@
     "innings_bowled": 16.0,
     "ipl_caps": 16
   },
-  "K Khejroliya": {
+  "Kulwant Khejroliya": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3635,7 +3611,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "K Rabada": {
+  "Kagiso Rabada": {
     "batting_runs": 215.0,
     "balls_faced": 200.0,
     "batting_sr": 107.5,
@@ -3647,7 +3623,7 @@
     "innings_bowled": 84.0,
     "ipl_caps": 84
   },
-  "K Santokie": {
+  "Krishmar Santokie": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3659,7 +3635,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "K Upadhyay": {
+  "Krishnakant Upadhyay": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3671,19 +3647,19 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "K Yadav": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 3
+  "Kuldeep Yadav": {
+    "batting_runs": 201.0,
+    "balls_faced": 232.0,
+    "batting_sr": 86.64,
+    "batting_avg": 15.46,
+    "innings_played": 37.0,
+    "wickets": 102.0,
+    "bowling_econ": 8.08,
+    "bowling_sr": 20.24,
+    "innings_bowled": 96.0,
+    "ipl_caps": 98
   },
-  "KA Jamieson": {
+  "Kyle Jamieson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3695,7 +3671,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 13
   },
-  "KA Maharaj": {
+  "Keshav Maharaj": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3707,7 +3683,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "KA Pollard": {
+  "Kieron Pollard": {
     "batting_runs": 3437.0,
     "balls_faced": 2315.0,
     "batting_sr": 148.47,
@@ -3719,7 +3695,7 @@
     "innings_bowled": 107.0,
     "ipl_caps": 179
   },
-  "KAJ Roach": {
+  "Kemar Roach": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3731,7 +3707,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "KB Arun Karthik": {
+  "Arun Karthik": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3743,7 +3719,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "KC Cariappa": {
+  "Karn Cariappa": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3755,7 +3731,7 @@
     "innings_bowled": 11.0,
     "ipl_caps": 11
   },
-  "KC Sangakkara": {
+  "Kumar Sangakkara": {
     "batting_runs": 1687.0,
     "balls_faced": 1385.0,
     "batting_sr": 121.81,
@@ -3767,7 +3743,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 68
   },
-  "KD Karthik": {
+  "Dinesh Karthik": {
     "batting_runs": 4843.0,
     "balls_faced": 3570.0,
     "batting_sr": 135.66,
@@ -3779,7 +3755,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 233
   },
-  "KH Pandya": {
+  "Krunal Pandya": {
     "batting_runs": 1756.0,
     "balls_faced": 1323.0,
     "batting_sr": 132.73,
@@ -3791,7 +3767,7 @@
     "innings_bowled": 132.0,
     "ipl_caps": 142
   },
-  "KJ Abbott": {
+  "Kyle Abbott": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3803,7 +3779,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "KK Ahmed": {
+  "Khaleel Ahmed": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3815,7 +3791,7 @@
     "innings_bowled": 71.0,
     "ipl_caps": 71
   },
-  "KK Cooper": {
+  "Kevon Cooper": {
     "batting_runs": 116.0,
     "balls_faced": 67.0,
     "batting_sr": 173.13,
@@ -3827,7 +3803,7 @@
     "innings_bowled": 25.0,
     "ipl_caps": 25
   },
-  "KK Nair": {
+  "Karun Nair": {
     "batting_runs": 1694.0,
     "balls_faced": 1283.0,
     "batting_sr": 132.03,
@@ -3839,7 +3815,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 76
   },
-  "KL Nagarkoti": {
+  "Kamlesh Nagarkoti": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3851,7 +3827,7 @@
     "innings_bowled": 11.0,
     "ipl_caps": 12
   },
-  "KL Rahul": {
+  "Kannur Lokesh Rahul": {
     "batting_runs": 5235.0,
     "balls_faced": 3836.0,
     "batting_sr": 136.47,
@@ -3875,7 +3851,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "KM Jadhav": {
+  "Kedar Jadhav": {
     "batting_runs": 1208.0,
     "balls_faced": 969.0,
     "batting_sr": 124.66,
@@ -3887,7 +3863,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 81
   },
-  "KMA Paul": {
+  "Keemo Paul": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3899,7 +3875,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "KMDN Kulasekara": {
+  "Nuwan Kulasekara": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3923,7 +3899,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 13
   },
-  "KP Pietersen": {
+  "Kevin Pietersen": {
     "batting_runs": 1001.0,
     "balls_faced": 742.0,
     "batting_sr": 134.91,
@@ -3935,7 +3911,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 36
   },
-  "KR Mayers": {
+  "Kyle Mayers": {
     "batting_runs": 379.0,
     "balls_faced": 258.0,
     "batting_sr": 146.9,
@@ -3947,7 +3923,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 13
   },
-  "KR Sen": {
+  "Kuldeep Sen": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3959,7 +3935,7 @@
     "innings_bowled": 12.0,
     "ipl_caps": 12
   },
-  "KS Bharat": {
+  "Srikar Bharat": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3971,7 +3947,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "KS Rathore": {
+  "Kunal Singh Rathore": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -3983,43 +3959,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "KS Sharma": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 3
-  },
-  "KS Williamson": {
-    "batting_runs": 2132.0,
-    "balls_faced": 1692.0,
-    "batting_sr": 126.0,
-    "batting_avg": 36.14,
-    "innings_played": 76.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 76
-  },
-  "KT Maphaka": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 4
-  },
-  "KV Sharma": {
+  "Karn Sharma": {
     "batting_runs": 352.0,
     "balls_faced": 295.0,
     "batting_sr": 119.32,
@@ -4031,7 +3971,31 @@
     "innings_bowled": 87.0,
     "ipl_caps": 88
   },
-  "KW Richardson": {
+  "Kane Williamson": {
+    "batting_runs": 2132.0,
+    "balls_faced": 1692.0,
+    "batting_sr": 126.0,
+    "batting_avg": 36.14,
+    "innings_played": 76.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 76
+  },
+  "Kwena Maphaka": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 4
+  },
+  "Kane Richardson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4103,18 +4067,6 @@
     "innings_bowled": 20.0,
     "ipl_caps": 20
   },
-  "Kuldeep Yadav": {
-    "batting_runs": 201.0,
-    "balls_faced": 232.0,
-    "batting_sr": 86.64,
-    "batting_avg": 15.46,
-    "innings_played": 37.0,
-    "wickets": 102.0,
-    "bowling_econ": 8.08,
-    "bowling_sr": 20.24,
-    "innings_bowled": 96.0,
-    "ipl_caps": 98
-  },
   "Kumar Kushagra": {
     "batting_runs": NaN,
     "balls_faced": NaN,
@@ -4127,7 +4079,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "L Ablish": {
+  "Love Ablish": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4139,7 +4091,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "L Balaji": {
+  "Lakshmipathy Balaji": {
     "batting_runs": 36.0,
     "balls_faced": 49.0,
     "batting_sr": 73.47,
@@ -4151,7 +4103,7 @@
     "innings_bowled": 73.0,
     "ipl_caps": 73
   },
-  "L Ngidi": {
+  "Lungi Ngidi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4163,7 +4115,7 @@
     "innings_bowled": 16.0,
     "ipl_caps": 16
   },
-  "L Ronchi": {
+  "Luke Ronchi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4175,7 +4127,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "L Wood": {
+  "Luke Wood": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4187,7 +4139,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "LA Carseldine": {
+  "Lee Carseldine": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4199,7 +4151,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "LA Pomersbach": {
+  "Luke Pomersbach": {
     "batting_runs": 302.0,
     "balls_faced": 243.0,
     "batting_sr": 124.28,
@@ -4211,7 +4163,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 16
   },
-  "LB Williams": {
+  "Lizaad Williams": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4223,7 +4175,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "LE Plunkett": {
+  "Liam Plunkett": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4235,7 +4187,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "LH Ferguson": {
+  "Lockie Ferguson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4247,7 +4199,7 @@
     "innings_bowled": 49.0,
     "ipl_caps": 49
   },
-  "LI Meriwala": {
+  "Lukman Meriwala": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4259,7 +4211,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "LJ Wright": {
+  "Luke Wright": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4271,7 +4223,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "LMP Simmons": {
+  "Lendl Simmons": {
     "batting_runs": 1079.0,
     "balls_faced": 848.0,
     "batting_sr": 127.24,
@@ -4283,7 +4235,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 29
   },
-  "LPC Silva": {
+  "Chamara Silva": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4295,7 +4247,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "LR Shukla": {
+  "Laxmi Ratan Shukla": {
     "batting_runs": 405.0,
     "balls_faced": 350.0,
     "batting_sr": 115.71,
@@ -4307,7 +4259,7 @@
     "innings_bowled": 27.0,
     "ipl_caps": 43
   },
-  "LRPL Taylor": {
+  "Ross Taylor": {
     "batting_runs": 1017.0,
     "balls_faced": 818.0,
     "batting_sr": 124.33,
@@ -4319,7 +4271,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 54
   },
-  "LS Livingstone": {
+  "Liam Livingstone": {
     "batting_runs": 1051.0,
     "balls_faced": 655.0,
     "batting_sr": 160.46,
@@ -4355,7 +4307,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "M Ashwin": {
+  "Murugan Ashwin": {
     "batting_runs": 35.0,
     "balls_faced": 50.0,
     "batting_sr": 70.0,
@@ -4367,7 +4319,7 @@
     "innings_bowled": 44.0,
     "ipl_caps": 44
   },
-  "M Jansen": {
+  "Marco Jansen": {
     "batting_runs": 141.0,
     "balls_faced": 129.0,
     "batting_sr": 109.3,
@@ -4379,7 +4331,7 @@
     "innings_bowled": 35.0,
     "ipl_caps": 35
   },
-  "M Kaif": {
+  "Mohammad Kaif": {
     "batting_runs": 259.0,
     "balls_faced": 249.0,
     "batting_sr": 104.02,
@@ -4391,7 +4343,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 22
   },
-  "M Kartik": {
+  "Murali Kartik": {
     "batting_runs": 113.0,
     "balls_faced": 107.0,
     "batting_sr": 105.61,
@@ -4403,7 +4355,7 @@
     "innings_bowled": 55.0,
     "ipl_caps": 55
   },
-  "M Klinger": {
+  "Michael Klinger": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4415,7 +4367,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "M Manhas": {
+  "Mithun Manhas": {
     "batting_runs": 514.0,
     "balls_faced": 470.0,
     "batting_sr": 109.36,
@@ -4427,7 +4379,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 38
   },
-  "M Markande": {
+  "Mayank Markande": {
     "batting_runs": 48.0,
     "balls_faced": 42.0,
     "batting_sr": 114.29,
@@ -4439,7 +4391,7 @@
     "innings_bowled": 37.0,
     "ipl_caps": 37
   },
-  "M Morkel": {
+  "Morne Morkel": {
     "batting_runs": 126.0,
     "balls_faced": 89.0,
     "batting_sr": 141.57,
@@ -4451,7 +4403,7 @@
     "innings_bowled": 70.0,
     "ipl_caps": 70
   },
-  "M Muralitharan": {
+  "Muttiah Muralitharan": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4463,7 +4415,7 @@
     "innings_bowled": 66.0,
     "ipl_caps": 66
   },
-  "M Ntini": {
+  "Makhaya Ntini": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4475,7 +4427,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 9
   },
-  "M Pathirana": {
+  "Matheesha Pathirana": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4487,7 +4439,7 @@
     "innings_bowled": 32.0,
     "ipl_caps": 32
   },
-  "M Prasidh Krishna": {
+  "Prasidh Krishna": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4499,7 +4451,7 @@
     "innings_bowled": 66.0,
     "ipl_caps": 66
   },
-  "M Rawat": {
+  "Mahesh Rawat": {
     "batting_runs": 55.0,
     "balls_faced": 69.0,
     "batting_sr": 79.71,
@@ -4511,7 +4463,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 11
   },
-  "M Shahrukh Khan": {
+  "Shahrukh Khan": {
     "batting_runs": 732.0,
     "balls_faced": 490.0,
     "batting_sr": 149.39,
@@ -4523,7 +4475,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 48
   },
-  "M Siddharth": {
+  "Manimaran Siddharth": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4535,7 +4487,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "M Theekshana": {
+  "Maheesh Theekshana": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4547,355 +4499,7 @@
     "innings_bowled": 38.0,
     "ipl_caps": 38
   },
-  "M Tiwari": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 2
-  },
-  "M Vijay": {
-    "batting_runs": 2619.0,
-    "balls_faced": 2147.0,
-    "batting_sr": 121.98,
-    "batting_avg": 27.0,
-    "innings_played": 105.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 105
-  },
-  "M Vohra": {
-    "batting_runs": 1083.0,
-    "balls_faced": 828.0,
-    "batting_sr": 130.8,
-    "batting_avg": 22.56,
-    "innings_played": 51.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 51
-  },
-  "M de Lange": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 5
-  },
-  "MA Agarwal": {
-    "batting_runs": 2764.0,
-    "balls_faced": 2053.0,
-    "batting_sr": 134.63,
-    "batting_avg": 23.23,
-    "innings_played": 125.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 125
-  },
-  "MA Khote": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 3
-  },
-  "MA Starc": {
-    "batting_runs": 111.0,
-    "balls_faced": 119.0,
-    "batting_sr": 93.28,
-    "batting_avg": 11.1,
-    "innings_played": 21.0,
-    "wickets": 65.0,
-    "bowling_econ": 8.67,
-    "bowling_sr": 16.37,
-    "innings_bowled": 50.0,
-    "ipl_caps": 51
-  },
-  "MA Wood": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 5
-  },
-  "MB Parmar": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 1
-  },
-  "MC Henriques": {
-    "batting_runs": 1000.0,
-    "balls_faced": 785.0,
-    "batting_sr": 127.39,
-    "batting_avg": 26.32,
-    "innings_played": 54.0,
-    "wickets": 42.0,
-    "bowling_econ": 8.14,
-    "bowling_sr": 22.62,
-    "innings_bowled": 60.0,
-    "ipl_caps": 62
-  },
-  "MC Juneja": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 7
-  },
-  "MD Mishra": {
-    "batting_runs": 237.0,
-    "balls_faced": 206.0,
-    "batting_sr": 115.05,
-    "batting_avg": 15.8,
-    "innings_played": 17.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 17
-  },
-  "MD Shanaka": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 3
-  },
-  "MDKJ Perera": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 2
-  },
-  "MEK Hussey": {
-    "batting_runs": 1977.0,
-    "balls_faced": 1610.0,
-    "batting_sr": 122.8,
-    "batting_avg": 38.02,
-    "innings_played": 58.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 58
-  },
-  "MF Maharoof": {
-    "batting_runs": 177.0,
-    "balls_faced": 123.0,
-    "batting_sr": 143.9,
-    "batting_avg": 17.7,
-    "innings_played": 14.0,
-    "wickets": 27.0,
-    "bowling_econ": 7.43,
-    "bowling_sr": 15.56,
-    "innings_bowled": 20.0,
-    "ipl_caps": 20
-  },
-  "MG Bracewell": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 5
-  },
-  "MG Johnson": {
-    "batting_runs": 167.0,
-    "balls_faced": 163.0,
-    "batting_sr": 102.45,
-    "batting_avg": 11.93,
-    "innings_played": 28.0,
-    "wickets": 62.0,
-    "bowling_econ": 8.3,
-    "bowling_sr": 19.92,
-    "innings_bowled": 54.0,
-    "ipl_caps": 54
-  },
-  "MG Neser": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 1
-  },
-  "MJ Clarke": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 6
-  },
-  "MJ Guptill": {
-    "batting_runs": 271.0,
-    "balls_faced": 196.0,
-    "batting_sr": 138.27,
-    "batting_avg": 22.58,
-    "innings_played": 13.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 13
-  },
-  "MJ Henry": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 6
-  },
-  "MJ Lumb": {
-    "batting_runs": 278.0,
-    "balls_faced": 191.0,
-    "batting_sr": 145.55,
-    "batting_avg": 27.8,
-    "innings_played": 12.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 12
-  },
-  "MJ McClenaghan": {
-    "batting_runs": 85.0,
-    "balls_faced": 69.0,
-    "batting_sr": 123.19,
-    "batting_avg": 7.73,
-    "innings_played": 20.0,
-    "wickets": 71.0,
-    "bowling_econ": 8.49,
-    "bowling_sr": 17.94,
-    "innings_bowled": 56.0,
-    "ipl_caps": 56
-  },
-  "MJ Owen": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 1
-  },
-  "MJ Santner": {
-    "batting_runs": 110.0,
-    "balls_faced": 103.0,
-    "batting_sr": 106.8,
-    "batting_avg": 13.75,
-    "innings_played": 19.0,
-    "wickets": 25.0,
-    "bowling_econ": 7.31,
-    "bowling_sr": 24.12,
-    "innings_bowled": 31.0,
-    "ipl_caps": 31
-  },
-  "MJ Suthar": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 1
-  },
-  "MK Lomror": {
-    "batting_runs": 527.0,
-    "balls_faced": 372.0,
-    "batting_sr": 141.67,
-    "batting_avg": 17.57,
-    "innings_played": 35.0,
-    "wickets": 1.0,
-    "bowling_econ": 8.47,
-    "bowling_sr": 90.0,
-    "innings_bowled": 11.0,
-    "ipl_caps": 37
-  },
-  "MK Pandey": {
-    "batting_runs": 3951.0,
-    "balls_faced": 3239.0,
-    "batting_sr": 121.98,
-    "batting_avg": 29.27,
-    "innings_played": 161.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 161
-  },
-  "MK Tiwary": {
+  "Manoj Tiwary": {
     "batting_runs": 1695.0,
     "balls_faced": 1444.0,
     "batting_sr": 117.38,
@@ -4907,67 +4511,31 @@
     "innings_bowled": NaN,
     "ipl_caps": 85
   },
-  "ML Hayden": {
-    "batting_runs": 1107.0,
-    "balls_faced": 799.0,
-    "batting_sr": 138.55,
-    "batting_avg": 39.54,
-    "innings_played": 32.0,
+  "Murali Vijay": {
+    "batting_runs": 2619.0,
+    "balls_faced": 2147.0,
+    "batting_sr": 121.98,
+    "batting_avg": 27.0,
+    "innings_played": 105.0,
     "wickets": NaN,
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 32
+    "ipl_caps": 105
   },
-  "MM Ali": {
-    "batting_runs": 1167.0,
-    "balls_faced": 831.0,
-    "batting_sr": 140.43,
-    "batting_avg": 22.88,
-    "innings_played": 59.0,
-    "wickets": 41.0,
-    "bowling_econ": 7.23,
-    "bowling_sr": 20.83,
-    "innings_bowled": 57.0,
-    "ipl_caps": 69
+  "Manan Vohra": {
+    "batting_runs": 1083.0,
+    "balls_faced": 828.0,
+    "batting_sr": 130.8,
+    "batting_avg": 22.56,
+    "innings_played": 51.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 51
   },
-  "MM Patel": {
-    "batting_runs": 39.0,
-    "balls_faced": 41.0,
-    "batting_sr": 95.12,
-    "batting_avg": 7.8,
-    "innings_played": 12.0,
-    "wickets": 74.0,
-    "bowling_econ": 7.52,
-    "bowling_sr": 18.31,
-    "innings_bowled": 63.0,
-    "ipl_caps": 63
-  },
-  "MM Sharma": {
-    "batting_runs": 125.0,
-    "balls_faced": 136.0,
-    "batting_sr": 91.91,
-    "batting_avg": 7.35,
-    "innings_played": 30.0,
-    "wickets": 134.0,
-    "bowling_econ": 8.77,
-    "bowling_sr": 17.93,
-    "innings_bowled": 119.0,
-    "ipl_caps": 120
-  },
-  "MN Samuels": {
-    "batting_runs": 161.0,
-    "balls_faced": 172.0,
-    "batting_sr": 93.6,
-    "batting_avg": 13.42,
-    "innings_played": 14.0,
-    "wickets": 9.0,
-    "bowling_econ": 7.96,
-    "bowling_sr": 23.78,
-    "innings_bowled": 11.0,
-    "ipl_caps": 15
-  },
-  "MN van Wyk": {
+  "Marchant de Lange": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4979,7 +4547,55 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "MP Breetzke": {
+  "Mayank Agarwal": {
+    "batting_runs": 2764.0,
+    "balls_faced": 2053.0,
+    "batting_sr": 134.63,
+    "batting_avg": 23.23,
+    "innings_played": 125.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 125
+  },
+  "Musavir Khote": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 3
+  },
+  "Mitchell Starc": {
+    "batting_runs": 111.0,
+    "balls_faced": 119.0,
+    "batting_sr": 93.28,
+    "batting_avg": 11.1,
+    "innings_played": 21.0,
+    "wickets": 65.0,
+    "bowling_econ": 8.67,
+    "bowling_sr": 16.37,
+    "innings_bowled": 50.0,
+    "ipl_caps": 51
+  },
+  "Mark Wood": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 5
+  },
+  "Mohnish Parmar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -4991,19 +4607,127 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "MP Stoinis": {
-    "batting_runs": 2026.0,
-    "balls_faced": 1392.0,
-    "batting_sr": 145.55,
-    "batting_avg": 27.75,
-    "innings_played": 99.0,
-    "wickets": 44.0,
-    "bowling_econ": 9.79,
-    "bowling_sr": 20.18,
-    "innings_bowled": 71.0,
-    "ipl_caps": 108
+  "Moises Henriques": {
+    "batting_runs": 1000.0,
+    "balls_faced": 785.0,
+    "batting_sr": 127.39,
+    "batting_avg": 26.32,
+    "innings_played": 54.0,
+    "wickets": 42.0,
+    "bowling_econ": 8.14,
+    "bowling_sr": 22.62,
+    "innings_bowled": 60.0,
+    "ipl_caps": 62
   },
-  "MP Yadav": {
+  "Manpreet Juneja": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 7
+  },
+  "Mohnish Mishra": {
+    "batting_runs": 237.0,
+    "balls_faced": 206.0,
+    "batting_sr": 115.05,
+    "batting_avg": 15.8,
+    "innings_played": 17.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 17
+  },
+  "Dasun Shanaka": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 3
+  },
+  "Kusal Perera": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 2
+  },
+  "Mike Hussey": {
+    "batting_runs": 1977.0,
+    "balls_faced": 1610.0,
+    "batting_sr": 122.8,
+    "batting_avg": 38.02,
+    "innings_played": 58.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 58
+  },
+  "Farveez Maharoof": {
+    "batting_runs": 177.0,
+    "balls_faced": 123.0,
+    "batting_sr": 143.9,
+    "batting_avg": 17.7,
+    "innings_played": 14.0,
+    "wickets": 27.0,
+    "bowling_econ": 7.43,
+    "bowling_sr": 15.56,
+    "innings_bowled": 20.0,
+    "ipl_caps": 20
+  },
+  "Michael Bracewell": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 5
+  },
+  "Mitchell Johnson": {
+    "batting_runs": 167.0,
+    "balls_faced": 163.0,
+    "batting_sr": 102.45,
+    "batting_avg": 11.93,
+    "innings_played": 28.0,
+    "wickets": 62.0,
+    "bowling_econ": 8.3,
+    "bowling_sr": 19.92,
+    "innings_bowled": 54.0,
+    "ipl_caps": 54
+  },
+  "Michael Neser": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 1
+  },
+  "Michael Clarke": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5015,19 +4739,55 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "MR Marsh": {
-    "batting_runs": 1292.0,
-    "balls_faced": 902.0,
-    "batting_sr": 143.24,
-    "batting_avg": 28.71,
-    "innings_played": 49.0,
-    "wickets": 37.0,
-    "bowling_econ": 8.52,
-    "bowling_sr": 15.14,
-    "innings_bowled": 34.0,
-    "ipl_caps": 55
+  "Martin Guptill": {
+    "batting_runs": 271.0,
+    "balls_faced": 196.0,
+    "batting_sr": 138.27,
+    "batting_avg": 22.58,
+    "innings_played": 13.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 13
   },
-  "MS Bhandage": {
+  "Matt Henry": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 6
+  },
+  "Michael Lumb": {
+    "batting_runs": 278.0,
+    "balls_faced": 191.0,
+    "batting_sr": 145.55,
+    "batting_avg": 27.8,
+    "innings_played": 12.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 12
+  },
+  "Mitchell McClenaghan": {
+    "batting_runs": 85.0,
+    "balls_faced": 69.0,
+    "batting_sr": 123.19,
+    "batting_avg": 7.73,
+    "innings_played": 20.0,
+    "wickets": 71.0,
+    "bowling_econ": 8.49,
+    "bowling_sr": 17.94,
+    "innings_bowled": 56.0,
+    "ipl_caps": 56
+  },
+  "Mitchell Owen": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5039,7 +4799,187 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "MS Bisla": {
+  "Mitchell Santner": {
+    "batting_runs": 110.0,
+    "balls_faced": 103.0,
+    "batting_sr": 106.8,
+    "batting_avg": 13.75,
+    "innings_played": 19.0,
+    "wickets": 25.0,
+    "bowling_econ": 7.31,
+    "bowling_sr": 24.12,
+    "innings_bowled": 31.0,
+    "ipl_caps": 31
+  },
+  "Manav Suthar": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 1
+  },
+  "Mahipal Lomror": {
+    "batting_runs": 527.0,
+    "balls_faced": 372.0,
+    "batting_sr": 141.67,
+    "batting_avg": 17.57,
+    "innings_played": 35.0,
+    "wickets": 1.0,
+    "bowling_econ": 8.47,
+    "bowling_sr": 90.0,
+    "innings_bowled": 11.0,
+    "ipl_caps": 37
+  },
+  "Manish Pandey": {
+    "batting_runs": 3951.0,
+    "balls_faced": 3239.0,
+    "batting_sr": 121.98,
+    "batting_avg": 29.27,
+    "innings_played": 161.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 161
+  },
+  "Matthew Hayden": {
+    "batting_runs": 1107.0,
+    "balls_faced": 799.0,
+    "batting_sr": 138.55,
+    "batting_avg": 39.54,
+    "innings_played": 32.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 32
+  },
+  "Moeen Ali": {
+    "batting_runs": 1167.0,
+    "balls_faced": 831.0,
+    "batting_sr": 140.43,
+    "batting_avg": 22.88,
+    "innings_played": 59.0,
+    "wickets": 41.0,
+    "bowling_econ": 7.23,
+    "bowling_sr": 20.83,
+    "innings_bowled": 57.0,
+    "ipl_caps": 69
+  },
+  "Munaf Patel": {
+    "batting_runs": 39.0,
+    "balls_faced": 41.0,
+    "batting_sr": 95.12,
+    "batting_avg": 7.8,
+    "innings_played": 12.0,
+    "wickets": 74.0,
+    "bowling_econ": 7.52,
+    "bowling_sr": 18.31,
+    "innings_bowled": 63.0,
+    "ipl_caps": 63
+  },
+  "Mohit Sharma": {
+    "batting_runs": 125.0,
+    "balls_faced": 136.0,
+    "batting_sr": 91.91,
+    "batting_avg": 7.35,
+    "innings_played": 30.0,
+    "wickets": 134.0,
+    "bowling_econ": 8.77,
+    "bowling_sr": 17.93,
+    "innings_bowled": 119.0,
+    "ipl_caps": 120
+  },
+  "Marlon Samuels": {
+    "batting_runs": 161.0,
+    "balls_faced": 172.0,
+    "batting_sr": 93.6,
+    "batting_avg": 13.42,
+    "innings_played": 14.0,
+    "wickets": 9.0,
+    "bowling_econ": 7.96,
+    "bowling_sr": 23.78,
+    "innings_bowled": 11.0,
+    "ipl_caps": 15
+  },
+  "Morne van Wyk": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 5
+  },
+  "Matthew Breetzke": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 1
+  },
+  "Marcus Stoinis": {
+    "batting_runs": 2026.0,
+    "balls_faced": 1392.0,
+    "batting_sr": 145.55,
+    "batting_avg": 27.75,
+    "innings_played": 99.0,
+    "wickets": 44.0,
+    "bowling_econ": 9.79,
+    "bowling_sr": 20.18,
+    "innings_bowled": 71.0,
+    "ipl_caps": 108
+  },
+  "Jai Prakash Yadav": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 6
+  },
+  "Mitchell Marsh": {
+    "batting_runs": 1292.0,
+    "balls_faced": 902.0,
+    "batting_sr": 143.24,
+    "batting_avg": 28.71,
+    "innings_played": 49.0,
+    "wickets": 37.0,
+    "bowling_econ": 8.52,
+    "bowling_sr": 15.14,
+    "innings_bowled": 34.0,
+    "ipl_caps": 55
+  },
+  "Manoj Bhandage": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 1
+  },
+  "Manvinder Bisla": {
     "batting_runs": 798.0,
     "balls_faced": 700.0,
     "batting_sr": 114.0,
@@ -5051,7 +4991,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 39
   },
-  "MS Dhoni": {
+  "Mahendra Singh Dhoni": {
     "batting_runs": 5439.0,
     "balls_faced": 3935.0,
     "batting_sr": 138.22,
@@ -5063,7 +5003,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 241
   },
-  "MS Gony": {
+  "Manpreet Gony": {
     "batting_runs": 99.0,
     "balls_faced": 70.0,
     "batting_sr": 141.43,
@@ -5075,7 +5015,7 @@
     "innings_bowled": 44.0,
     "ipl_caps": 44
   },
-  "MS Wade": {
+  "Matthew Wade": {
     "batting_runs": 183.0,
     "balls_faced": 177.0,
     "batting_sr": 103.39,
@@ -5087,7 +5027,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 14
   },
-  "MV Boucher": {
+  "Mark Boucher": {
     "batting_runs": 394.0,
     "balls_faced": 307.0,
     "batting_sr": 128.34,
@@ -5099,7 +5039,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 23
   },
-  "MW Short": {
+  "Matthew Short": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5327,151 +5267,7 @@
     "innings_bowled": 60.0,
     "ipl_caps": 60
   },
-  "N Burger": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 5
-  },
-  "N Jagadeesan": {
-    "batting_runs": 162.0,
-    "balls_faced": 147.0,
-    "batting_sr": 110.2,
-    "batting_avg": 18.0,
-    "innings_played": 10.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 10
-  },
-  "N Pooran": {
-    "batting_runs": 2293.0,
-    "balls_faced": 1355.0,
-    "batting_sr": 169.23,
-    "batting_avg": 34.22,
-    "innings_played": 86.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 86
-  },
-  "N Rana": {
-    "batting_runs": 2853.0,
-    "balls_faced": 2079.0,
-    "batting_sr": 137.23,
-    "batting_avg": 27.43,
-    "innings_played": 112.0,
-    "wickets": 10.0,
-    "bowling_econ": 8.44,
-    "bowling_sr": 19.2,
-    "innings_bowled": 26.0,
-    "ipl_caps": 114
-  },
-  "N Saini": {
-    "batting_runs": 140.0,
-    "balls_faced": 140.0,
-    "batting_sr": 100.0,
-    "batting_avg": 12.73,
-    "innings_played": 10.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 10
-  },
-  "N Thushara": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 8
-  },
-  "N Wadhera": {
-    "batting_runs": 719.0,
-    "balls_faced": 500.0,
-    "batting_sr": 143.8,
-    "batting_avg": 27.65,
-    "innings_played": 31.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 31
-  },
-  "NA Saini": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 1
-  },
-  "NB Singh": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 2
-  },
-  "ND Doshi": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 4
-  },
-  "NJ Maddinson": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 3
-  },
-  "NJ Rimmington": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 1
-  },
-  "NK Patel": {
+  "Nandre Burger": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5483,89 +5279,41 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "NL McCullum": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
+  "Narayan Jagadeesan": {
+    "batting_runs": 162.0,
+    "balls_faced": 147.0,
+    "batting_sr": 110.2,
+    "batting_avg": 18.0,
+    "innings_played": 10.0,
     "wickets": NaN,
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 2
+    "ipl_caps": 10
   },
-  "NLTC Perera": {
-    "batting_runs": 424.0,
-    "balls_faced": 306.0,
-    "batting_sr": 138.56,
-    "batting_avg": 17.67,
-    "innings_played": 30.0,
-    "wickets": 31.0,
-    "bowling_econ": 8.73,
-    "bowling_sr": 22.52,
-    "innings_bowled": 36.0,
-    "ipl_caps": 37
-  },
-  "NM Coulter-Nile": {
-    "batting_runs": 82.0,
-    "balls_faced": 72.0,
-    "batting_sr": 113.89,
-    "batting_avg": 8.2,
-    "innings_played": 16.0,
-    "wickets": 48.0,
-    "bowling_econ": 7.7,
-    "bowling_sr": 17.85,
-    "innings_bowled": 38.0,
-    "ipl_caps": 38
-  },
-  "NS Naik": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
+  "Nicholas Pooran": {
+    "batting_runs": 2293.0,
+    "balls_faced": 1355.0,
+    "batting_sr": 169.23,
+    "batting_avg": 34.22,
+    "innings_played": 86.0,
     "wickets": NaN,
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 4
+    "ipl_caps": 86
   },
-  "NT Ellis": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": 19.0,
-    "bowling_econ": 8.67,
-    "bowling_sr": 19.89,
-    "innings_bowled": 17.0,
-    "ipl_caps": 17
-  },
-  "NV Ojha": {
-    "batting_runs": 1554.0,
-    "balls_faced": 1308.0,
-    "batting_sr": 118.81,
-    "batting_avg": 21.0,
-    "innings_played": 94.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 94
-  },
-  "Naman Dhir": {
-    "batting_runs": 392.0,
-    "balls_faced": 216.0,
-    "batting_sr": 181.48,
-    "batting_avg": 28.0,
-    "innings_played": 19.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 19
+  "Nitish Rana": {
+    "batting_runs": 2853.0,
+    "balls_faced": 2079.0,
+    "batting_sr": 137.23,
+    "batting_avg": 27.43,
+    "innings_played": 112.0,
+    "wickets": 10.0,
+    "bowling_econ": 8.44,
+    "bowling_sr": 19.2,
+    "innings_bowled": 26.0,
+    "ipl_caps": 114
   },
   "Navdeep Saini": {
     "batting_runs": NaN,
@@ -5579,6 +5327,174 @@
     "innings_bowled": 31.0,
     "ipl_caps": 31
   },
+  "Nuwan Thushara": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 8
+  },
+  "Nehal Wadhera": {
+    "batting_runs": 719.0,
+    "balls_faced": 500.0,
+    "batting_sr": 143.8,
+    "batting_avg": 27.65,
+    "innings_played": 31.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 31
+  },
+  "Neeraj Barman Singh": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 2
+  },
+  "Nayan Doshi": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 4
+  },
+  "Nic Maddinson": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 3
+  },
+  "Nathan Rimmington": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 1
+  },
+  "Niraj Patel": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 6
+  },
+  "Nathan McCullum": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 2
+  },
+  "Thisara Perera": {
+    "batting_runs": 424.0,
+    "balls_faced": 306.0,
+    "batting_sr": 138.56,
+    "batting_avg": 17.67,
+    "innings_played": 30.0,
+    "wickets": 31.0,
+    "bowling_econ": 8.73,
+    "bowling_sr": 22.52,
+    "innings_bowled": 36.0,
+    "ipl_caps": 37
+  },
+  "Nathan Coulter-Nile": {
+    "batting_runs": 82.0,
+    "balls_faced": 72.0,
+    "batting_sr": 113.89,
+    "batting_avg": 8.2,
+    "innings_played": 16.0,
+    "wickets": 48.0,
+    "bowling_econ": 7.7,
+    "bowling_sr": 17.85,
+    "innings_bowled": 38.0,
+    "ipl_caps": 38
+  },
+  "Nikhil Naik": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 4
+  },
+  "Nathan Ellis": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": 19.0,
+    "bowling_econ": 8.67,
+    "bowling_sr": 19.89,
+    "innings_bowled": 17.0,
+    "ipl_caps": 17
+  },
+  "Naman Ojha": {
+    "batting_runs": 1554.0,
+    "balls_faced": 1308.0,
+    "batting_sr": 118.81,
+    "batting_avg": 21.0,
+    "innings_played": 94.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 94
+  },
+  "Naman Dhir": {
+    "batting_runs": 417.0,
+    "balls_faced": 229.0,
+    "batting_sr": 182.1,
+    "batting_avg": 28.0,
+    "innings_played": 20.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 20
+  },
   "Naveen-ul-Haq": {
     "batting_runs": NaN,
     "balls_faced": NaN,
@@ -5591,7 +5507,7 @@
     "innings_bowled": 17.0,
     "ipl_caps": 17
   },
-  "Nithish Kumar Reddy": {
+  "Nitish Kumar Reddy": {
     "batting_runs": 485.0,
     "balls_faced": 364.0,
     "batting_sr": 133.24,
@@ -5615,7 +5531,7 @@
     "innings_bowled": 37.0,
     "ipl_caps": 37
   },
-  "O Thomas": {
+  "Oshane Thomas": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5627,7 +5543,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "OA Shah": {
+  "Owais Shah": {
     "batting_runs": 506.0,
     "balls_faced": 388.0,
     "batting_sr": 130.41,
@@ -5639,7 +5555,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 22
   },
-  "OC McCoy": {
+  "Obed McCoy": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5651,7 +5567,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "OF Smith": {
+  "Odean Smith": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5663,7 +5579,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "P Amarnath": {
+  "Palani Amarnath": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5675,7 +5591,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "P Awana": {
+  "Parvinder Awana": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5687,7 +5603,7 @@
     "innings_bowled": 33.0,
     "ipl_caps": 33
   },
-  "P Chopra": {
+  "Prashant Chopra": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5699,7 +5615,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "P Dogra": {
+  "Paras Dogra": {
     "batting_runs": 127.0,
     "balls_faced": 138.0,
     "batting_sr": 92.03,
@@ -5711,7 +5627,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 12
   },
-  "P Dubey": {
+  "Pravin Dubey": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5723,7 +5639,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "P Kumar": {
+  "Praveen Kumar": {
     "batting_runs": 340.0,
     "balls_faced": 312.0,
     "batting_sr": 108.97,
@@ -5735,7 +5651,7 @@
     "innings_bowled": 119.0,
     "ipl_caps": 119
   },
-  "P Negi": {
+  "Pawan Negi": {
     "batting_runs": 365.0,
     "balls_faced": 288.0,
     "batting_sr": 126.74,
@@ -5747,7 +5663,7 @@
     "innings_bowled": 42.0,
     "ipl_caps": 46
   },
-  "P Parameswaran": {
+  "Prasanth Parameswaran": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5759,7 +5675,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "P Prasanth": {
+  "Padmanabhan Prasanth": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5771,7 +5687,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "P Ray Barman": {
+  "Prayas Ray Barman": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5783,7 +5699,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "P Sahu": {
+  "Pardeep Sahu": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5795,7 +5711,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "P Simran Singh": {
+  "Prabhsimran Singh": {
     "batting_runs": 1355.0,
     "balls_faced": 884.0,
     "batting_sr": 153.28,
@@ -5807,7 +5723,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 52
   },
-  "P Suyal": {
+  "Pawan Suyal": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5819,7 +5735,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "PA Patel": {
+  "Parthiv Patel": {
     "batting_runs": 2848.0,
     "balls_faced": 2350.0,
     "batting_sr": 121.19,
@@ -5831,7 +5747,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 136
   },
-  "PA Reddy": {
+  "Akshath Reddy": {
     "batting_runs": 164.0,
     "balls_faced": 160.0,
     "batting_sr": 102.5,
@@ -5843,7 +5759,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 10
   },
-  "PBB Rajapaksa": {
+  "Bhanuka Rajapaksa": {
     "batting_runs": 277.0,
     "balls_faced": 190.0,
     "batting_sr": 145.79,
@@ -5855,7 +5771,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 13
   },
-  "PC Valthaty": {
+  "Paul Valthaty": {
     "batting_runs": 505.0,
     "balls_faced": 414.0,
     "batting_sr": 121.98,
@@ -5867,7 +5783,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 23
   },
-  "PD Collingwood": {
+  "Paul Collingwood": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5879,7 +5795,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "PD Salt": {
+  "Phil Salt": {
     "batting_runs": 1056.0,
     "balls_faced": 595.0,
     "batting_sr": 177.48,
@@ -5891,7 +5807,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 34
   },
-  "PH Solanki": {
+  "Prashant Solanki": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5903,7 +5819,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "PHKD Mendis": {
+  "Kamindu Mendis": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5915,7 +5831,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "PJ Cummins": {
+  "Pat Cummins": {
     "batting_runs": 612.0,
     "balls_faced": 400.0,
     "batting_sr": 153.0,
@@ -5927,7 +5843,7 @@
     "innings_bowled": 72.0,
     "ipl_caps": 72
   },
-  "PJ Sangwan": {
+  "Pradeep Sangwan": {
     "batting_runs": 26.0,
     "balls_faced": 44.0,
     "batting_sr": 59.09,
@@ -5939,7 +5855,7 @@
     "innings_bowled": 42.0,
     "ipl_caps": 42
   },
-  "PK Garg": {
+  "Priyam Garg": {
     "batting_runs": 273.0,
     "balls_faced": 238.0,
     "batting_sr": 114.71,
@@ -5951,7 +5867,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 19
   },
-  "PM Sarvesh Kumar": {
+  "Sarvesh Kumar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5963,7 +5879,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "PN Mankad": {
+  "Prerak Mankad": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -5975,7 +5891,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "PP Chawla": {
+  "Piyush Chawla": {
     "batting_runs": 624.0,
     "balls_faced": 561.0,
     "batting_sr": 111.23,
@@ -5987,79 +5903,7 @@
     "innings_bowled": 191.0,
     "ipl_caps": 192
   },
-  "PP Ojha": {
-    "batting_runs": 16.0,
-    "balls_faced": 44.0,
-    "batting_sr": 36.36,
-    "batting_avg": 1.6,
-    "innings_played": 19.0,
-    "wickets": 89.0,
-    "bowling_econ": 7.37,
-    "bowling_sr": 21.34,
-    "innings_bowled": 90.0,
-    "ipl_caps": 90
-  },
-  "PP Shaw": {
-    "batting_runs": 1892.0,
-    "balls_faced": 1279.0,
-    "batting_sr": 147.93,
-    "batting_avg": 24.57,
-    "innings_played": 79.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 79
-  },
-  "PR Shah": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 9
-  },
-  "PSP Handscomb": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 1
-  },
-  "PV Tambe": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": 28.0,
-    "bowling_econ": 7.75,
-    "bowling_sr": 23.57,
-    "innings_bowled": 33.0,
-    "ipl_caps": 33
-  },
-  "PVD Chameera": {
-    "batting_runs": 53.0,
-    "balls_faced": 42.0,
-    "batting_sr": 126.19,
-    "batting_avg": 17.67,
-    "innings_played": 10.0,
-    "wickets": 13.0,
-    "bowling_econ": 9.84,
-    "bowling_sr": 29.54,
-    "innings_bowled": 19.0,
-    "ipl_caps": 19
-  },
-  "PVSN Raju": {
+  "Pragyan Ojha": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6071,7 +5915,31 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "PWA Mulder": {
+  "Prithvi Shaw": {
+    "batting_runs": 1892.0,
+    "balls_faced": 1279.0,
+    "batting_sr": 147.93,
+    "batting_avg": 24.57,
+    "innings_played": 79.0,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 79
+  },
+  "Pinal Shah": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 9
+  },
+  "Peter Handscomb": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6083,7 +5951,43 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "PWH de Silva": {
+  "Pravin Tambe": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": 28.0,
+    "bowling_econ": 7.75,
+    "bowling_sr": 23.57,
+    "innings_bowled": 33.0,
+    "ipl_caps": 33
+  },
+  "Dushmantha Chameera": {
+    "batting_runs": 53.0,
+    "balls_faced": 42.0,
+    "batting_sr": 126.19,
+    "batting_avg": 17.67,
+    "innings_played": 10.0,
+    "wickets": 13.0,
+    "bowling_econ": 9.84,
+    "bowling_sr": 29.54,
+    "innings_bowled": 19.0,
+    "ipl_caps": 19
+  },
+  "Wiaan Mulder": {
+    "batting_runs": NaN,
+    "balls_faced": NaN,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": NaN,
+    "wickets": NaN,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": NaN,
+    "ipl_caps": 1
+  },
+  "Wanindu Hasaranga": {
     "batting_runs": 81.0,
     "balls_faced": 88.0,
     "batting_sr": 92.05,
@@ -6143,7 +6047,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 18
   },
-  "Q de Kock": {
+  "Quinton de Kock": {
     "batting_runs": 3312.0,
     "balls_faced": 2465.0,
     "batting_sr": 134.36,
@@ -6155,7 +6059,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 115
   },
-  "R Ashwin": {
+  "Ravichandran Ashwin": {
     "batting_runs": 833.0,
     "balls_faced": 703.0,
     "batting_sr": 118.49,
@@ -6167,7 +6071,7 @@
     "innings_bowled": 217.0,
     "ipl_caps": 217
   },
-  "R Bhatia": {
+  "Rajat Bhatia": {
     "batting_runs": 342.0,
     "balls_faced": 284.0,
     "batting_sr": 120.42,
@@ -6179,19 +6083,19 @@
     "innings_bowled": 91.0,
     "ipl_caps": 94
   },
-  "R Bishnoi": {
-    "batting_runs": NaN,
-    "balls_faced": NaN,
-    "batting_sr": 120.0,
-    "batting_avg": 20.0,
-    "innings_played": NaN,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 3
+  "Ravi Bishnoi": {
+    "batting_runs": 45.0,
+    "balls_faced": 66.0,
+    "batting_sr": 68.18,
+    "batting_avg": 5.0,
+    "innings_played": 16.0,
+    "wickets": 74.0,
+    "bowling_econ": 8.22,
+    "bowling_sr": 22.68,
+    "innings_bowled": 77.0,
+    "ipl_caps": 77
   },
-  "R Dhawan": {
+  "Rishi Dhawan": {
     "batting_runs": 210.0,
     "balls_faced": 187.0,
     "batting_sr": 112.3,
@@ -6203,7 +6107,7 @@
     "innings_bowled": 36.0,
     "ipl_caps": 37
   },
-  "R Dravid": {
+  "Rahul Dravid": {
     "batting_runs": 2174.0,
     "balls_faced": 1878.0,
     "batting_sr": 115.76,
@@ -6215,7 +6119,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 82
   },
-  "R Goyal": {
+  "Raghav Goyal": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6227,7 +6131,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "R McLaren": {
+  "Ryan McLaren": {
     "batting_runs": 159.0,
     "balls_faced": 171.0,
     "batting_sr": 92.98,
@@ -6239,7 +6143,7 @@
     "innings_bowled": 18.0,
     "ipl_caps": 18
   },
-  "R Minz": {
+  "Robin Minz": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6251,7 +6155,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "R Ninan": {
+  "Ryan Ninan": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6263,19 +6167,19 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "R Parag": {
-    "batting_runs": 1570.0,
-    "balls_faced": 1101.0,
-    "batting_sr": 142.6,
+  "Riyan Parag": {
+    "batting_runs": 1590.0,
+    "balls_faced": 1111.0,
+    "batting_sr": 143.11,
     "batting_avg": 26.17,
-    "innings_played": 72.0,
+    "innings_played": 73.0,
     "wickets": 7.0,
     "bowling_econ": 9.7,
     "bowling_sr": 42.14,
     "innings_bowled": 30.0,
-    "ipl_caps": 75
+    "ipl_caps": 76
   },
-  "R Powell": {
+  "Rovman Powell": {
     "batting_runs": 365.0,
     "balls_faced": 249.0,
     "batting_sr": 146.59,
@@ -6287,7 +6191,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 23
   },
-  "R Rampaul": {
+  "Ravi Rampaul": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6299,7 +6203,7 @@
     "innings_bowled": 12.0,
     "ipl_caps": 12
   },
-  "R Ravindra": {
+  "Rachin Ravindra": {
     "batting_runs": 413.0,
     "balls_faced": 284.0,
     "batting_sr": 145.42,
@@ -6311,7 +6215,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 18
   },
-  "R Sai Kishore": {
+  "Ravisrinivasan Sai Kishore": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6323,7 +6227,7 @@
     "innings_bowled": 25.0,
     "ipl_caps": 25
   },
-  "R Sanjay Yadav": {
+  "Sanjay Yadav": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6335,7 +6239,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "R Sathish": {
+  "Rajagopal Sathish": {
     "batting_runs": 270.0,
     "balls_faced": 230.0,
     "batting_sr": 117.39,
@@ -6347,7 +6251,7 @@
     "innings_bowled": 14.0,
     "ipl_caps": 27
   },
-  "R Sharma": {
+  "Rahul Sharma": {
     "batting_runs": 66.0,
     "balls_faced": 75.0,
     "batting_sr": 88.0,
@@ -6359,7 +6263,7 @@
     "innings_bowled": 44.0,
     "ipl_caps": 44
   },
-  "R Shepherd": {
+  "Romario Shepherd": {
     "batting_runs": 185.0,
     "balls_faced": 85.0,
     "batting_sr": 217.65,
@@ -6371,7 +6275,7 @@
     "innings_bowled": 15.0,
     "ipl_caps": 17
   },
-  "R Shukla": {
+  "Rahul Shukla": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6383,7 +6287,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "R Tewatia": {
+  "Rahul Tewatia": {
     "batting_runs": 1112.0,
     "balls_faced": 807.0,
     "batting_sr": 137.79,
@@ -6395,7 +6299,7 @@
     "innings_bowled": 52.0,
     "ipl_caps": 90
   },
-  "R Vinay Kumar": {
+  "Vinay Kumar": {
     "batting_runs": 310.0,
     "balls_faced": 274.0,
     "batting_sr": 113.14,
@@ -6407,7 +6311,7 @@
     "innings_bowled": 104.0,
     "ipl_caps": 104
   },
-  "RA Bawa": {
+  "Raj Bawa": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6419,7 +6323,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "RA Jadeja": {
+  "Ravindra Jadeja": {
     "batting_runs": 3260.0,
     "balls_faced": 2489.0,
     "batting_sr": 130.98,
@@ -6431,7 +6335,7 @@
     "innings_bowled": 225.0,
     "ipl_caps": 246
   },
-  "RA Shaikh": {
+  "Rahil Shaikh": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6443,7 +6347,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "RA Tripathi": {
+  "Rahul Tripathi": {
     "batting_runs": 2291.0,
     "balls_faced": 1655.0,
     "batting_sr": 138.43,
@@ -6455,7 +6359,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 98
   },
-  "RD Chahar": {
+  "Rahul Chahar": {
     "batting_runs": 129.0,
     "balls_faced": 124.0,
     "batting_sr": 104.03,
@@ -6467,7 +6371,7 @@
     "innings_bowled": 78.0,
     "ipl_caps": 78
   },
-  "RD Gaikwad": {
+  "Ruturaj Gaikwad": {
     "batting_runs": 2502.0,
     "balls_faced": 1811.0,
     "batting_sr": 138.16,
@@ -6479,19 +6383,19 @@
     "innings_bowled": NaN,
     "ipl_caps": 70
   },
-  "RD Rickelton": {
-    "batting_runs": 388.0,
-    "balls_faced": 255.0,
-    "batting_sr": 152.16,
+  "Ryan Rickelton": {
+    "batting_runs": 396.0,
+    "balls_faced": 259.0,
+    "batting_sr": 152.9,
     "batting_avg": 29.85,
-    "innings_played": 14.0,
+    "innings_played": 15.0,
     "wickets": NaN,
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 14
+    "ipl_caps": 15
   },
-  "RE Levi": {
+  "Richard Levi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6503,7 +6407,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "RE van der Merwe": {
+  "Roelof van der Merwe": {
     "batting_runs": 159.0,
     "balls_faced": 141.0,
     "batting_sr": 112.77,
@@ -6515,7 +6419,7 @@
     "innings_bowled": 21.0,
     "ipl_caps": 21
   },
-  "RG More": {
+  "Ronit More": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6527,7 +6431,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "RG Sharma": {
+  "Rohit Sharma": {
     "batting_runs": 7048.0,
     "balls_faced": 5317.0,
     "batting_sr": 132.56,
@@ -6539,7 +6443,7 @@
     "innings_bowled": 32.0,
     "ipl_caps": 266
   },
-  "RJ Gleeson": {
+  "Richard Gleeson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6551,7 +6455,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "RJ Harris": {
+  "Ryan Harris": {
     "batting_runs": 117.0,
     "balls_faced": 111.0,
     "batting_sr": 105.41,
@@ -6563,7 +6467,7 @@
     "innings_bowled": 37.0,
     "ipl_caps": 37
   },
-  "RJ Peterson": {
+  "Robin Peterson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6575,7 +6479,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "RJ Quiney": {
+  "Rob Quiney": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6587,7 +6491,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "RJW Topley": {
+  "Reece Topley": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6599,7 +6503,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "RK Bhui": {
+  "Ricky Bhui": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6611,7 +6515,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "RK Singh": {
+  "Rinku Singh": {
     "batting_runs": 1099.0,
     "balls_faced": 750.0,
     "batting_sr": 146.53,
@@ -6623,7 +6527,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 51
   },
-  "RM Patidar": {
+  "Rajat Patidar": {
     "batting_runs": 1111.0,
     "balls_faced": 719.0,
     "batting_sr": 154.52,
@@ -6635,7 +6539,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 38
   },
-  "RN ten Doeschate": {
+  "Ryan ten Doeschate": {
     "batting_runs": 326.0,
     "balls_faced": 235.0,
     "batting_sr": 138.72,
@@ -6647,7 +6551,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 23
   },
-  "RP Meredith": {
+  "Riley Meredith": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6659,7 +6563,7 @@
     "innings_bowled": 18.0,
     "ipl_caps": 18
   },
-  "RP Singh": {
+  "Rudra Pratap Singh": {
     "batting_runs": 52.0,
     "balls_faced": 76.0,
     "batting_sr": 68.42,
@@ -6671,7 +6575,7 @@
     "innings_bowled": 82.0,
     "ipl_caps": 82
   },
-  "RR Bhatkal": {
+  "Raju Bhatkal": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6683,7 +6587,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "RR Bose": {
+  "Ranadeb Bose": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6695,7 +6599,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "RR Pant": {
+  "Rishabh Pant": {
     "batting_runs": 3566.0,
     "balls_faced": 2407.0,
     "batting_sr": 148.15,
@@ -6707,7 +6611,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 123
   },
-  "RR Powar": {
+  "Ramesh Powar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6719,7 +6623,7 @@
     "innings_bowled": 26.0,
     "ipl_caps": 26
   },
-  "RR Raje": {
+  "Rohan Raje": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6731,7 +6635,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 10
   },
-  "RR Rossouw": {
+  "Rilee Rossouw": {
     "batting_runs": 473.0,
     "balls_faced": 306.0,
     "batting_sr": 154.58,
@@ -6743,7 +6647,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 22
   },
-  "RR Sarwan": {
+  "Ramnaresh Sarwan": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6755,7 +6659,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "RS Bopara": {
+  "Ravi Bopara": {
     "batting_runs": 531.0,
     "balls_faced": 453.0,
     "batting_sr": 117.22,
@@ -6767,7 +6671,7 @@
     "innings_bowled": 14.0,
     "ipl_caps": 24
   },
-  "RS Gavaskar": {
+  "Rohan Gavaskar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6779,7 +6683,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "RS Hangargekar": {
+  "Rajvardhan Hangargekar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6791,7 +6695,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "RS Sodhi": {
+  "Reetinder Sodhi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6803,7 +6707,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "RT Ponting": {
+  "Ricky Ponting": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6815,7 +6719,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 9
   },
-  "RV Gomez": {
+  "Raiphi Gomez": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6827,7 +6731,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 13
   },
-  "RV Patel": {
+  "Rush Kalaria": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6839,7 +6743,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "RV Uthappa": {
+  "Robin Uthappa": {
     "batting_runs": 4954.0,
     "balls_faced": 3784.0,
     "batting_sr": 130.92,
@@ -6851,7 +6755,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 197
   },
-  "RW Price": {
+  "Raymond Price": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6911,19 +6815,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 13
   },
-  "Ravi Bishnoi": {
-    "batting_runs": 45.0,
-    "balls_faced": 66.0,
-    "batting_sr": 68.18,
-    "batting_avg": 5.0,
-    "innings_played": 16.0,
-    "wickets": 72.0,
-    "bowling_econ": 8.22,
-    "bowling_sr": 22.68,
-    "innings_bowled": 76.0,
-    "ipl_caps": 76
-  },
-  "S Anirudha": {
+  "Srikkanth Anirudha": {
     "batting_runs": 136.0,
     "balls_faced": 112.0,
     "batting_sr": 121.43,
@@ -6935,7 +6827,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 12
   },
-  "S Aravind": {
+  "Sreenath Aravind": {
     "batting_runs": 59.0,
     "balls_faced": 57.0,
     "batting_sr": 103.51,
@@ -6947,7 +6839,7 @@
     "innings_bowled": 38.0,
     "ipl_caps": 38
   },
-  "S Badree": {
+  "Samuel Badree": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6959,7 +6851,7 @@
     "innings_bowled": 12.0,
     "ipl_caps": 12
   },
-  "S Badrinath": {
+  "Subramaniam Badrinath": {
     "batting_runs": 1441.0,
     "balls_faced": 1208.0,
     "batting_sr": 119.29,
@@ -6971,7 +6863,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 65
   },
-  "S Chanderpaul": {
+  "Shivnarine Chanderpaul": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -6983,7 +6875,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "S Dhawan": {
+  "Shikhar Dhawan": {
     "batting_runs": 6769.0,
     "balls_faced": 5304.0,
     "batting_sr": 127.62,
@@ -6995,7 +6887,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 221
   },
-  "S Dube": {
+  "Shivam Dube": {
     "batting_runs": 1859.0,
     "balls_faced": 1290.0,
     "batting_sr": 144.11,
@@ -7007,7 +6899,7 @@
     "innings_bowled": 15.0,
     "ipl_caps": 76
   },
-  "S Gopal": {
+  "Shreyas Gopal": {
     "batting_runs": 180.0,
     "balls_faced": 169.0,
     "batting_sr": 106.51,
@@ -7019,7 +6911,7 @@
     "innings_bowled": 51.0,
     "ipl_caps": 51
   },
-  "S Joseph": {
+  "Shamar Joseph": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7031,7 +6923,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "S Kaul": {
+  "Siddarth Kaul": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7043,7 +6935,7 @@
     "innings_bowled": 55.0,
     "ipl_caps": 55
   },
-  "S Kaushik": {
+  "Shivil Kaushik": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7055,7 +6947,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 10
   },
-  "S Ladda": {
+  "Sarabjit Ladda": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7067,7 +6959,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 9
   },
-  "S Lamichhane": {
+  "Sandeep Lamichhane": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7079,7 +6971,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 9
   },
-  "S Midhun": {
+  "Sudhesan Midhun": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7091,7 +6983,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "S Nadeem": {
+  "Shahbaz Nadeem": {
     "batting_runs": 39.0,
     "balls_faced": 87.0,
     "batting_sr": 44.83,
@@ -7103,7 +6995,7 @@
     "innings_bowled": 70.0,
     "ipl_caps": 71
   },
-  "S Narwal": {
+  "Sumit Narwal": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7115,7 +7007,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 7
   },
-  "S Rana": {
+  "Sachin Rana": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7127,7 +7019,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "S Randiv": {
+  "Suraj Randiv": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7139,7 +7031,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "S Sandeep Warrier": {
+  "Sandeep Warrier": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7151,7 +7043,7 @@
     "innings_bowled": 10.0,
     "ipl_caps": 10
   },
-  "S Sohal": {
+  "Sunny Sohal": {
     "batting_runs": 368.0,
     "balls_faced": 289.0,
     "batting_sr": 127.34,
@@ -7163,7 +7055,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 20
   },
-  "S Sreesanth": {
+  "Shanthakumaran Sreesanth": {
     "batting_runs": 34.0,
     "balls_faced": 55.0,
     "batting_sr": 61.82,
@@ -7175,7 +7067,7 @@
     "innings_bowled": 44.0,
     "ipl_caps": 44
   },
-  "S Sriram": {
+  "Sridharan Sriram": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7187,7 +7079,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "S Tyagi": {
+  "Sudeep Tyagi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7199,7 +7091,7 @@
     "innings_bowled": 14.0,
     "ipl_caps": 14
   },
-  "S Vidyut": {
+  "Sivaramakrishnan Vidyut": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7211,7 +7103,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "SA Abbott": {
+  "Sean Abbott": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7223,7 +7115,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "SA Asnodkar": {
+  "Swapnil Asnodkar": {
     "batting_runs": 423.0,
     "balls_faced": 337.0,
     "batting_sr": 125.52,
@@ -7235,19 +7127,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 19
   },
-  "SA Yadav": {
-    "batting_runs": 4311.0,
-    "balls_faced": 2889.0,
-    "batting_sr": 149.22,
-    "batting_avg": 35.05,
-    "innings_played": 151.0,
-    "wickets": NaN,
-    "bowling_econ": 8.5,
-    "bowling_sr": 20.0,
-    "innings_bowled": NaN,
-    "ipl_caps": 152
-  },
-  "SB Bangar": {
+  "Sanjay Bangar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7259,7 +7139,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 10
   },
-  "SB Dubey": {
+  "Shivam Dubey": {
     "batting_runs": 139.0,
     "balls_faced": 84.0,
     "batting_sr": 165.48,
@@ -7271,7 +7151,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 11
   },
-  "SB Jakati": {
+  "Shadab Jakati": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7283,7 +7163,7 @@
     "innings_bowled": 57.0,
     "ipl_caps": 57
   },
-  "SB Joshi": {
+  "Sunil Joshi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7295,7 +7175,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "SB Styris": {
+  "Scott Styris": {
     "batting_runs": 131.0,
     "balls_faced": 132.0,
     "batting_sr": 99.24,
@@ -7307,7 +7187,7 @@
     "innings_bowled": 11.0,
     "ipl_caps": 12
   },
-  "SB Wagh": {
+  "Shrikant Wagh": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7319,7 +7199,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "SC Ganguly": {
+  "Sourav Ganguly": {
     "batting_runs": 1349.0,
     "balls_faced": 1257.0,
     "batting_sr": 107.32,
@@ -7331,7 +7211,7 @@
     "innings_bowled": 20.0,
     "ipl_caps": 57
   },
-  "SC Kuggeleijn": {
+  "Scott Kuggeleijn": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7343,7 +7223,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "SD Chitnis": {
+  "Siddharth Chitnis": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7355,7 +7235,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 9
   },
-  "SD Hope": {
+  "Shai Hope": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7367,7 +7247,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 9
   },
-  "SD Lad": {
+  "Siddhesh Lad": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7379,7 +7259,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "SE Bond": {
+  "Shane Bond": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7391,7 +7271,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "SE Marsh": {
+  "Shaun Marsh": {
     "batting_runs": 2489.0,
     "balls_faced": 1866.0,
     "batting_sr": 133.39,
@@ -7403,19 +7283,19 @@
     "innings_bowled": NaN,
     "ipl_caps": 69
   },
-  "SE Rutherford": {
-    "batting_runs": 397.0,
-    "balls_faced": 288.0,
-    "batting_sr": 137.85,
+  "Sherfane Rutherford": {
+    "batting_runs": 422.0,
+    "balls_faced": 296.0,
+    "batting_sr": 142.57,
     "batting_avg": 22.06,
-    "innings_played": 20.0,
+    "innings_played": 21.0,
     "wickets": NaN,
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 20
+    "ipl_caps": 21
   },
-  "SH Johnson": {
+  "Spencer Johnson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7427,7 +7307,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 9
   },
-  "SJ Srivastava": {
+  "Shalabh Srivastava": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7439,7 +7319,7 @@
     "innings_bowled": 14.0,
     "ipl_caps": 14
   },
-  "SK Raina": {
+  "Suresh Raina": {
     "batting_runs": 5536.0,
     "balls_faced": 4025.0,
     "batting_sr": 137.54,
@@ -7451,7 +7331,7 @@
     "innings_bowled": 69.0,
     "ipl_caps": 200
   },
-  "SK Rasheed": {
+  "Shaik Rasheed": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7463,7 +7343,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "SK Trivedi": {
+  "Siddharth Trivedi": {
     "batting_runs": 42.0,
     "balls_faced": 58.0,
     "batting_sr": 72.41,
@@ -7475,7 +7355,7 @@
     "innings_bowled": 75.0,
     "ipl_caps": 76
   },
-  "SK Warne": {
+  "Shane Warne": {
     "batting_runs": 198.0,
     "balls_faced": 213.0,
     "batting_sr": 92.96,
@@ -7487,7 +7367,7 @@
     "innings_bowled": 54.0,
     "ipl_caps": 55
   },
-  "SL Malinga": {
+  "Lasith Malinga": {
     "batting_runs": 88.0,
     "balls_faced": 99.0,
     "batting_sr": 88.89,
@@ -7499,7 +7379,7 @@
     "innings_bowled": 122.0,
     "ipl_caps": 122
   },
-  "SM Boland": {
+  "Scott Boland": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7511,7 +7391,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "SM Curran": {
+  "Sam Curran": {
     "batting_runs": 997.0,
     "balls_faced": 725.0,
     "batting_sr": 137.52,
@@ -7523,7 +7403,7 @@
     "innings_bowled": 63.0,
     "ipl_caps": 64
   },
-  "SM Harwood": {
+  "Shane Harwood": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7535,7 +7415,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "SM Katich": {
+  "Simon Katich": {
     "batting_runs": 241.0,
     "balls_faced": 185.0,
     "batting_sr": 130.27,
@@ -7547,7 +7427,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 11
   },
-  "SM Pollock": {
+  "Shaun Pollock": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7559,7 +7439,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 13
   },
-  "SMSM Senanayake": {
+  "Sachitra Senanayake": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7571,7 +7451,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "SN Khan": {
+  "Sarfaraz Khan": {
     "batting_runs": 585.0,
     "balls_faced": 444.0,
     "batting_sr": 131.76,
@@ -7583,31 +7463,31 @@
     "innings_bowled": NaN,
     "ipl_caps": 36
   },
-  "SN Thakur": {
+  "Shardul Thakur": {
     "batting_runs": 325.0,
     "balls_faced": 232.0,
     "batting_sr": 140.09,
     "batting_avg": 12.5,
     "innings_played": 40.0,
-    "wickets": 108.0,
+    "wickets": 109.0,
     "bowling_econ": 9.4,
     "bowling_sr": 19.17,
-    "innings_bowled": 102.0,
-    "ipl_caps": 103
+    "innings_bowled": 103.0,
+    "ipl_caps": 104
   },
-  "SO Hetmyer": {
-    "batting_runs": 1488.0,
-    "balls_faced": 975.0,
-    "batting_sr": 152.62,
+  "Shimron Hetmyer": {
+    "batting_runs": 1494.0,
+    "balls_faced": 982.0,
+    "batting_sr": 152.14,
     "batting_avg": 28.08,
-    "innings_played": 78.0,
+    "innings_played": 79.0,
     "wickets": NaN,
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 78
+    "ipl_caps": 79
   },
-  "SP Fleming": {
+  "Stephen Fleming": {
     "batting_runs": 196.0,
     "balls_faced": 162.0,
     "batting_sr": 120.99,
@@ -7619,7 +7499,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 10
   },
-  "SP Goswami": {
+  "Shreevats Goswami": {
     "batting_runs": 293.0,
     "balls_faced": 293.0,
     "batting_sr": 100.0,
@@ -7631,7 +7511,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 21
   },
-  "SP Jackson": {
+  "Sheldon Jackson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7643,7 +7523,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "SP Narine": {
+  "Sunil Narine": {
     "batting_runs": 1780.0,
     "balls_faced": 1067.0,
     "batting_sr": 166.82,
@@ -7655,7 +7535,7 @@
     "innings_bowled": 187.0,
     "ipl_caps": 188
   },
-  "SPD Smith": {
+  "Steve Smith": {
     "batting_runs": 2495.0,
     "balls_faced": 1931.0,
     "batting_sr": 129.21,
@@ -7667,7 +7547,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 93
   },
-  "SR Tendulkar": {
+  "Sachin Tendulkar": {
     "batting_runs": 2334.0,
     "balls_faced": 1941.0,
     "batting_sr": 120.25,
@@ -7679,7 +7559,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 78
   },
-  "SR Watson": {
+  "Shane Watson": {
     "batting_runs": 3880.0,
     "balls_faced": 2801.0,
     "batting_sr": 138.52,
@@ -7691,7 +7571,7 @@
     "innings_bowled": 105.0,
     "ipl_caps": 145
   },
-  "SS Agarwal": {
+  "Shubham Agarwal": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7703,7 +7583,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "SS Cottrell": {
+  "Sheldon Cottrell": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7715,7 +7595,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "SS Iyer": {
+  "Shreyas Iyer": {
     "batting_runs": 3735.0,
     "balls_faced": 2792.0,
     "batting_sr": 133.78,
@@ -7727,7 +7607,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 131
   },
-  "SS Mundhe": {
+  "Shrikant Mundhe": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7739,7 +7619,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "SS Prabhudessai": {
+  "Suyash S Prabhudessai": {
     "batting_runs": 126.0,
     "balls_faced": 105.0,
     "batting_sr": 120.0,
@@ -7751,7 +7631,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 10
   },
-  "SS Sarkar": {
+  "Souraw Sarkar": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7763,7 +7643,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "SS Shaikh": {
+  "Sabir Shaikh": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7775,7 +7655,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "SS Tiwary": {
+  "Saurabh Tiwary": {
     "batting_runs": 1494.0,
     "balls_faced": 1235.0,
     "batting_sr": 120.97,
@@ -7787,7 +7667,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 73
   },
-  "SSB Magala": {
+  "Sisanda Magala": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7799,7 +7679,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "ST Jayasuriya": {
+  "Sanath Jayasuriya": {
     "batting_runs": 768.0,
     "balls_faced": 529.0,
     "batting_sr": 145.18,
@@ -7811,7 +7691,7 @@
     "innings_bowled": 21.0,
     "ipl_caps": 30
   },
-  "STR Binny": {
+  "Stuart Binny": {
     "batting_runs": 880.0,
     "balls_faced": 682.0,
     "batting_sr": 129.03,
@@ -7823,7 +7703,7 @@
     "innings_bowled": 63.0,
     "ipl_caps": 86
   },
-  "SV Samson": {
+  "Sanju Samson": {
     "batting_runs": 4704.0,
     "balls_faced": 3368.0,
     "batting_sr": 139.67,
@@ -7835,7 +7715,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 171
   },
-  "SW Billings": {
+  "Sam Billings": {
     "batting_runs": 503.0,
     "balls_faced": 385.0,
     "batting_sr": 130.65,
@@ -7847,7 +7727,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 27
   },
-  "SW Tait": {
+  "Shaun Tait": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7859,7 +7739,7 @@
     "innings_bowled": 21.0,
     "ipl_caps": 21
   },
-  "SZ Mulani": {
+  "Shams Mulani": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -7913,11 +7793,11 @@
     "batting_sr": 81.08,
     "batting_avg": 12.0,
     "innings_played": 26.0,
-    "wickets": 146.0,
+    "wickets": 148.0,
     "bowling_econ": 8.05,
     "bowling_sr": 20.86,
-    "innings_bowled": 136.0,
-    "ipl_caps": 136
+    "innings_bowled": 137.0,
+    "ipl_caps": 137
   },
   "Sanvir Singh": {
     "batting_runs": NaN,
@@ -8195,7 +8075,7 @@
     "innings_bowled": 14.0,
     "ipl_caps": 14
   },
-  "T Banton": {
+  "Tom Banton": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8207,7 +8087,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "T Henderson": {
+  "Tyron Henderson": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8219,7 +8099,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "T Kohler-Cadmore": {
+  "Tom Kohler-Cadmore": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8231,7 +8111,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "T Kohli": {
+  "Taruwar Kohli": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8243,7 +8123,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "T Natarajan": {
+  "Thangarasu Natarajan": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8255,7 +8135,7 @@
     "innings_bowled": 63.0,
     "ipl_caps": 63
   },
-  "T Shamsi": {
+  "Tabraiz Shamsi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8267,7 +8147,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "T Stubbs": {
+  "Tristan Stubbs": {
     "batting_runs": 711.0,
     "balls_faced": 431.0,
     "batting_sr": 164.97,
@@ -8279,7 +8159,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 31
   },
-  "T Taibu": {
+  "Tatenda Taibu": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8291,7 +8171,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "T Thushara": {
+  "Thilan Thushara": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8303,7 +8183,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "TA Boult": {
+  "Trent Boult": {
     "batting_runs": 85.0,
     "balls_faced": 81.0,
     "batting_sr": 104.94,
@@ -8315,7 +8195,7 @@
     "innings_bowled": 119.0,
     "ipl_caps": 119
   },
-  "TD Paine": {
+  "Tim Paine": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8327,7 +8207,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "TG Southee": {
+  "Tim Southee": {
     "batting_runs": 120.0,
     "balls_faced": 106.0,
     "batting_sr": 113.21,
@@ -8339,7 +8219,7 @@
     "innings_bowled": 54.0,
     "ipl_caps": 54
   },
-  "TH David": {
+  "Tim David": {
     "batting_runs": 846.0,
     "balls_faced": 483.0,
     "batting_sr": 175.16,
@@ -8351,7 +8231,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 44
   },
-  "TK Curran": {
+  "Tom Curran": {
     "batting_runs": 127.0,
     "balls_faced": 107.0,
     "batting_sr": 118.69,
@@ -8363,7 +8243,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 13
   },
-  "TL Seifert": {
+  "Tim Seifert": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8375,7 +8255,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "TL Suman": {
+  "Tirumalasetti Suman": {
     "batting_runs": 676.0,
     "balls_faced": 573.0,
     "batting_sr": 117.98,
@@ -8387,7 +8267,7 @@
     "innings_bowled": 11.0,
     "ipl_caps": 40
   },
-  "TM Dilshan": {
+  "Tillakaratne Dilshan": {
     "batting_runs": 1153.0,
     "balls_faced": 1001.0,
     "batting_sr": 115.18,
@@ -8399,7 +8279,7 @@
     "innings_bowled": 25.0,
     "ipl_caps": 50
   },
-  "TM Head": {
+  "Travis Head": {
     "batting_runs": 1146.0,
     "balls_faced": 667.0,
     "batting_sr": 171.81,
@@ -8411,7 +8291,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 37
   },
-  "TM Srivastava": {
+  "Tanmay Srivastava": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8435,7 +8315,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "TR Birt": {
+  "Travis Birt": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8447,7 +8327,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "TS Mills": {
+  "Tymal Mills": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8459,17 +8339,17 @@
     "innings_bowled": 10.0,
     "ipl_caps": 10
   },
-  "TU Deshpande": {
+  "Tushar Deshpande": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
     "batting_avg": 20.0,
     "innings_played": NaN,
-    "wickets": 51.0,
+    "wickets": 52.0,
     "bowling_econ": 9.84,
     "bowling_sr": 18.92,
-    "innings_bowled": 46.0,
-    "ipl_caps": 46
+    "innings_bowled": 47.0,
+    "ipl_caps": 47
   },
   "Tanush Kotian": {
     "batting_runs": NaN,
@@ -8496,18 +8376,18 @@
     "ipl_caps": 1
   },
   "Tilak Varma": {
-    "batting_runs": 1499.0,
-    "balls_faced": 1032.0,
-    "batting_sr": 145.25,
+    "batting_runs": 1513.0,
+    "balls_faced": 1042.0,
+    "batting_sr": 145.2,
     "batting_avg": 39.45,
-    "innings_played": 51.0,
+    "innings_played": 52.0,
     "wickets": NaN,
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 51
+    "ipl_caps": 52
   },
-  "U Kaul": {
+  "Uday Kaul": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8519,7 +8399,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "UA Birla": {
+  "Aryaman Birla": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8531,7 +8411,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "UBT Chand": {
+  "Unmukt Chand": {
     "batting_runs": 300.0,
     "balls_faced": 299.0,
     "batting_sr": 100.33,
@@ -8543,7 +8423,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 20
   },
-  "UT Khawaja": {
+  "Usman Khawaja": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8555,7 +8435,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 6
   },
-  "UT Yadav": {
+  "Umesh Yadav": {
     "batting_runs": 208.0,
     "balls_faced": 201.0,
     "batting_sr": 103.48,
@@ -8603,7 +8483,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "V Kaverappa": {
+  "Vidwath Kaverappa": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8615,7 +8495,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "V Kohli": {
+  "Virat Kohli": {
     "batting_runs": 8671.0,
     "balls_faced": 6505.0,
     "batting_sr": 133.3,
@@ -8627,7 +8507,7 @@
     "innings_bowled": 26.0,
     "ipl_caps": 260
   },
-  "V Nigam": {
+  "Vipraj Nigam": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8639,7 +8519,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 14
   },
-  "V Pratap Singh": {
+  "Veer Pratap Singh": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8651,7 +8531,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 9
   },
-  "V Puthur": {
+  "Vignesh Puthur": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8663,7 +8543,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 5
   },
-  "V Sehwag": {
+  "Virender Sehwag": {
     "batting_runs": 2728.0,
     "balls_faced": 1740.0,
     "batting_sr": 156.78,
@@ -8675,7 +8555,7 @@
     "innings_bowled": 15.0,
     "ipl_caps": 104
   },
-  "V Shankar": {
+  "Vijay Shankar": {
     "batting_runs": 1233.0,
     "balls_faced": 947.0,
     "batting_sr": 130.2,
@@ -8687,7 +8567,7 @@
     "innings_bowled": 22.0,
     "ipl_caps": 69
   },
-  "V Suryavanshi": {
+  "Vaibhav Suryavanshi": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8697,9 +8577,9 @@
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 7
+    "ipl_caps": 8
   },
-  "V Viyaskanth": {
+  "Vijayakanth Viyaskanth": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8711,7 +8591,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "VG Arora": {
+  "Vaibhav Arora": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8723,7 +8603,7 @@
     "innings_bowled": 32.0,
     "ipl_caps": 32
   },
-  "VH Zol": {
+  "Vijay Zol": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8735,7 +8615,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "VR Aaron": {
+  "Varun Aaron": {
     "batting_runs": 50.0,
     "balls_faced": 71.0,
     "batting_sr": 70.42,
@@ -8747,7 +8627,7 @@
     "innings_bowled": 50.0,
     "ipl_caps": 50
   },
-  "VR Iyer": {
+  "Venkatesh Iyer": {
     "batting_runs": 1468.0,
     "balls_faced": 1068.0,
     "batting_sr": 137.45,
@@ -8759,7 +8639,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 56
   },
-  "VRV Singh": {
+  "Vikram Singh": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8771,7 +8651,7 @@
     "innings_bowled": 18.0,
     "ipl_caps": 18
   },
-  "VS Malik": {
+  "Vikramjeet Malik": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8783,7 +8663,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 13
   },
-  "VS Yeligati": {
+  "Vinayak Yeligati": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8807,7 +8687,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 20
   },
-  "VY Mahesh": {
+  "Yo Mahesh": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8867,7 +8747,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "W Jaffer": {
+  "Wasim Jaffer": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8879,7 +8759,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 8
   },
-  "W O'Rourke": {
+  "William O'Rourke": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8891,7 +8771,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "WA Mota": {
+  "Wilkin Mota": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8903,7 +8783,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 10
   },
-  "WD Parnell": {
+  "Wayne Parnell": {
     "batting_runs": 65.0,
     "balls_faced": 80.0,
     "batting_sr": 81.25,
@@ -8915,7 +8795,7 @@
     "innings_bowled": 33.0,
     "ipl_caps": 33
   },
-  "WG Jacks": {
+  "Will Jacks": {
     "batting_runs": 463.0,
     "balls_faced": 302.0,
     "batting_sr": 153.31,
@@ -8927,7 +8807,7 @@
     "innings_bowled": 13.0,
     "ipl_caps": 20
   },
-  "WP Saha": {
+  "Wriddhiman Saha": {
     "batting_runs": 2934.0,
     "balls_faced": 2296.0,
     "batting_sr": 127.79,
@@ -8939,7 +8819,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 143
   },
-  "WPUJC Vaas": {
+  "Chaminda Vaas": {
     "batting_runs": 81.0,
     "balls_faced": 72.0,
     "batting_sr": 112.5,
@@ -8963,7 +8843,7 @@
     "innings_bowled": 63.0,
     "ipl_caps": 65
   },
-  "X Thalaivan Sargunam": {
+  "Xavier Thalaivan Sargunam": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8975,7 +8855,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 1
   },
-  "XC Bartlett": {
+  "Xavier Bartlett": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8987,7 +8867,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 4
   },
-  "Y Gnaneswara Rao": {
+  "Yalaka Gnaneswara Rao": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -8999,7 +8879,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "Y Nagar": {
+  "Yogesh Nagar": {
     "batting_runs": 285.0,
     "balls_faced": 259.0,
     "batting_sr": 110.04,
@@ -9011,7 +8891,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 20
   },
-  "Y Prithvi Raj": {
+  "Yarra Prithviraj": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -9023,7 +8903,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 2
   },
-  "Y Venugopal Rao": {
+  "Venugopal Rao": {
     "batting_runs": 985.0,
     "balls_faced": 832.0,
     "batting_sr": 118.39,
@@ -9035,7 +8915,7 @@
     "innings_bowled": 20.0,
     "ipl_caps": 57
   },
-  "YA Abdulla": {
+  "Yusuf Abdulla": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -9047,19 +8927,19 @@
     "innings_bowled": 11.0,
     "ipl_caps": 11
   },
-  "YBK Jaiswal": {
-    "batting_runs": 2166.0,
-    "balls_faced": 1412.0,
-    "batting_sr": 153.4,
+  "Yashasvi Jaiswal": {
+    "batting_runs": 2243.0,
+    "balls_faced": 1444.0,
+    "batting_sr": 155.33,
     "batting_avg": 34.94,
-    "innings_played": 66.0,
+    "innings_played": 67.0,
     "wickets": NaN,
     "bowling_econ": 8.5,
     "bowling_sr": 20.0,
     "innings_bowled": NaN,
-    "ipl_caps": 66
+    "ipl_caps": 67
   },
-  "YK Pathan": {
+  "Yusuf Pathan": {
     "batting_runs": 3222.0,
     "balls_faced": 2233.0,
     "batting_sr": 144.29,
@@ -9071,7 +8951,7 @@
     "innings_bowled": 82.0,
     "ipl_caps": 161
   },
-  "YS Chahal": {
+  "Yuzvendra Chahal": {
     "batting_runs": 37.0,
     "balls_faced": 86.0,
     "batting_sr": 43.02,
@@ -9083,7 +8963,7 @@
     "innings_bowled": 172.0,
     "ipl_caps": 172
   },
-  "YV Dhull": {
+  "Yash Dhull": {
     "batting_runs": NaN,
     "balls_faced": NaN,
     "batting_sr": 120.0,
@@ -9095,7 +8975,7 @@
     "innings_bowled": NaN,
     "ipl_caps": 3
   },
-  "YV Takawale": {
+  "Yogesh Takawale": {
     "batting_runs": 192.0,
     "balls_faced": 177.0,
     "batting_sr": 108.47,
@@ -9179,7 +9059,7 @@
     "innings_bowled": 73.0,
     "ipl_caps": 129
   },
-  "Z Khan": {
+  "Zaheer Khan": {
     "batting_runs": 117.0,
     "balls_faced": 140.0,
     "batting_sr": 83.57,
@@ -9202,5 +9082,17 @@
     "bowling_sr": 33.83,
     "innings_bowled": 10.0,
     "ipl_caps": 10
+  },
+  "AM Ghazanfar": {
+    "batting_runs": 0.0,
+    "balls_faced": 0.0,
+    "batting_sr": 120.0,
+    "batting_avg": 20.0,
+    "innings_played": 0,
+    "wickets": 2.0,
+    "bowling_econ": 8.5,
+    "bowling_sr": 20.0,
+    "innings_bowled": 1,
+    "ipl_caps": 1
   }
 }

@@ -99,8 +99,12 @@ def get_accuracy():
             "recent": [],
         }
 
-    # Only evaluate entries that have both a prediction and a result
-    evaluated = [r for r in log if r.get("predicted_winner") and r.get("actual_winner")]
+    # Only evaluate entries that have both a prediction and a result (exclude washouts)
+    evaluated = [
+        r for r in log 
+        if r.get("predicted_winner") and r.get("actual_winner") 
+        and r["actual_winner"].lower() not in ["no result", "washout", "abandoned"]
+    ]
     correct   = sum(1 for r in evaluated if r["predicted_winner"] == r["actual_winner"])
     accuracy  = round(correct / len(evaluated), 4) if evaluated else None
 
