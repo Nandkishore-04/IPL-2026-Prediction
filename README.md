@@ -9,6 +9,16 @@ A full-stack predictive platform delivering pre-match winner forecasts and live 
 
 ---
 
+## 📺 Preview
+
+![Project Dashboard](docs/demo.gif)
+*Real-time win probability tracking and squad-quality analysis in action.*
+
+> [!TIP]
+> **[Watch High-Res Video Demo](docs/demo_video.mp4)** / **[View Live Site](https://your-hosted-platform-link.com)**
+
+---
+
 ## ⚡ Quick Demo
 
 The platform provides two primary interfaces:
@@ -37,11 +47,18 @@ The pre-match model was trained on historical IPL data (2008–2023) and validat
 | **Brier Score** | 0.238 | Measures the quality of probability forecasts |
 | **Calibration** | Isotonic | Ensures predicted 70% win rate matches reality |
 
+### Model Calibration
+![Calibration Curve](docs/calibration_curve.png)
+*The isotonic regression calibration ensures that the predicted probabilities align closely with the actual win rates.*
+
 ---
 
 ## 🧠 Feature Engineering
 
 Rather than using raw cumulative totals, the engine focuses on **differential features** to eliminate team-order bias and capture relative strength:
+
+![Feature Importance](docs/feature_importance.png)
+*Top 10 features driving the pre-match model predictions.*
 
 *   **`xi_exp_diff`**: The gap in match experience between the selected Playing XIs.
 *   **`form_wr_diff`**: Momentum difference calculated via **Exponential Moving Average (EMA)**.
@@ -63,6 +80,7 @@ Rather than using raw cumulative totals, the engine focuses on **differential fe
 *   **Optimization**: Calibrated using isotonic regression for reliable betting/analysis metrics.
 
 ### Data Infrastructure
+*   **SQLite-Powered Core**: High-concurrency relational database for match-day performance tracking.
 *   **Credit-Aware Polling**: Smart "match window" logic reduces API credit usage by **90%**.
 *   **Form Blending Engine**: Blends 2026 season-to-date form (60%) with career stats (40%) dynamically.
 *   **Auto-Logging**: background tasks handle scorecard logging and standings updates instantly upon match completion.
@@ -95,4 +113,4 @@ This project demonstrates proficiency in the full data product lifecycle:
 
 ---
 
-
+*Developed by Nandkishore — a showcase of Full-Stack Machine Learning.*

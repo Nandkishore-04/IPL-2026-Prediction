@@ -8,8 +8,8 @@ class MatchPredictionRequest(BaseModel):
     team_a: str = Field(..., example="Mumbai Indians")
     team_b: str = Field(..., example="Chennai Super Kings")
     venue: str = Field(..., example="Wankhede Stadium, Mumbai")
-    toss_winner: str = Field(..., example="Mumbai Indians")
-    toss_decision: str = Field(..., example="bat")  # "bat" or "field"
+    toss_winner: Optional[str] = Field(default=None, example="Mumbai Indians")
+    toss_decision: Optional[str] = Field(default=None, example="bat")  # "bat" or "field"
     team_a_xi: List[str] = Field(default=[], example=["Rohit Sharma", "Ishan Kishan"])
     team_b_xi: List[str] = Field(default=[], example=["MS Dhoni", "Ruturaj Gaikwad"])
     match_date: Optional[str] = Field(default=None, example="2026-04-05")  # YYYY-MM-DD
