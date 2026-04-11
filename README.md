@@ -21,7 +21,6 @@ The platform provides two primary interfaces:
 *   **Update Frequency**: Every ball (via smart polling).
 *   **Visualization**: Dynamic win-probability trends and situational momentum shifts.
 
-> [!TIP]
 > Use the **Accuracy Dashboard** to see the model's performance in real-time as the 2026 season progresses.
 
 ---
